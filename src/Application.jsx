@@ -3,9 +3,13 @@ import './Application.css'
 function Application() {
   return (
   <>
-    <div className="flexbox-container">
-      <p>Left Block (text)</p>
-      <p>Right Block (image)</p>
+    <div className="container">
+      <div id="main-div" className="container-item">
+        Block A
+      </div>
+      <div id="self-div" className="container-item">
+        Block B
+      </div>
     </div>
   </>
 )
