@@ -1,15 +1,44 @@
+/* Mobile-first styles */
 .container {
   display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  gap: 1rem; /* Space between the boxes */
+  padding: 1rem;
 }
 
-.container-item {
-  flex: 0 1 auto;
+.box {
+  background-color: #f0f0f0;
+  padding: 2rem; /* Increased padding for better visibility */
+  border: 1px solid #ccc;
 }
 
-#main-div, #self-div {
-  width: 100vw;
-  height: 50vh;
+/* Align header and bullet points to the left */
+.content-box header,
+.content-box ul {
+  text-align: left;
+}
+
+.content-box ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+}
+
+/* Center the footer */
+.content-box footer {
+  text-align: center;
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+.image-box img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Center the image within the div */
+}
+
+/* Media query for larger devices */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
 }
