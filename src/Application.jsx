@@ -4,11 +4,21 @@ function Application() {
   return (
   <>
     <div className="container">
-      <div id="main-div" className="container-item">
-        Block A
+      <div className="box content-box">
+        <header>
+          <h1>Hi, I&apos;m Allan Boswell.</h1>
+        </header>
+        <ul>
+          <li>test test test test test test test</li>
+          <li>Bullet point 2</li>
+          <li>Bullet point 3</li>
+        </ul>
+        <footer>
+          <p>Footer</p>
+        </footer>
       </div>
-      <div id="self-div" className="container-item">
-        Block B
+      <div className="box image-box">
+        <img src="https://placehold.co/300" alt="Description"></img>
       </div>
     </div>
   </>
