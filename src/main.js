@@ -25,33 +25,67 @@ document.querySelector('#app').innerHTML = `
             </g>
           </svg
       </button>
-      <button id="menu-toggle" aria-label="Open menu">☰</button>
+      <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6" stroke="currentColor" stroke-width="2" />
+          <line x1="3" y1="12" x2="21" y2="12" stroke="currentColor" stroke-width="2" />
+          <line x1="3" y1="18" x2="21" y2="18" stroke="currentColor" stroke-width="2" />
+        </svg>
+      </button>
     </div>
   </header>
 
   <main>
     <section id="hero">
-      <h2>Builder of software. Writer of fanfiction.</h2>
-      <p>Open-source projects and free stories, hosted openly.</p>
+      <h2>Lorem ipsum dolor sit amet.</h2>
+      <p>Lorem ipsum dolor sit amet.</p>
       <div>
-        <button>View Projects</button>
+        <button>View My Projects</button>
         <button>Read My Writing</button>
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <p>Placeholder for featured GitHub projects.</p>
+      <p class="section-intro">Lorem ipsum dolor sit amet.</p>
+      <div class="card-list">
+        <article class="card card--project">
+          <div class="card-image">
+            <img src="https://placehold.co/640x320" alt="Placeholder project image" />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Project Title</h3>
+            <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum bibendum maximus. Vivamus at viverra tortor, sed eleifend erat.</p>
+          </div>
+          <ul class="card-tags">
+            <li class="tag">python</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
-    <section id="writing">
-      <h2>Writing</h2>
-      <p>Placeholder for fanfiction.</p>
+    <section id="stories">
+      <h2>Stories</h2>
+      <p class="section-intro">Lorem ipsum dolor sit amet.</p>
+      <div class="card-list">
+        <article class="card card--story">
+          <div class="card-image">
+            <img src="https://placehold.co/512x800" alt="Placeholder story image" />
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Story Title</h3>
+            <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla feugiat metus, a hendrerit tellus viverra in. Mauris tempus tortor sit amet sagittis ullamcorper. Aenean. </p>
+            <ul class="card-tags">
+              <li class="tag">adventure</li>
+            </ul>
+          </div>
+        </article>
+      </div>
     </section>
 
     <section id="about">
       <h2>About</h2>
-      <p>Placeholder for information about me.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
     </section>
   </main>
 
