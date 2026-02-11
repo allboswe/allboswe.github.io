@@ -70,7 +70,7 @@
           </div>
           <div class="card-content">
             <h3 class="card-title">Story Title</h3>
-            <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla feugiat metus, a hendrerit tellus viverra in. Mauris tempus tortor sit amet sagittis ullamcorper. Aenean. </p>
+            <p class="card-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <ul class="card-tags">
               <li class="tag">adventure</li>
             </ul>
