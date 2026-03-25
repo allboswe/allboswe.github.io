@@ -2,46 +2,53 @@ const root = document.documentElement;
 const STORAGE_KEY = 'theme';
 
 function getStoredTheme() {
-    return localStorage.getItem(STORAGE_KEY);
+  return localStorage.getItem(STORAGE_KEY);
+}
+
+function getCurrentTheme() {
+  const manualTheme = root.getAttribute('data-theme');
+
+  if (manualTheme === 'light' || manualTheme === 'dark') {
+    return manualTheme;
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light';
 }
 
 function applyTheme(theme) {
-    const button = document.getElementById('theme-toggle');
+  const button = document.getElementById('theme-toggle');
 
-    if (theme) {
-        root.setAttribute("data-theme", theme);
-        localStorage.setItem(STORAGE_KEY, theme);
-    } else {
-        root.removeAttribute("data-theme");
-        localStorage.removeItem(STORAGE_KEY);
-    }
+  root.setAttribute('data-theme', theme);
+  localStorage.setItem(STORAGE_KEY, theme);
 
-    if (button) {
-        button.setAttribute("aria-pressed", theme === "dark")
-    }
+  if (button) {
+    button.setAttribute('aria-pressed', String(theme === 'dark'));
+  }
 }
 
 function toggleTheme() {
-    const current = root.getAttribute("data-theme");
-
-    if (current == "dark") {
-        applyTheme("light");
-    } else {
-        applyTheme("dark")
-    }
+  const current = getCurrentTheme();
+  applyTheme(current === 'dark' ? 'light' : 'dark');
 }
 
 function initThemeToggle() {
-    const savedTheme = getStoredTheme();
-    applyTheme(savedTheme);
-    
-    document.addEventListener('click', (event) => {
-        const button = event.target.closest('#theme-toggle');
+  const savedTheme = getStoredTheme();
 
-        if (button) {
-            toggleTheme();
-        }
-    });
+  if (savedTheme === 'light' || savedTheme === 'dark') {
+    applyTheme(savedTheme);
+  } else {
+    applyTheme(getCurrentTheme());
+  }
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('#theme-toggle');
+
+    if (button) {
+      toggleTheme();
+    }
+  });
 }
 
 export { initThemeToggle };
