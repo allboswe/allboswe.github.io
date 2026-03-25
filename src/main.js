@@ -23,7 +23,7 @@ document.querySelector('#app').innerHTML = `
               <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
               <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
             </g>
-          </svg
+          </svg>
       </button>
       <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">
         <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true">
