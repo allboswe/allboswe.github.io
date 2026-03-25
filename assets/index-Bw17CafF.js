@@ -1,4 +1,4 @@
-(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const o of t.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&n(o)}).observe(document,{childList:!0,subtree:!0});function c(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(e){if(e.ep)return;e.ep=!0;const t=c(e);fetch(e.href,t)}})();const s=document.documentElement,a="theme";function d(){return localStorage.getItem(a)}function l(i){const r=document.getElementById("theme-toggle");i?(s.setAttribute("data-theme",i),localStorage.setItem(a,i)):(s.removeAttribute("data-theme"),localStorage.removeItem(a)),r&&r.setAttribute("aria-pressed",i==="dark")}function u(){s.getAttribute("data-theme")=="dark"?l("light"):l("dark")}function m(){const i=d();l(i),document.addEventListener("click",r=>{r.target.closest("#theme-toggle")&&u()})}document.querySelector("#app").innerHTML=`
+(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))a(e);new MutationObserver(e=>{for(const i of e)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function c(e){const i={};return e.integrity&&(i.integrity=e.integrity),e.referrerPolicy&&(i.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?i.credentials="include":e.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function a(e){if(e.ep)return;e.ep=!0;const i=c(e);fetch(e.href,i)}})();const n=document.documentElement,l="theme";function u(){return localStorage.getItem(l)}function d(){const t=n.getAttribute("data-theme");return t==="light"||t==="dark"?t:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(t){const r=document.getElementById("theme-toggle");n.setAttribute("data-theme",t),localStorage.setItem(l,t),r&&r.setAttribute("aria-pressed",String(t==="dark"))}function m(){const t=d();s(t==="dark"?"light":"dark")}function h(){const t=u();s(t==="light"||t==="dark"?t:d()),document.addEventListener("click",r=>{r.target.closest("#theme-toggle")&&m()})}document.querySelector("#app").innerHTML=`
   <header>
     <h1>Allan Boswell</h1>
 
@@ -19,7 +19,7 @@
               <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
               <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
             </g>
-          </svg
+          </svg>
       </button>
       <button id="menu-toggle" aria-label="Open menu" aria-expanded="false">
         <svg class="icon icon-menu" viewBox="0 0 24 24" aria-hidden="true">
@@ -89,4 +89,4 @@
     <p>Built with Vite · Hosted on GitHub Pages</p>
     <p><a href="#" aria-label="GitHub profile">GitHub</a></p>
   </footer>
-`;m();
+`;h();
