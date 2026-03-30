@@ -1,7 +1,10 @@
 export function renderSiteHeader() {
   return `
     <header>
-      <h1>Allan Boswell</h1>
+      <h1 class="site-title">
+        <img src="/favicon.svg" alt="Logo" class="site-logo" />
+        <span>Allan Boswell</span>
+      </h1>
 
       <div class="header-actions">
         <button id="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
