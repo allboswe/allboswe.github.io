@@ -110,7 +110,7 @@
     display: flex;
     gap: 1rem;
     padding: 1rem 1.25rem;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .card--story .card-tags {
@@ -118,8 +118,8 @@
 }
 
 .card--story .card-image {
-    flex: 0 0 6rem;
-    width: 6rem;
+    flex: 0 0 5.5rem;
+    width: 5.5rem;
     aspect-ratio: 2 / 3;
     margin-bottom: 0;
 }
@@ -139,4 +139,21 @@
     border-color: var(--color-accent);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 30rem) {
+    .card--story {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card--story .card-image {
+        flex: 0 0 auto;
+        width: 7rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .card--story .card-content {
+        width: 100%;
+    }
 }
