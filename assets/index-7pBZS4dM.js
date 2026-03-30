@@ -1,4 +1,4 @@
-(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&a(i)}).observe(document,{childList:!0,subtree:!0});function n(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function a(t){if(t.ep)return;t.ep=!0;const r=n(t);fetch(t.href,r)}})();const c=document.documentElement,l="theme";function u(){return localStorage.getItem(l)}function d(){const e=c.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(e){const o=document.getElementById("theme-toggle");c.setAttribute("data-theme",e),localStorage.setItem(l,e),o&&o.setAttribute("aria-pressed",String(e==="dark"))}function m(){const e=d();s(e==="dark"?"light":"dark")}function g(){const e=u();s(e==="light"||e==="dark"?e:d()),document.addEventListener("click",o=>{o.target.closest("#theme-toggle")&&m()})}function h(){return`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function n(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function a(t){if(t.ep)return;t.ep=!0;const r=n(t);fetch(t.href,r)}})();const c=document.documentElement,l="theme";function u(){return localStorage.getItem(l)}function d(){const e=c.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(e){const i=document.getElementById("theme-toggle");c.setAttribute("data-theme",e),localStorage.setItem(l,e),i&&i.setAttribute("aria-pressed",String(e==="dark"))}function m(){const e=d();s(e==="dark"?"light":"dark")}function g(){const e=u();s(e==="light"||e==="dark"?e:d()),document.addEventListener("click",i=>{i.target.closest("#theme-toggle")&&m()})}function h(){return`
     <header>
       <h1 class="site-title">
         <img src="/favicon.svg" alt="Logo" class="site-logo" />
@@ -98,10 +98,5 @@
           </div>
         </article>
       </div>
-    </section>
-
-    <section id="about">
-      <h2>About</h2>
-      <p>Lorem ipsum dolor sit amet.</p>
     </section>
   `)}const v=document.querySelector("#app");v.innerHTML=y();g();
