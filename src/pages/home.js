@@ -3,11 +3,11 @@ import { renderStandardPage } from '../components/layout';
 export function renderHomePage() {
   return renderStandardPage(`
     <section id="hero">
-      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h2>Hello.</h2>
       <p>Lorem ipsum dolor sit amet.</p>
       <div>
-        <button type="button">View My Projects</button>
-        <button type="button">Read My Writing</button>
+        <button type="button">View Projects</button>
+        <button type="button">Read Manga</button>
       </div>
     </section>
 
@@ -15,12 +15,12 @@ export function renderHomePage() {
       <h2>Projects</h2>
       <p class="section-intro">Lorem ipsum dolor sit amet.</p>
       <div class="card-list">
-        <article class="card card--project">
+        <article class="card">
           <div class="card-image">
             <img src="https://placehold.co/640x320" alt="Placeholder project image" />
           </div>
           <div class="card-content">
-            <h3 class="card-title">Project Title</h3>
+            <h3 class="card-title">Title</h3>
             <p class="card-description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum
               bibendum maximus. Vivamus at viverra tortor, sed eleifend erat.
@@ -33,25 +33,24 @@ export function renderHomePage() {
       </div>
     </section>
 
-    <section id="stories">
-      <h2>Stories</h2>
+    <section id="manga">
+      <h2>Manga</h2>
       <p class="section-intro">Lorem ipsum dolor sit amet.</p>
       <div class="card-list">
-        <article class="card card--story">
+        <article class="card">
           <div class="card-image">
-            <img src="https://placehold.co/512x800" alt="Placeholder story image" />
+            <img src="https://placehold.co/640x320" alt="Placeholder story image" />
           </div>
           <div class="card-content">
-            <h3 class="card-title">Ars Arcana</h3>
+            <h3 class="card-title">Title</h3>
             <p class="card-description">
-              Four adventurers set out on a journey that becomes something more.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum
+              bibendum maximus. Vivamus at viverra tortor, sed eleifend erat.
             </p>
-            <ul class="card-tags">
-              <li class="tag">action</li>
-              <li class="tag">adventure</li>
-              <li class="tag">fantasy</li>
-            </ul>
           </div>
+          <ul class="card-tags">
+            <li class="tag">action</li>
+          </ul>
         </article>
       </div>
     </section>
