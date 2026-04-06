@@ -43,7 +43,7 @@ export function renderSiteFooter() {
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
-          &copy; 2026 Allan Boswell. All rights reserved.
+          &copy; 2023-2026 Allan Boswell. All rights reserved.
         </p>
 
         <div class="footer-links">
