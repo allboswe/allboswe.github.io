@@ -1,4 +1,4 @@
-(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))c(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&c(i)}).observe(document,{childList:!0,subtree:!0});function a(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function c(t){if(t.ep)return;t.ep=!0;const r=a(t);fetch(t.href,r)}})();const n=document.documentElement,l="theme";function u(){return localStorage.getItem(l)}function d(){const e=n.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(e){const o=document.getElementById("theme-toggle");n.setAttribute("data-theme",e),localStorage.setItem(l,e),o&&o.setAttribute("aria-pressed",String(e==="dark"))}function m(){const e=d();s(e==="dark"?"light":"dark")}function g(){const e=u();s(e==="light"||e==="dark"?e:d()),document.addEventListener("click",o=>{o.target.closest("#theme-toggle")&&m()})}function h(){return`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&n(o)}).observe(document,{childList:!0,subtree:!0});function a(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(t){if(t.ep)return;t.ep=!0;const r=a(t);fetch(t.href,r)}})();const c=document.documentElement,l="theme";function u(){return localStorage.getItem(l)}function d(){const e=c.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(e){const i=document.getElementById("theme-toggle");c.setAttribute("data-theme",e),localStorage.setItem(l,e),i&&i.setAttribute("aria-pressed",String(e==="dark"))}function m(){const e=d();s(e==="dark"?"light":"dark")}function g(){const e=u();s(e==="light"||e==="dark"?e:d()),document.addEventListener("click",i=>{i.target.closest("#theme-toggle")&&m()})}function h(){return`
     <header>
       <h1 class="site-title">
         <img src="/favicon.svg" alt="Logo" class="site-logo" />
@@ -38,7 +38,7 @@
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
-          &copy; 2026 Allan Boswell. All rights reserved.
+          &copy; 2023-2026 Allan Boswell. All rights reserved.
         </p>
 
         <div class="footer-links">
@@ -63,13 +63,13 @@
       ${e}
     </main>
     ${p()}
-  `}function y(){return f(`
+  `}function v(){return f(`
     <section id="hero">
-      <h2>Lorem ipsum dolor sit amet.</h2>
+      <h2>Hello.</h2>
       <p>Lorem ipsum dolor sit amet.</p>
       <div>
-        <button type="button">View My Projects</button>
-        <button type="button">Read My Writing</button>
+        <button type="button">View Projects</button>
+        <button type="button">Read Manga</button>
       </div>
     </section>
 
@@ -77,12 +77,12 @@
       <h2>Projects</h2>
       <p class="section-intro">Lorem ipsum dolor sit amet.</p>
       <div class="card-list">
-        <article class="card card--project">
+        <article class="card">
           <div class="card-image">
             <img src="https://placehold.co/640x320" alt="Placeholder project image" />
           </div>
           <div class="card-content">
-            <h3 class="card-title">Project Title</h3>
+            <h3 class="card-title">Title</h3>
             <p class="card-description">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum
               bibendum maximus. Vivamus at viverra tortor, sed eleifend erat.
@@ -95,26 +95,25 @@
       </div>
     </section>
 
-    <section id="stories">
-      <h2>Stories</h2>
+    <section id="manga">
+      <h2>Manga</h2>
       <p class="section-intro">Lorem ipsum dolor sit amet.</p>
       <div class="card-list">
-        <article class="card card--story">
+        <article class="card">
           <div class="card-image">
-            <img src="https://placehold.co/512x800" alt="Placeholder story image" />
+            <img src="https://placehold.co/640x320" alt="Placeholder story image" />
           </div>
           <div class="card-content">
-            <h3 class="card-title">Ars Arcana</h3>
+            <h3 class="card-title">Title</h3>
             <p class="card-description">
-              Four adventurers set out on a journey that becomes something more.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum
+              bibendum maximus. Vivamus at viverra tortor, sed eleifend erat.
             </p>
-            <ul class="card-tags">
-              <li class="tag">action</li>
-              <li class="tag">adventure</li>
-              <li class="tag">fantasy</li>
-            </ul>
           </div>
+          <ul class="card-tags">
+            <li class="tag">action</li>
+          </ul>
         </article>
       </div>
     </section>
-  `)}const v=document.querySelector("#app");v.innerHTML=y();g();
+  `)}const y=document.querySelector("#app");y.innerHTML=v();g();
