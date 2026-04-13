@@ -40,13 +40,14 @@ footer {
     transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.footer-links a:hover,
-.footer-links a:focus {
+/* Hover ONLY (removed :focus) */
+.footer-links a:hover {
     color: var(--color-accent);
     transform: translateY(-2px) scale(1.05);
     text-decoration: none;
 }
 
+/* Accessible focus (no transform/color carryover) */
 .footer-links a:focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 4px;
@@ -73,12 +74,11 @@ footer {
     transition: fill 0.2s ease;
 }
 
-.footer-links a[aria-label="Reddit"]:hover .reddit-bg,
-.footer-links a[aria-label="Reddit"]:focus .reddit-bg {
+/* Hover ONLY (removed :focus) */
+.footer-links a[aria-label="Reddit"]:hover .reddit-bg {
     fill: var(--color-accent);
 }
 
-.footer-links a[aria-label="Reddit"]:hover .reddit-mark,
-.footer-links a[aria-label="Reddit"]:focus .reddit-mark {
+.footer-links a[aria-label="Reddit"]:hover .reddit-mark {
     fill: var(--color-background);
 }
