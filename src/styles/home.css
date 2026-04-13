@@ -7,8 +7,16 @@
 }
 
 #hero h2 {
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
     font-size: 1.75rem;
     line-height: 1.3;
+    border-right: 2px solid var(--color-text);
+    animation:
+        typing 1.8s steps(12, end) forwards,
+        blink-caret 0.75s step-end infinite;
 }
 
 #hero p {
@@ -113,4 +121,22 @@
     border-color: var(--color-accent);
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 12ch;
+    }
+}
+
+@keyframes blink-caret {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+        border-color: var(--color-text);
+    }
 }
