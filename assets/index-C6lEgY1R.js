@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&n(o)}).observe(document,{childList:!0,subtree:!0});function a(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(t){if(t.ep)return;t.ep=!0;const r=a(t);fetch(t.href,r)}})();const c=document.documentElement,l="theme";function u(){return localStorage.getItem(l)}function d(){const e=c.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(e){const i=document.getElementById("theme-toggle");c.setAttribute("data-theme",e),localStorage.setItem(l,e),i&&i.setAttribute("aria-pressed",String(e==="dark"))}function m(){const e=d();s(e==="dark"?"light":"dark")}function g(){const e=u();s(e==="light"||e==="dark"?e:d()),document.addEventListener("click",i=>{i.target.closest("#theme-toggle")&&m()})}function h(){return`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function n(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function a(t){if(t.ep)return;t.ep=!0;const r=n(t);fetch(t.href,r)}})();const c=document.documentElement,l="theme";function u(){return localStorage.getItem(l)}function d(){const e=c.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(e){const i=document.getElementById("theme-toggle");c.setAttribute("data-theme",e),localStorage.setItem(l,e),i&&i.setAttribute("aria-pressed",String(e==="dark"))}function g(){const e=d();s(e==="dark"?"light":"dark")}function m(){const e=u();s(e==="light"||e==="dark"?e:d()),document.addEventListener("click",i=>{i.target.closest("#theme-toggle")&&g()})}function h(){return`
     <header>
       <h1 class="site-title">
         <img src="/favicon.svg" alt="Logo" class="site-logo" />
@@ -65,17 +65,17 @@
     ${p()}
   `}function v(){return f(`
     <section id="hero">
-      <h2>Hello.</h2>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <h2>Hello world.</h2>
+      <p>I build software and write stories.</p>
       <div>
         <button type="button">View Projects</button>
-        <button type="button">Read Manga</button>
+        <button type="button">Read Light Novels</button>
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <p class="section-intro">Lorem ipsum dolor sit amet.</p>
+      <p class="section-intro">Stuff I've made.</p>
       <div class="card-list">
         <article class="card">
           <div class="card-image">
@@ -95,9 +95,9 @@
       </div>
     </section>
 
-    <section id="manga">
-      <h2>Manga</h2>
-      <p class="section-intro">Lorem ipsum dolor sit amet.</p>
+    <section id="light-novels">
+      <h2>Light Novels</h2>
+      <p class="section-intro">Stuff I write when I should be doing something else.</p>
       <div class="card-list">
         <article class="card">
           <div class="card-image">
@@ -116,4 +116,4 @@
         </article>
       </div>
     </section>
-  `)}const y=document.querySelector("#app");y.innerHTML=v();g();
+  `)}const y=document.querySelector("#app");y.innerHTML=v();m();
