@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))a(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&a(o)}).observe(document,{childList:!0,subtree:!0});function n(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function a(t){if(t.ep)return;t.ep=!0;const r=n(t);fetch(t.href,r)}})();const c=document.documentElement,l="theme";function u(){return localStorage.getItem(l)}function d(){const e=c.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(e){const i=document.getElementById("theme-toggle");c.setAttribute("data-theme",e),localStorage.setItem(l,e),i&&i.setAttribute("aria-pressed",String(e==="dark"))}function g(){const e=d();s(e==="dark"?"light":"dark")}function m(){const e=u();s(e==="light"||e==="dark"?e:d()),document.addEventListener("click",i=>{i.target.closest("#theme-toggle")&&g()})}function h(){return`
+(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))n(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function a(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(t){if(t.ep)return;t.ep=!0;const r=a(t);fetch(t.href,r)}})();const l=document.documentElement,c="theme";function u(){return localStorage.getItem(c)}function d(){const e=l.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function s(e){const o=document.getElementById("theme-toggle");l.setAttribute("data-theme",e),localStorage.setItem(c,e),o&&o.setAttribute("aria-pressed",String(e==="dark"))}function g(){const e=d();s(e==="dark"?"light":"dark")}function h(){const e=u();s(e==="light"||e==="dark"?e:d()),document.addEventListener("click",o=>{o.target.closest("#theme-toggle")&&g()})}function m(){return`
     <header>
       <h1 class="site-title">
         <img src="/favicon.svg" alt="Logo" class="site-logo" />
@@ -34,7 +34,7 @@
         </button>
       </div>
     </header>
-  `}function p(){return`
+  `}function f(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -57,25 +57,25 @@
         </div>
       </div>
     </footer>
-  `}function f(e){return`
-    ${h()}
+  `}function p(e){return`
+    ${m()}
     <main>
       ${e}
     </main>
-    ${p()}
-  `}function v(){return f(`
+    ${f()}
+  `}function v(){return p(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
       <div>
         <button type="button">View Projects</button>
-        <button type="button">Read Light Novels</button>
+        <button type="button">Read Web Novels</button>
       </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <p class="section-intro">Stuff I've made.</p>
+      <p class="section-intro">Stuff I've built.</p>
       <div class="card-list">
         <article class="card">
           <div class="card-image">
@@ -95,25 +95,27 @@
       </div>
     </section>
 
-    <section id="light-novels">
-      <h2>Light Novels</h2>
-      <p class="section-intro">Stuff I write when I should be doing something else.</p>
+    <section id="web-novels">
+      <h2>Web Novels</h2>
+      <p class="section-intro">Stuff I've written.</p>
       <div class="card-list">
         <article class="card">
           <div class="card-image">
             <img src="https://placehold.co/640x320" alt="Placeholder story image" />
           </div>
           <div class="card-content">
-            <h3 class="card-title">Title</h3>
+            <h3 class="card-title">Pink Guy</h3>
             <p class="card-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum
-              bibendum maximus. Vivamus at viverra tortor, sed eleifend erat.
+              A story about a foolish guy in pink and a world that doesn't play fair.
+              Once it starts, there's no clean way out.
             </p>
           </div>
           <ul class="card-tags">
             <li class="tag">action</li>
+            <li class="tag">dark fantasy</li>
+            <li class="tag">supernatural</li>
           </ul>
         </article>
       </div>
     </section>
-  `)}const y=document.querySelector("#app");y.innerHTML=v();m();
+  `)}const y=document.querySelector("#app");y.innerHTML=v();h();
