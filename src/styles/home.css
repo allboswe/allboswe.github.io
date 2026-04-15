@@ -164,7 +164,6 @@
     main {
         width: 100%;
         max-width: 96rem;
-        min-height: calc(100vh - 12rem);
         display: grid;
         grid-template-columns:
             minmax(0, 1fr)
