@@ -2,8 +2,10 @@ export function renderSiteHeader() {
   return `
     <header>
       <h1 class="site-title">
-        <img src="/favicon.svg" alt="Logo" class="site-logo" />
-        <span>Allan Boswell</span>
+        <a href="/" class="site-title-link">
+          <img src="/favicon.svg" alt="Logo" class="site-logo" />
+          <span>Allan Boswell</span>
+        </a>
       </h1>
 
       <div class="header-actions">
