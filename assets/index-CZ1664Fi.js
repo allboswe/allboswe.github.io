@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))d(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&d(o)}).observe(document,{childList:!0,subtree:!0});function l(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function d(t){if(t.ep)return;t.ep=!0;const r=l(t);fetch(t.href,r)}})();const p=document.documentElement,g="theme";function y(){return localStorage.getItem(g)}function f(){const e=p.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function c(e){const a=document.getElementById("theme-toggle");p.setAttribute("data-theme",e),localStorage.setItem(g,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function b(){const e=f();c(e==="dark"?"light":"dark")}function x(){const e=y();c(e==="light"||e==="dark"?e:f()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&b()})}function k(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))d(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&d(o)}).observe(document,{childList:!0,subtree:!0});function l(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function d(t){if(t.ep)return;t.ep=!0;const r=l(t);fetch(t.href,r)}})();const g=document.documentElement,f="theme";function b(){return localStorage.getItem(f)}function v(){const e=g.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function c(e){const a=document.getElementById("theme-toggle");g.setAttribute("data-theme",e),localStorage.setItem(f,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function x(){const e=v();c(e==="dark"?"light":"dark")}function k(){const e=b();c(e==="light"||e==="dark"?e:v()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&x()})}function w(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </header>
-  `}function w(){return`
+  `}function L(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -83,13 +83,13 @@
         </div>
       </div>
     </footer>
-  `}function v(e){return`
-    ${k()}
+  `}function y(e){return`
+    ${w()}
     <main>
       ${e}
     </main>
-    ${w()}
-  `}function L(){return v(`
+    ${L()}
+  `}function S(){return y(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
@@ -144,7 +144,7 @@
         </article>
       </div>
     </section>
-  `)}function A(){return v(`
+  `)}function P(){return y(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
@@ -209,4 +209,4 @@
         </aside>
       </div>
     </section>
-  `)}const u=document.querySelector("#app"),C=window.location.pathname.replace(/\/$/,"")||"/";C==="/pink_guy/characters/london"?u.innerHTML=A():u.innerHTML=L();x();const s=document.querySelector("#menu-toggle"),i=document.querySelector("#menu"),h=document.querySelector("#menu-close"),m=document.querySelector(".menu-backdrop");function S(){!i||!s||(i.classList.add("is-open"),i.setAttribute("aria-hidden","false"),s.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function n(){!i||!s||(i.classList.remove("is-open"),i.setAttribute("aria-hidden","true"),s.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}s&&i&&h&&m&&(s.addEventListener("click",S),h.addEventListener("click",n),m.addEventListener("click",n),document.addEventListener("keydown",e=>{e.key==="Escape"&&i.classList.contains("is-open")&&n()}));
+  `)}const u=document.querySelector("#app"),h=sessionStorage.getItem("redirectPath");h&&(sessionStorage.removeItem("redirectPath"),window.history.replaceState(null,"",h));const A=window.location.pathname.replace(/\/$/,"")||"/";A==="/pink_guy/characters/london"?u.innerHTML=P():u.innerHTML=S();k();const s=document.querySelector("#menu-toggle"),i=document.querySelector("#menu"),m=document.querySelector("#menu-close"),p=document.querySelector(".menu-backdrop");function C(){!i||!s||(i.classList.add("is-open"),i.setAttribute("aria-hidden","false"),s.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function n(){!i||!s||(i.classList.remove("is-open"),i.setAttribute("aria-hidden","true"),s.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}s&&i&&m&&p&&(s.addEventListener("click",C),m.addEventListener("click",n),p.addEventListener("click",n),document.addEventListener("keydown",e=>{e.key==="Escape"&&i.classList.contains("is-open")&&n()}));
