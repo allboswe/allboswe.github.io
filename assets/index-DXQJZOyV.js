@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))d(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const n of r.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&d(n)}).observe(document,{childList:!0,subtree:!0});function l(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function d(t){if(t.ep)return;t.ep=!0;const r=l(t);fetch(t.href,r)}})();const h=document.documentElement,g="theme";function f(){return localStorage.getItem(g)}function p(){const e=h.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function c(e){const i=document.getElementById("theme-toggle");h.setAttribute("data-theme",e),localStorage.setItem(g,e),i&&i.setAttribute("aria-pressed",String(e==="dark"))}function v(){const e=p();c(e==="dark"?"light":"dark")}function y(){const e=f();c(e==="light"||e==="dark"?e:p()),document.addEventListener("click",i=>{i.target.closest("#theme-toggle")&&v()})}function b(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))d(t);new MutationObserver(t=>{for(const r of t)if(r.type==="childList")for(const o of r.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&d(o)}).observe(document,{childList:!0,subtree:!0});function l(t){const r={};return t.integrity&&(r.integrity=t.integrity),t.referrerPolicy&&(r.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?r.credentials="include":t.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function d(t){if(t.ep)return;t.ep=!0;const r=l(t);fetch(t.href,r)}})();const p=document.documentElement,g="theme";function y(){return localStorage.getItem(g)}function f(){const e=p.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function c(e){const a=document.getElementById("theme-toggle");p.setAttribute("data-theme",e),localStorage.setItem(g,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function b(){const e=f();c(e==="dark"?"light":"dark")}function x(){const e=y();c(e==="light"||e==="dark"?e:f()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&b()})}function k(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </header>
-  `}function x(){return`
+  `}function w(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -83,13 +83,13 @@
         </div>
       </div>
     </footer>
-  `}function k(e){return`
-    ${b()}
+  `}function v(e){return`
+    ${k()}
     <main>
       ${e}
     </main>
-    ${x()}
-  `}function w(){return k(`
+    ${w()}
+  `}function L(){return v(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
@@ -144,4 +144,69 @@
         </article>
       </div>
     </section>
-  `)}const L=document.querySelector("#app");L.innerHTML=w();y();const s=document.querySelector("#menu-toggle"),o=document.querySelector("#menu"),u=document.querySelector("#menu-close"),m=document.querySelector(".menu-backdrop");function S(){!o||!s||(o.classList.add("is-open"),o.setAttribute("aria-hidden","false"),s.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function a(){!o||!s||(o.classList.remove("is-open"),o.setAttribute("aria-hidden","true"),s.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}s&&o&&u&&m&&(s.addEventListener("click",S),u.addEventListener("click",a),m.addEventListener("click",a),document.addEventListener("keydown",e=>{e.key==="Escape"&&o.classList.contains("is-open")&&a()}));
+  `)}function A(){return v(`
+    <section class="character-page">
+      <div class="character-shell">
+        <article class="character-article">
+          <div class="character-title-block">
+            <p class="character-kicker">Pink Guy / Characters</p>
+            <h1>London</h1>
+
+            <nav class="character-subnav" aria-label="Character sections">
+              <a href="/pink_guy/characters/london" aria-current="page">Overview</a>
+              <a href="/pink_guy/characters/london/history">History</a>
+              <a href="/pink_guy/characters/london/image_gallery">Image Gallery</a>
+            </nav>
+          </div>
+
+          <section class="character-section" id="overview">
+            <p>Work in progress.</p>
+          </section>
+
+          <section class="character-section">
+            <h2>Appearance</h2>
+            <p>Work in progress.</p>
+          </section>
+
+          <section class="character-section">
+            <h2>Personality</h2>
+            <p>Work in progress.</p>
+          </section>
+        </article>
+
+        <aside class="character-infobox" aria-label="London infobox">
+          <div class="character-infobox-card">
+            <div class="character-infobox-header">
+              <h2>London</h2>
+            </div>
+
+            <figure class="character-infobox-figure">
+              <div class="character-infobox-image-frame">
+                <img
+                  src="/images/london-infobox-1200.webp"
+                  srcset="/images/london-infobox-800.webp 800w,
+                          /images/london-infobox-1200.webp 1200w"
+                  sizes="(min-width: 1200px) 320px, 90vw"
+                  alt="London"
+                  class="character-infobox-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </figure>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
+                <dt>First Appearance</dt>
+              </div>
+
+              <div>
+                <dt>Web Novel</dt>
+                <dd>TBA</dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+    </section>
+  `)}const u=document.querySelector("#app"),C=window.location.pathname.replace(/\/$/,"")||"/";C==="/pink_guy/characters/london"?u.innerHTML=A():u.innerHTML=L();x();const s=document.querySelector("#menu-toggle"),i=document.querySelector("#menu"),h=document.querySelector("#menu-close"),m=document.querySelector(".menu-backdrop");function S(){!i||!s||(i.classList.add("is-open"),i.setAttribute("aria-hidden","false"),s.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function n(){!i||!s||(i.classList.remove("is-open"),i.setAttribute("aria-hidden","true"),s.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}s&&i&&h&&m&&(s.addEventListener("click",S),h.addEventListener("click",n),m.addEventListener("click",n),document.addEventListener("keydown",e=>{e.key==="Escape"&&i.classList.contains("is-open")&&n()}));
