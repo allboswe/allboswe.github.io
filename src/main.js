@@ -1,10 +1,17 @@
 import './styles/index.css';
 import { initThemeToggle } from './libraries/theme';
 import { renderHomePage } from './pages/home';
+import { renderLondonPage } from './pages/london';
 
 const app = document.querySelector('#app');
 
-app.innerHTML = renderHomePage();
+const path = window.location.pathname.replace(/\/$/, '') || '/';
+
+if (path === '/pink_guy/characters/london') {
+  app.innerHTML = renderLondonPage();
+} else {
+  app.innerHTML = renderHomePage();
+}
 
 initThemeToggle();
 
