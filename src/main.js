@@ -4,6 +4,12 @@ import { renderHomePage } from './pages/home';
 import { renderLondonPage } from './pages/london';
 
 const app = document.querySelector('#app');
+const redirectPath = sessionStorage.getItem('redirectPath');
+
+if (redirectPath) {
+  sessionStorage.removeItem('redirectPath');
+  window.history.replaceState(null, '', redirectPath);
+}
 
 const path = window.location.pathname.replace(/\/$/, '') || '/';
 
