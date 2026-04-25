@@ -160,7 +160,10 @@
           </div>
 
           <section class="character-section" id="overview">
-            <p>Work in progress.</p>
+            <p>
+                <strong>London</strong> (ロンドン <em>Rondon</em>) serves as an Administrator in the Bureau of Arcane Affairs, a global organization responsible for overseeing arcane phenomena.
+                As the archetypal representative of The World, she is a central figure in the series.
+            </p>
           </section>
 
           <section class="character-section">
