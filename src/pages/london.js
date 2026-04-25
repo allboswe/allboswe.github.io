@@ -57,6 +57,21 @@ export function renderLondonPage() {
 
             <dl class="character-facts">
               <div class="character-facts-section">
+                <dt>Name</dt>
+              </div>
+
+              <div>
+                <dt>Kana</dt>
+                <dd>ロンドン</dd>
+              </div>
+              <div>
+                <dt>Romaji</dt>
+                <dd>Rondon</dd>
+              </div>
+            </dl>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
                 <dt>First Appearance</dt>
               </div>
 
