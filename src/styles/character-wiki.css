@@ -203,6 +203,30 @@
     line-height: 1.65;
 }
 
+/* Spoiler Button */
+
+.spoiler-reveal {
+    color: var(--color-accent);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    background: none;
+    text-underline-offset: 0.15em;
+}
+
+.spoiler-reveal:hover,
+.spoiler-reveal:focus {
+    opacity: 0.8;
+}
+
+.spoiler-reveal.is-revealed {
+    color: var(--color-text-muted);
+    cursor: default;
+    text-decoration: none;
+    opacity: 1;
+}
+
 @media (min-width: 1200px) {
     main:has(.character-page) {
         display: block;
