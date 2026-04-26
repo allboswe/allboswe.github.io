@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const o of i.addedNodes)o.tagName==="LINK"&&o.rel==="modulepreload"&&l(o)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function l(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function y(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const v=document.documentElement,f="theme";function w(){return localStorage.getItem(f)}function g(){const e=v.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function d(e){const a=document.getElementById("theme-toggle");v.setAttribute("data-theme",e),localStorage.setItem(f,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function x(){const e=g();d(e==="dark"?"light":"dark")}function k(){const e=w();d(e==="light"||e==="dark"?e:g()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&x()})}function L(){return`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))d(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&d(r)}).observe(document,{childList:!0,subtree:!0});function s(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function d(a){if(a.ep)return;a.ep=!0;const i=s(a);fetch(a.href,i)}})();function x(){const e=document.querySelector(".gallery-lightbox"),t=document.querySelector(".gallery-lightbox-image"),s=document.querySelector(".gallery-lightbox-close"),d=document.querySelectorAll(".gallery-image");if(!e||!t||!s||d.length===0)return;function a(r){const w=r.dataset.fullImage||r.src;t.src=w,t.alt=r.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),t.src="",t.alt=""}d.forEach(r=>{r.addEventListener("click",()=>{a(r)})}),s.addEventListener("click",i),e.addEventListener("click",r=>{r.target===e&&i()}),document.addEventListener("keydown",r=>{r.key==="Escape"&&i()})}function k(){document.querySelectorAll(".spoiler-reveal").forEach(t=>{t.addEventListener("click",()=>{const s=t.dataset.spoilerText;s&&(t.textContent=s,t.disabled=!0,t.classList.add("is-revealed"))})})}const f=document.documentElement,b="theme";function L(){return localStorage.getItem(b)}function y(){const e=f.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function h(e){const t=document.getElementById("theme-toggle");f.setAttribute("data-theme",e),localStorage.setItem(b,e),t&&t.setAttribute("aria-pressed",String(e==="dark"))}function A(){const e=y();h(e==="dark"?"light":"dark")}function S(){const e=L();h(e==="light"||e==="dark"?e:y()),document.addEventListener("click",t=>{t.target.closest("#theme-toggle")&&A()})}function C(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </header>
-  `}function S(){return`
+  `}function B(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -83,13 +83,13 @@
         </div>
       </div>
     </footer>
-  `}function b(e){return`
-    ${L()}
+  `}function u(e){return`
+    ${C()}
     <main>
       ${e}
     </main>
-    ${S()}
-  `}function A(){return b(`
+    ${B()}
+  `}function P(){return u(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
@@ -144,7 +144,7 @@
         </article>
       </div>
     </section>
-  `)}function P(){return b(`
+  `)}function I(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
@@ -154,7 +154,7 @@
 
             <nav class="character-subnav" aria-label="Character sections">
               <a href="/pink_guy/characters/london" aria-current="page">Overview</a>
-              <a href="/pink_guy/characters/london/history">History</a>
+              <a href="#" class="is-disabled" aria-disabled="true">History</a>
               <a href="/pink_guy/characters/london/gallery">Gallery</a>
             </nav>
           </div>
@@ -306,4 +306,188 @@
         </aside>
       </div>
     </section>
-  `)}const u=document.querySelector("#app"),h=sessionStorage.getItem("redirectPath");h&&(sessionStorage.removeItem("redirectPath"),window.history.replaceState(null,"",h));const T=window.location.pathname.replace(/\/$/,"")||"/";T==="/pink_guy/characters/london"?u.innerHTML=P():u.innerHTML=A();k();y();const r=document.querySelector("#menu-toggle"),s=document.querySelector("#menu"),p=document.querySelector("#menu-close"),m=document.querySelector(".menu-backdrop");function B(){!s||!r||(s.classList.add("is-open"),s.setAttribute("aria-hidden","false"),r.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function c(){!s||!r||(s.classList.remove("is-open"),s.setAttribute("aria-hidden","true"),r.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}r&&s&&p&&m&&(r.addEventListener("click",B),p.addEventListener("click",c),m.addEventListener("click",c),document.addEventListener("keydown",e=>{e.key==="Escape"&&s.classList.contains("is-open")&&c()}));
+  `)}function T(){return u(`
+    <section class="character-page">
+      <div class="character-shell">
+        <article class="character-article">
+          <div class="character-title-block">
+            <p class="character-kicker">Pink Guy / Characters</p>
+            <h1>London</h1>
+
+            <nav class="character-subnav" aria-label="Character sections">
+              <a href="/pink_guy/characters/london">Overview</a>
+              <a href="#" class="is-disabled" aria-disabled="true">History</a>
+              <a href="/pink_guy/characters/london/gallery" aria-current="page">Gallery</a>
+            </nav>
+          </div>
+
+          <section class="character-section character-gallery-section">
+            <div class="gallery-category-header">
+              <h2>Web Novel</h2>
+            </div>
+
+            <div class="gallery-tabs">
+              <input type="radio" name="london-gallery-tabs" id="london-concept-art" checked />
+              <input type="radio" name="london-gallery-tabs" id="london-cover-art" />
+
+              <div class="gallery-tab-list" aria-label="Gallery categories">
+                <label for="london-concept-art">Concept Art</label>
+                <label for="london-cover-art">Cover Art</label>
+              </div>
+
+              <div class="gallery-tab-panel gallery-concept-panel">
+                <figure class="gallery-image-card">
+                  <img
+                    src="/images/london-concept-800.webp"
+                    srcset="
+                      /images/london-concept-800.webp 800w,
+                      /images/london-concept-1280.webp 1280w
+                    "
+                    sizes="(min-width: 1200px) 400px, 90vw"
+                    alt="London Concept Art - Part I"
+                    class="gallery-image"
+                    data-full-image="/images/london-concept-1280.webp"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>London Concept Art (<em>during part one</em>)</figcaption>
+                </figure>
+              </div>
+
+              <div class="gallery-tab-panel gallery-cover-panel">
+                <figure class="gallery-image-card">
+                  <img
+                    src="/images/london-infobox-800.webp"
+                    srcset="
+                      /images/london-infobox-800.webp 800w,
+                      /images/london-infobox-1200.webp 1200w
+                    "
+                    sizes="(min-width: 1200px) 400px, 90vw"
+                    alt="London Cover Art - Part I"
+                    class="gallery-image"
+                    data-full-image="/images/london-infobox-1200.webp"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <figcaption>London Cover Art (<em>during part one</em>)</figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <aside class="character-infobox" aria-label="London infobox">
+          <div class="character-infobox-card">
+            <div class="character-infobox-header">
+              <h2>London</h2>
+            </div>
+
+            <figure class="character-infobox-figure">
+              <div class="character-infobox-image-frame">
+                <img
+                  src="/images/london-infobox-1200.webp"
+                  srcset="/images/london-infobox-800.webp 800w,
+                          /images/london-infobox-1200.webp 1200w"
+                  sizes="(min-width: 1200px) 320px, 90vw"
+                  alt="London"
+                  class="character-infobox-image"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </figure>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
+                <dt>Name</dt>
+              </div>
+
+              <div>
+                <dt>Alias(es)</dt>
+                <dd>Administrator</dd>
+              </div>
+              <div>
+                <dt>Kana</dt>
+                <dd>ロンドン</dd>
+              </div>
+              <div>
+                <dt>Romaji</dt>
+                <dd>Rondon</dd>
+              </div>
+            </dl>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
+                <dt>Biological Information</dt>
+              </div>
+
+              <div>
+                <dt>Age</dt>
+                <dd>Unknown</dd>
+              </div>
+              <div>
+                <dt>Birthday</dt>
+                <dd>April 23</dd>
+              </div>
+              <div>
+                <dt>Birthplace</dt>
+                <dd>United Kingdom</dd>
+              </div>
+              <div>
+                <dt>Gender</dt>
+                <dd>Female</dd>
+              </div>
+              <div>
+                <dt>Height</dt>
+                <dd>168 cm (5'6")</dd>
+              </div>
+              <div>
+                <dt>Species</dt>
+                <dd>Human</dd>
+              </div>
+              <div>
+                <dt>Weight</dt>
+                <dd>59 kg (130 lb)</dd>
+              </div>
+            </dl>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
+                <dt>Personal Information</dt>
+              </div>
+
+              <div>
+                <dt>Status</dt>
+                <dd>
+                  <button class="spoiler-reveal" type="button" data-spoiler-text="Alive">
+                    Reveal Status
+                  </button>
+                </dd>
+              </div>
+            </dl>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
+                <dt>First Appearance</dt>
+              </div>
+
+              <div>
+                <dt>Web Novel</dt>
+                <dd>TBA</dd>
+              </div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+
+      <div class="gallery-lightbox" aria-hidden="true">
+        <button class="gallery-lightbox-close" type="button" aria-label="Close image preview">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <img src="" alt="" class="gallery-lightbox-image" />
+      </div>
+    </section>
+  `)}const c=document.querySelector("#app"),g=sessionStorage.getItem("redirectPath");g&&(sessionStorage.removeItem("redirectPath"),window.history.replaceState(null,"",g));const v=window.location.pathname.replace(/\/$/,"")||"/";v==="/pink_guy/characters/london"?c.innerHTML=I():v==="/pink_guy/characters/london/gallery"?c.innerHTML=T():c.innerHTML=P();S();k();x();const o=document.querySelector("#menu-toggle"),n=document.querySelector("#menu"),p=document.querySelector("#menu-close"),m=document.querySelector(".menu-backdrop");function z(){!n||!o||(n.classList.add("is-open"),n.setAttribute("aria-hidden","false"),o.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function l(){!n||!o||(n.classList.remove("is-open"),n.setAttribute("aria-hidden","true"),o.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}o&&n&&p&&m&&(o.addEventListener("click",z),p.addEventListener("click",l),m.addEventListener("click",l),document.addEventListener("keydown",e=>{e.key==="Escape"&&n.classList.contains("is-open")&&l()}));
