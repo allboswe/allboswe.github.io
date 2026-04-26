@@ -3,6 +3,7 @@ import { initSpoilerToggle } from './libraries/spoilers';
 import { initThemeToggle } from './libraries/theme';
 import { renderHomePage } from './pages/home';
 import { renderLondonPage } from './pages/london';
+import { renderLondonGalleryPage } from './pages/london-gallery';
 
 const app = document.querySelector('#app');
 const redirectPath = sessionStorage.getItem('redirectPath');
@@ -16,6 +17,8 @@ const path = window.location.pathname.replace(/\/$/, '') || '/';
 
 if (path === '/pink_guy/characters/london') {
   app.innerHTML = renderLondonPage();
+} else if (path === '/pink_guy/characters/london/gallery') {
+  app.innerHTML = renderLondonGalleryPage();
 } else {
   app.innerHTML = renderHomePage();
 }
