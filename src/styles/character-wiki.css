@@ -171,6 +171,14 @@
     background: var(--color-accent-soft);
 }
 
+.character-subnav a.is-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+    border-color: var(--color-border);
+    background: var(--color-background);
+}
+
 .character-section {
     margin-top: 2rem;
 }
@@ -231,18 +239,18 @@
     main:has(.character-page) {
         display: block;
         width: 100%;
-        max-width: 96rem;
+        max-width: 110rem; /* ⬅️ wider overall page */
         margin-left: auto;
         margin-right: auto;
     }
 
     .character-shell {
         display: grid;
-        grid-template-columns: minmax(0, 3fr) minmax(18rem, 1fr);
-        gap: 2rem;
+        grid-template-columns: minmax(0, 4fr) minmax(22rem, 1.3fr); /* ⬅️ wider infobox + main */
+        gap: 2.5rem;
         align-items: start;
         width: 100%;
-        max-width: 72rem;
+        max-width: 90rem; /* ⬅️ increased from 72rem */
         margin-left: auto;
         margin-right: auto;
     }
