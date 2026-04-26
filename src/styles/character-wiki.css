@@ -166,6 +166,8 @@
 }
 
 .character-subnav a[aria-current="page"] {
+    cursor: default;
+    pointer-events: none;
     color: var(--color-text);
     border-color: var(--color-accent);
     background: var(--color-accent-soft);
