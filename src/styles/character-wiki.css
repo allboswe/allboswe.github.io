@@ -237,6 +237,113 @@
     opacity: 1;
 }
 
+/* Gallery */
+
+.character-gallery-section h2 {
+    border-bottom: none;
+}
+
+.gallery-category-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.55rem 1rem;
+    border-radius: 0.75rem;
+    background-color: var(--color-accent-soft);
+}
+
+.gallery-category-header h2 {
+    margin: 0;
+    padding: 0;
+    color: var(--color-text);
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.gallery-tabs input {
+    display: none;
+}
+
+.gallery-tab-list {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-left: 0.25rem; /* subtle alignment tweak */
+}
+
+.gallery-tab-list label {
+    color: var(--color-text-muted);
+    cursor: pointer;
+    padding: 0 0 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+}
+
+.gallery-tab-list label:hover {
+    color: var(--color-text);
+}
+
+.gallery-tab-panel {
+    display: none;
+}
+
+#london-concept-art:checked ~ .gallery-tab-list label[for="london-concept-art"],
+#london-cover-art:checked ~ .gallery-tab-list label[for="london-cover-art"] {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+}
+
+#london-concept-art:checked ~ .gallery-concept-panel,
+#london-cover-art:checked ~ .gallery-cover-panel {
+    display: block;
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+}
+
+.gallery-cover-panel .gallery-image {
+    height: 260px;           /* match concept art visual height */
+    width: auto;             /* prevent stretching */
+    display: block;
+    margin: 0 auto;          /* center it */
+    object-fit: contain;     /* keep full image visible */
+}
+
+.gallery-image-card {
+    max-width: 22rem;
+    margin: 0 auto; /* ← this centers it */
+}
+
+.gallery-placeholder-image {
+    aspect-ratio: 3 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    background-color: var(--color-accent-soft);
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.gallery-image-card figcaption {
+    margin-top: 0.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
 @media (min-width: 1200px) {
     main:has(.character-page) {
         display: block;
@@ -280,4 +387,15 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+#london-concept-art:checked ~ .gallery-concept-panel {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.gallery-concept-panel .gallery-image-card {
+    margin: 0;
+}
 }
