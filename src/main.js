@@ -1,4 +1,5 @@
 import './styles/index.css';
+import { initGalleryLightbox } from './libraries/gallery-lightbox';
 import { initSpoilerToggle } from './libraries/spoilers';
 import { initThemeToggle } from './libraries/theme';
 import { renderHomePage } from './pages/home';
@@ -25,6 +26,7 @@ if (path === '/pink_guy/characters/london') {
 
 initThemeToggle();
 initSpoilerToggle();
+initGalleryLightbox();
 
 /* Menu Logic */
 
