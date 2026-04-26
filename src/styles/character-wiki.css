@@ -309,6 +309,7 @@
     display: block;
     border: 1px solid var(--color-border);
     background-color: var(--color-background);
+    cursor: zoom-in;
 }
 
 .gallery-cover-panel .gallery-image {
@@ -342,6 +343,83 @@
     color: var(--color-text-muted);
     font-size: 0.9rem;
     text-align: center;
+}
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: color-mix(in srgb, var(--color-background) 82%, transparent);
+    backdrop-filter: blur(4px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.gallery-lightbox.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.gallery-lightbox-image {
+    max-width: 95vw;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-background);
+
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-lightbox.is-open .gallery-lightbox-image {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-lightbox-close {
+    position: fixed;
+    top: 1rem;
+    right: 1.25rem;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+    color: var(--color-text);
+
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+
+    z-index: 1001;
+}
+
+.gallery-lightbox-close:hover,
+.gallery-lightbox-close:focus {
+    color: var(--color-accent);
+}
+
+.gallery-lightbox-close .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    display: block;
+    color: currentColor;
 }
 
 @media (min-width: 1200px) {
