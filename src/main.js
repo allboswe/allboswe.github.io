@@ -1,4 +1,5 @@
 import './styles/index.css';
+import { initSpoilerToggle } from './libraries/spoilers';
 import { initThemeToggle } from './libraries/theme';
 import { renderHomePage } from './pages/home';
 import { renderLondonPage } from './pages/london';
@@ -20,6 +21,7 @@ if (path === '/pink_guy/characters/london') {
 }
 
 initThemeToggle();
+initSpoilerToggle();
 
 /* Menu Logic */
 
