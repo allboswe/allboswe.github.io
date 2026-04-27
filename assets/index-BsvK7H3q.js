@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))d(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&d(r)}).observe(document,{childList:!0,subtree:!0});function s(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function d(a){if(a.ep)return;a.ep=!0;const i=s(a);fetch(a.href,i)}})();function x(){const e=document.querySelector(".gallery-lightbox"),t=document.querySelector(".gallery-lightbox-image"),s=document.querySelector(".gallery-lightbox-close"),d=document.querySelectorAll(".gallery-image");if(!e||!t||!s||d.length===0)return;function a(r){const w=r.dataset.fullImage||r.src;t.src=w,t.alt=r.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),t.src="",t.alt=""}d.forEach(r=>{r.addEventListener("click",()=>{a(r)})}),s.addEventListener("click",i),e.addEventListener("click",r=>{r.target===e&&i()}),document.addEventListener("keydown",r=>{r.key==="Escape"&&i()})}function k(){document.querySelectorAll(".spoiler-reveal").forEach(t=>{t.addEventListener("click",()=>{const s=t.dataset.spoilerText;s&&(t.textContent=s,t.disabled=!0,t.classList.add("is-revealed"))})})}const f=document.documentElement,b="theme";function L(){return localStorage.getItem(b)}function y(){const e=f.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function h(e){const t=document.getElementById("theme-toggle");f.setAttribute("data-theme",e),localStorage.setItem(b,e),t&&t.setAttribute("aria-pressed",String(e==="dark"))}function A(){const e=y();h(e==="dark"?"light":"dark")}function S(){const e=L();h(e==="light"||e==="dark"?e:y()),document.addEventListener("click",t=>{t.target.closest("#theme-toggle")&&A()})}function C(){return`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function d(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(a){if(a.ep)return;a.ep=!0;const i=d(a);fetch(a.href,i)}})();function w(){const e=document.querySelector(".gallery-lightbox"),t=document.querySelector(".gallery-lightbox-image"),d=document.querySelector(".gallery-lightbox-close"),o=document.querySelectorAll(".gallery-image");if(!e||!t||!d||o.length===0)return;function a(s){const x=s.dataset.fullImage||s.src;t.src=x,t.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),t.src="",t.alt=""}o.forEach(s=>{s.addEventListener("click",()=>{a(s)})}),d.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function k(){document.querySelectorAll(".spoiler-reveal").forEach(t=>{t.addEventListener("click",()=>{const d=t.dataset.spoilerText;d&&(t.textContent=d,t.disabled=!0,t.classList.add("is-revealed"))})})}const m=document.documentElement,b="theme";function A(){return localStorage.getItem(b)}function y(){const e=m.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function u(e){const t=document.getElementById("theme-toggle");m.setAttribute("data-theme",e),localStorage.setItem(b,e),t&&t.setAttribute("aria-pressed",String(e==="dark"))}function L(){const e=y();u(e==="dark"?"light":"dark")}function C(){const e=A();u(e==="light"||e==="dark"?e:y()),document.addEventListener("click",t=>{t.target.closest("#theme-toggle")&&L()})}function S(){const e=document.querySelector(".character-toc"),t=document.querySelector(".character-toc-toggle");!e||!t||t.addEventListener("click",()=>{const d=e.classList.toggle("is-collapsed");t.textContent=d?"show":"hide",t.setAttribute("aria-expanded",String(!d))})}function P(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -83,13 +83,13 @@
         </div>
       </div>
     </footer>
-  `}function u(e){return`
-    ${C()}
+  `}function h(e){return`
+    ${P()}
     <main>
       ${e}
     </main>
     ${B()}
-  `}function P(){return u(`
+  `}function T(){return h(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
@@ -144,7 +144,7 @@
         </article>
       </div>
     </section>
-  `)}function I(){return u(`
+  `)}function E(){return h(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
@@ -165,7 +165,35 @@
             </p>
           </section>
 
-          <section class="character-section">
+          <nav class="character-toc is-collapsed" aria-label="Table of contents">
+            <div class="character-toc-header">
+              <h2 class="character-toc-title">
+                <span class="toc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <circle cx="2" cy="3" r="1" fill="currentColor"></circle>
+                    <line x1="5" y1="3" x2="14" y2="3" stroke="currentColor" stroke-width="1.5"></line>
+
+                    <circle cx="2" cy="8" r="1" fill="currentColor"></circle>
+                    <line x1="5" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.5"></line>
+
+                    <circle cx="2" cy="13" r="1" fill="currentColor"></circle>
+                    <line x1="5" y1="13" x2="14" y2="13" stroke="currentColor" stroke-width="1.5"></line>
+                  </svg>
+                </span>
+                Contents
+              </h2>
+              <button class="character-toc-toggle" type="button" aria-expanded="false">
+                show
+              </button>
+            </div>
+
+            <ol class="character-toc-list">
+              <li><a href="#appearance">Appearance</a></li>
+              <li><a href="#personality">Personality</a></li>
+            </ol>
+          </nav>
+
+          <section class="character-section" id="appearance">
             <h2>Appearance</h2>
             <p>
               London is a woman with light, neutral-toned skin and an average build.
@@ -181,7 +209,7 @@
             </p>
           </section>
 
-          <section class="character-section">
+          <section class="character-section" id="personality">
             <h2>Personality</h2>
             <p>
               London is composed and rarely shows outward reactions.
@@ -229,8 +257,8 @@
               </div>
 
               <div>
-                <dt>Alias(es)</dt>
-                <dd>Administrator</dd>
+                <dt>Alias</dt>
+                <dd>—</dd>
               </div>
               <div>
                 <dt>Kana</dt>
@@ -249,7 +277,10 @@
 
               <div>
                 <dt>Age</dt>
-                <dd>Unknown</dd>
+                <dd class="age">
+                  <span>Unknown</span>
+                  <span class="age-context">(appears late 20s)</span>
+                </dd>
               </div>
               <div>
                 <dt>Birthday</dt>
@@ -258,6 +289,10 @@
               <div>
                 <dt>Birthplace</dt>
                 <dd>United Kingdom</dd>
+              </div>
+              <div>
+                <dt>Blood Type</dt>
+                <dd>AB+</dd>
               </div>
               <div>
                 <dt>Gender</dt>
@@ -283,12 +318,61 @@
               </div>
 
               <div>
+                <dt>Arcana</dt>
+                <dd>
+                  <button class="spoiler-reveal" type="button" data-spoiler-text="The World">
+                    Reveal Arcana
+                  </button>
+                </dd>
+              </div>
+              <div>
+                <dt>Dislikes</dt>
+                <dd>Cliffhangers</dd>
+              </div>
+              <div>
+                <dt>Education</dt>
+                <dd class="education">
+                  <span>University of Oxford</span>
+                  <span class="education-context">PPE, DPhil in Politics</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Habits</dt>
+                <dd>Smoking</dd>
+              </div>
+              <div>
+                <dt>Likes</dt>
+                <dd>Classic Rock, Coffee</dd>
+              </div>
+              <div>
+                <dt>Relatives</dt>
+                <dd>—</dd>
+              </div>
+              <div>
                 <dt>Status</dt>
                 <dd>
                   <button class="spoiler-reveal" type="button" data-spoiler-text="Alive">
                     Reveal Status
                   </button>
                 </dd>
+              </div>
+            </dl>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
+                <dt>Professional Information</dt>
+              </div>
+
+              <div>
+                <dt>Affiliation</dt>
+                <dd class="affiliation">
+                  <span>Bureau of Arcane Affairs</span>
+                  <span class="affiliation-context">Administrator</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Jurisdiction</dt>
+                <dd>Global</dd>
               </div>
             </dl>
 
@@ -306,7 +390,7 @@
         </aside>
       </div>
     </section>
-  `)}function T(){return u(`
+  `)}function I(){return h(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
@@ -403,8 +487,8 @@
               </div>
 
               <div>
-                <dt>Alias(es)</dt>
-                <dd>Administrator</dd>
+                <dt>Alias</dt>
+                <dd>—</dd>
               </div>
               <div>
                 <dt>Kana</dt>
@@ -423,7 +507,10 @@
 
               <div>
                 <dt>Age</dt>
-                <dd>Unknown</dd>
+                <dd class="age">
+                  <span>Unknown</span>
+                  <span class="age-context">(appears late 20s)</span>
+                </dd>
               </div>
               <div>
                 <dt>Birthday</dt>
@@ -432,6 +519,10 @@
               <div>
                 <dt>Birthplace</dt>
                 <dd>United Kingdom</dd>
+              </div>
+              <div>
+                <dt>Blood Type</dt>
+                <dd>AB+</dd>
               </div>
               <div>
                 <dt>Gender</dt>
@@ -457,12 +548,61 @@
               </div>
 
               <div>
+                <dt>Arcana</dt>
+                <dd>
+                  <button class="spoiler-reveal" type="button" data-spoiler-text="The World">
+                    Reveal Arcana
+                  </button>
+                </dd>
+              </div>
+              <div>
+                <dt>Dislikes</dt>
+                <dd>Cliffhangers</dd>
+              </div>
+              <div>
+                <dt>Education</dt>
+                <dd class="education">
+                  <span>University of Oxford</span>
+                  <span class="education-context">PPE, DPhil in Politics</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Habits</dt>
+                <dd>Smoking</dd>
+              </div>
+              <div>
+                <dt>Likes</dt>
+                <dd>Classic Rock, Coffee</dd>
+              </div>
+              <div>
+                <dt>Relatives</dt>
+                <dd>—</dd>
+              </div>
+              <div>
                 <dt>Status</dt>
                 <dd>
                   <button class="spoiler-reveal" type="button" data-spoiler-text="Alive">
                     Reveal Status
                   </button>
                 </dd>
+              </div>
+            </dl>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
+                <dt>Professional Information</dt>
+              </div>
+
+              <div>
+                <dt>Affiliation</dt>
+                <dd class="affiliation">
+                  <span>Bureau of Arcane Affairs</span>
+                  <span class="affiliation-context">Administrator</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Jurisdiction</dt>
+                <dd>Global</dd>
               </div>
             </dl>
 
@@ -490,4 +630,4 @@
         <img src="" alt="" class="gallery-lightbox-image" />
       </div>
     </section>
-  `)}const c=document.querySelector("#app"),g=sessionStorage.getItem("redirectPath");g&&(sessionStorage.removeItem("redirectPath"),window.history.replaceState(null,"",g));const v=window.location.pathname.replace(/\/$/,"")||"/";v==="/pink_guy/characters/london"?c.innerHTML=I():v==="/pink_guy/characters/london/gallery"?c.innerHTML=T():c.innerHTML=P();S();k();x();const o=document.querySelector("#menu-toggle"),n=document.querySelector("#menu"),p=document.querySelector("#menu-close"),m=document.querySelector(".menu-backdrop");function z(){!n||!o||(n.classList.add("is-open"),n.setAttribute("aria-hidden","false"),o.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function l(){!n||!o||(n.classList.remove("is-open"),n.setAttribute("aria-hidden","true"),o.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}o&&n&&p&&m&&(o.addEventListener("click",z),p.addEventListener("click",l),m.addEventListener("click",l),document.addEventListener("keydown",e=>{e.key==="Escape"&&n.classList.contains("is-open")&&l()}));
+  `)}const c=document.querySelector("#app"),v=sessionStorage.getItem("redirectPath");v&&(sessionStorage.removeItem("redirectPath"),window.history.replaceState(null,"",v));const p=window.location.pathname.replace(/\/$/,"")||"/";p==="/pink_guy/characters/london"?c.innerHTML=E():p==="/pink_guy/characters/london/gallery"?c.innerHTML=I():c.innerHTML=T();C();S();k();w();const n=document.querySelector("#menu-toggle"),r=document.querySelector("#menu"),g=document.querySelector("#menu-close"),f=document.querySelector(".menu-backdrop");function z(){!r||!n||(r.classList.add("is-open"),r.setAttribute("aria-hidden","false"),n.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function l(){!r||!n||(r.classList.remove("is-open"),r.setAttribute("aria-hidden","true"),n.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}n&&r&&g&&f&&(n.addEventListener("click",z),g.addEventListener("click",l),f.addEventListener("click",l),document.addEventListener("keydown",e=>{e.key==="Escape"&&r.classList.contains("is-open")&&l()}));
