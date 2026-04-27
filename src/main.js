@@ -2,6 +2,7 @@ import './styles/index.css';
 import { initGalleryLightbox } from './libraries/gallery-lightbox';
 import { initSpoilerToggle } from './libraries/spoilers';
 import { initThemeToggle } from './libraries/theme';
+import { initCharacterToc } from './libraries/toc';
 import { renderHomePage } from './pages/home';
 import { renderLondonPage } from './pages/london';
 import { renderLondonGalleryPage } from './pages/london-gallery';
@@ -25,6 +26,7 @@ if (path === '/pink_guy/characters/london') {
 }
 
 initThemeToggle();
+initCharacterToc();
 initSpoilerToggle();
 initGalleryLightbox();
 
