@@ -22,7 +22,35 @@ export function renderLondonPage() {
             </p>
           </section>
 
-          <section class="character-section">
+          <nav class="character-toc is-collapsed" aria-label="Table of contents">
+            <div class="character-toc-header">
+              <h2 class="character-toc-title">
+                <span class="toc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16" width="14" height="14">
+                    <circle cx="2" cy="3" r="1" fill="currentColor"></circle>
+                    <line x1="5" y1="3" x2="14" y2="3" stroke="currentColor" stroke-width="1.5"></line>
+
+                    <circle cx="2" cy="8" r="1" fill="currentColor"></circle>
+                    <line x1="5" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1.5"></line>
+
+                    <circle cx="2" cy="13" r="1" fill="currentColor"></circle>
+                    <line x1="5" y1="13" x2="14" y2="13" stroke="currentColor" stroke-width="1.5"></line>
+                  </svg>
+                </span>
+                Contents
+              </h2>
+              <button class="character-toc-toggle" type="button" aria-expanded="false">
+                show
+              </button>
+            </div>
+
+            <ol class="character-toc-list">
+              <li><a href="#appearance">Appearance</a></li>
+              <li><a href="#personality">Personality</a></li>
+            </ol>
+          </nav>
+
+          <section class="character-section" id="appearance">
             <h2>Appearance</h2>
             <p>
               London is a woman with light, neutral-toned skin and an average build.
@@ -38,7 +66,7 @@ export function renderLondonPage() {
             </p>
           </section>
 
-          <section class="character-section">
+          <section class="character-section" id="personality">
             <h2>Personality</h2>
             <p>
               London is composed and rarely shows outward reactions.
@@ -156,7 +184,7 @@ export function renderLondonPage() {
               </div>
               <div>
                 <dt>Dislikes</dt>
-                <dd>Cliffhangers, Tea</dd>
+                <dd>Cliffhangers</dd>
               </div>
               <div>
                 <dt>Education</dt>
