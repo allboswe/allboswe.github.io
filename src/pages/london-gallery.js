@@ -98,8 +98,8 @@ export function renderLondonGalleryPage() {
               </div>
 
               <div>
-                <dt>Alias(es)</dt>
-                <dd>Administrator</dd>
+                <dt>Alias</dt>
+                <dd>—</dd>
               </div>
               <div>
                 <dt>Kana</dt>
@@ -118,7 +118,10 @@ export function renderLondonGalleryPage() {
 
               <div>
                 <dt>Age</dt>
-                <dd>Unknown</dd>
+                <dd class="age">
+                  <span>Unknown</span>
+                  <span class="age-context">(appears late 20s)</span>
+                </dd>
               </div>
               <div>
                 <dt>Birthday</dt>
@@ -127,6 +130,10 @@ export function renderLondonGalleryPage() {
               <div>
                 <dt>Birthplace</dt>
                 <dd>United Kingdom</dd>
+              </div>
+              <div>
+                <dt>Blood Type</dt>
+                <dd>AB+</dd>
               </div>
               <div>
                 <dt>Gender</dt>
@@ -152,12 +159,61 @@ export function renderLondonGalleryPage() {
               </div>
 
               <div>
+                <dt>Arcana</dt>
+                <dd>
+                  <button class="spoiler-reveal" type="button" data-spoiler-text="The World">
+                    Reveal Arcana
+                  </button>
+                </dd>
+              </div>
+              <div>
+                <dt>Dislikes</dt>
+                <dd>Cliffhangers, Tea</dd>
+              </div>
+              <div>
+                <dt>Education</dt>
+                <dd class="education">
+                  <span>University of Oxford</span>
+                  <span class="education-context">PPE, DPhil in Politics</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Habits</dt>
+                <dd>Smoking</dd>
+              </div>
+              <div>
+                <dt>Likes</dt>
+                <dd>Classic Rock, Coffee</dd>
+              </div>
+              <div>
+                <dt>Relatives</dt>
+                <dd>—</dd>
+              </div>
+              <div>
                 <dt>Status</dt>
                 <dd>
                   <button class="spoiler-reveal" type="button" data-spoiler-text="Alive">
                     Reveal Status
                   </button>
                 </dd>
+              </div>
+            </dl>
+
+            <dl class="character-facts">
+              <div class="character-facts-section">
+                <dt>Professional Information</dt>
+              </div>
+
+              <div>
+                <dt>Affiliation</dt>
+                <dd class="affiliation">
+                  <span>Bureau of Arcane Affairs</span>
+                  <span class="affiliation-context">Administrator</span>
+                </dd>
+              </div>
+              <div>
+                <dt>Jurisdiction</dt>
+                <dd>Global</dd>
               </div>
             </dl>
 
