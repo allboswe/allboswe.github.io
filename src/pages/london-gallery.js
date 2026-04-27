@@ -168,7 +168,7 @@ export function renderLondonGalleryPage() {
               </div>
               <div>
                 <dt>Dislikes</dt>
-                <dd>Cliffhangers, Tea</dd>
+                <dd>Cliffhangers</dd>
               </div>
               <div>
                 <dt>Education</dt>
