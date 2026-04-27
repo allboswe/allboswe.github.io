@@ -237,6 +237,18 @@
     opacity: 1;
 }
 
+.age, .affiliation, .education {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* keeps your right alignment */
+}
+
+.age-context, .affiliation-context, .education-context {
+    font-size: 0.8em;
+    opacity: 0.6;
+    margin-top: 0.1rem;
+}
+
 /* Gallery */
 
 .character-gallery-section h2 {
@@ -249,7 +261,6 @@
     align-items: center;
     margin-bottom: 1rem;
     padding: 0.55rem 1rem;
-    border-radius: 0.75rem;
     background-color: var(--color-accent-soft);
 }
 
