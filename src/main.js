@@ -8,21 +8,18 @@ import { renderLondonPage } from './pages/london';
 import { renderLondonGalleryPage } from './pages/london-gallery';
 
 const app = document.querySelector('#app');
-const redirectPath = sessionStorage.getItem('redirectPath');
 
-if (redirectPath) {
-  sessionStorage.removeItem('redirectPath');
-  window.history.replaceState(null, '', redirectPath);
-}
+const pages = {
+  home: renderHomePage,
+  london: renderLondonPage,
+  'london-gallery': renderLondonGalleryPage,
+};
 
-const path = window.location.pathname.replace(/\/$/, '') || '/';
+const pageName = app?.dataset.page || 'home';
+const renderPage = pages[pageName] || renderHomePage;
 
-if (path === '/pink_guy/characters/london') {
-  app.innerHTML = renderLondonPage();
-} else if (path === '/pink_guy/characters/london/gallery') {
-  app.innerHTML = renderLondonGalleryPage();
-} else {
-  app.innerHTML = renderHomePage();
+if (app) {
+  app.innerHTML = renderPage();
 }
 
 initThemeToggle();
