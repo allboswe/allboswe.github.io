@@ -10,9 +10,9 @@ export function renderLondonPage() {
             <h1>London</h1>
 
             <nav class="character-subnav" aria-label="Character sections">
-              <a href="/pink_guy/characters/london" aria-current="page">Overview</a>
+              <a href="/pink-guy/characters/london/" aria-current="page">Overview</a>
               <a href="#" class="is-disabled" aria-disabled="true">History</a>
-              <a href="/pink_guy/characters/london/gallery">Gallery</a>
+              <a href="/pink-guy/characters/london/gallery/">Gallery</a>
             </nav>
           </div>
 
