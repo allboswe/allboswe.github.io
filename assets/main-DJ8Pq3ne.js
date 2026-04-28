@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function d(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(a){if(a.ep)return;a.ep=!0;const i=d(a);fetch(a.href,i)}})();function w(){const e=document.querySelector(".gallery-lightbox"),t=document.querySelector(".gallery-lightbox-image"),d=document.querySelector(".gallery-lightbox-close"),o=document.querySelectorAll(".gallery-image");if(!e||!t||!d||o.length===0)return;function a(s){const x=s.dataset.fullImage||s.src;t.src=x,t.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),t.src="",t.alt=""}o.forEach(s=>{s.addEventListener("click",()=>{a(s)})}),d.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function k(){document.querySelectorAll(".spoiler-reveal").forEach(t=>{t.addEventListener("click",()=>{const d=t.dataset.spoilerText;d&&(t.textContent=d,t.disabled=!0,t.classList.add("is-revealed"))})})}const m=document.documentElement,b="theme";function A(){return localStorage.getItem(b)}function y(){const e=m.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function u(e){const t=document.getElementById("theme-toggle");m.setAttribute("data-theme",e),localStorage.setItem(b,e),t&&t.setAttribute("aria-pressed",String(e==="dark"))}function L(){const e=y();u(e==="dark"?"light":"dark")}function C(){const e=A();u(e==="light"||e==="dark"?e:y()),document.addEventListener("click",t=>{t.target.closest("#theme-toggle")&&L()})}function S(){const e=document.querySelector(".character-toc"),t=document.querySelector(".character-toc-toggle");!e||!t||t.addEventListener("click",()=>{const d=e.classList.toggle("is-collapsed");t.textContent=d?"show":"hide",t.setAttribute("aria-expanded",String(!d))})}function P(){return`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&o(s)}).observe(document,{childList:!0,subtree:!0});function d(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(a){if(a.ep)return;a.ep=!0;const i=d(a);fetch(a.href,i)}})();function x(){const e=document.querySelector(".gallery-lightbox"),t=document.querySelector(".gallery-lightbox-image"),d=document.querySelector(".gallery-lightbox-close"),o=document.querySelectorAll(".gallery-image");if(!e||!t||!d||o.length===0)return;function a(s){const y=s.dataset.fullImage||s.src;t.src=y,t.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),t.src="",t.alt=""}o.forEach(s=>{s.addEventListener("click",()=>{a(s)})}),d.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function w(){document.querySelectorAll(".spoiler-reveal").forEach(t=>{t.addEventListener("click",()=>{const d=t.dataset.spoilerText;d&&(t.textContent=d,t.disabled=!0,t.classList.add("is-revealed"))})})}const p=document.documentElement,f="theme";function k(){return localStorage.getItem(f)}function m(){const e=p.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function l(e){const t=document.getElementById("theme-toggle");p.setAttribute("data-theme",e),localStorage.setItem(f,e),t&&t.setAttribute("aria-pressed",String(e==="dark"))}function A(){const e=m();l(e==="dark"?"light":"dark")}function L(){const e=k();l(e==="light"||e==="dark"?e:m()),document.addEventListener("click",t=>{t.target.closest("#theme-toggle")&&A()})}function C(){const e=document.querySelector(".character-toc"),t=document.querySelector(".character-toc-toggle");!e||!t||t.addEventListener("click",()=>{const d=e.classList.toggle("is-collapsed");t.textContent=d?"show":"hide",t.setAttribute("aria-expanded",String(!d))})}function S(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </header>
-  `}function B(){return`
+  `}function P(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -84,12 +84,12 @@
       </div>
     </footer>
   `}function h(e){return`
-    ${P()}
+    ${S()}
     <main>
       ${e}
     </main>
-    ${B()}
-  `}function T(){return h(`
+    ${P()}
+  `}function b(){return h(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
@@ -144,7 +144,7 @@
         </article>
       </div>
     </section>
-  `)}function E(){return h(`
+  `)}function B(){return h(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
@@ -153,9 +153,9 @@
             <h1>London</h1>
 
             <nav class="character-subnav" aria-label="Character sections">
-              <a href="/pink_guy/characters/london" aria-current="page">Overview</a>
+              <a href="/pink-guy/characters/london/" aria-current="page">Overview</a>
               <a href="#" class="is-disabled" aria-disabled="true">History</a>
-              <a href="/pink_guy/characters/london/gallery">Gallery</a>
+              <a href="/pink-guy/characters/london/gallery/">Gallery</a>
             </nav>
           </div>
 
@@ -390,7 +390,7 @@
         </aside>
       </div>
     </section>
-  `)}function I(){return h(`
+  `)}function T(){return h(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
@@ -399,9 +399,9 @@
             <h1>London</h1>
 
             <nav class="character-subnav" aria-label="Character sections">
-              <a href="/pink_guy/characters/london">Overview</a>
+              <a href="/pink-guy/characters/london/">Overview</a>
               <a href="#" class="is-disabled" aria-disabled="true">History</a>
-              <a href="/pink_guy/characters/london/gallery" aria-current="page">Gallery</a>
+              <a href="/pink-guy/characters/london/gallery/" aria-current="page">Gallery</a>
             </nav>
           </div>
 
@@ -630,4 +630,4 @@
         <img src="" alt="" class="gallery-lightbox-image" />
       </div>
     </section>
-  `)}const c=document.querySelector("#app"),v=sessionStorage.getItem("redirectPath");v&&(sessionStorage.removeItem("redirectPath"),window.history.replaceState(null,"",v));const p=window.location.pathname.replace(/\/$/,"")||"/";p==="/pink_guy/characters/london"?c.innerHTML=E():p==="/pink_guy/characters/london/gallery"?c.innerHTML=I():c.innerHTML=T();C();S();k();w();const n=document.querySelector("#menu-toggle"),r=document.querySelector("#menu"),g=document.querySelector("#menu-close"),f=document.querySelector(".menu-backdrop");function z(){!r||!n||(r.classList.add("is-open"),r.setAttribute("aria-hidden","false"),n.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function l(){!r||!n||(r.classList.remove("is-open"),r.setAttribute("aria-hidden","true"),n.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}n&&r&&g&&f&&(n.addEventListener("click",z),g.addEventListener("click",l),f.addEventListener("click",l),document.addEventListener("keydown",e=>{e.key==="Escape"&&r.classList.contains("is-open")&&l()}));
+  `)}const u=document.querySelector("#app"),E={home:b,london:B,"london-gallery":T},I=u?.dataset.page||"home",z=E[I]||b;u&&(u.innerHTML=z());L();C();w();x();const n=document.querySelector("#menu-toggle"),r=document.querySelector("#menu"),v=document.querySelector("#menu-close"),g=document.querySelector(".menu-backdrop");function H(){!r||!n||(r.classList.add("is-open"),r.setAttribute("aria-hidden","false"),n.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function c(){!r||!n||(r.classList.remove("is-open"),r.setAttribute("aria-hidden","true"),n.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}n&&r&&v&&g&&(n.addEventListener("click",H),v.addEventListener("click",c),g.addEventListener("click",c),document.addEventListener("keydown",e=>{e.key==="Escape"&&r.classList.contains("is-open")&&c()}));
