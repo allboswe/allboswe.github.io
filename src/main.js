@@ -1,12 +1,31 @@
 import './styles/index.css';
+import { initGalleryLightbox } from './libraries/gallery-lightbox';
+import { initSpoilerToggle } from './libraries/spoilers';
 import { initThemeToggle } from './libraries/theme';
+import { initCharacterToc } from './libraries/toc';
 import { renderHomePage } from './pages/home';
+import { renderLondonPage } from './pages/london';
+import { renderLondonGalleryPage } from './pages/london-gallery';
 
 const app = document.querySelector('#app');
 
-app.innerHTML = renderHomePage();
+const pages = {
+  home: renderHomePage,
+  london: renderLondonPage,
+  'london-gallery': renderLondonGalleryPage,
+};
+
+const pageName = app?.dataset.page || 'home';
+const renderPage = pages[pageName] || renderHomePage;
+
+if (app) {
+  app.innerHTML = renderPage();
+}
 
 initThemeToggle();
+initCharacterToc();
+initSpoilerToggle();
+initGalleryLightbox();
 
 /* Menu Logic */
 
