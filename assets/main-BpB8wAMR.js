@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))i(a);new MutationObserver(a=>{for(const r of a)if(r.type==="childList")for(const s of r.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&i(s)}).observe(document,{childList:!0,subtree:!0});function n(a){const r={};return a.integrity&&(r.integrity=a.integrity),a.referrerPolicy&&(r.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?r.credentials="include":a.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function i(a){if(a.ep)return;a.ep=!0;const r=n(a);fetch(a.href,r)}})();function $(){const e=document.querySelector(".gallery-lightbox"),t=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),i=document.querySelectorAll(".gallery-image");if(!e||!t||!n||i.length===0)return;function a(s){const k=s.dataset.fullImage||s.src;t.src=k,t.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function r(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),t.src="",t.alt=""}i.forEach(s=>{s.addEventListener("click",()=>{a(s)})}),n.addEventListener("click",r),e.addEventListener("click",s=>{s.target===e&&r()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&r()})}function C(){document.querySelectorAll(".spoiler-reveal").forEach(t=>{t.addEventListener("click",()=>{const n=t.dataset.spoilerText;n&&(t.textContent=n,t.disabled=!0,t.classList.add("is-revealed"))})})}const f=document.documentElement,b="theme";function L(){return localStorage.getItem(b)}function v(){const e=f.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function u(e){const t=document.getElementById("theme-toggle");f.setAttribute("data-theme",e),localStorage.setItem(b,e),t&&t.setAttribute("aria-pressed",String(e==="dark"))}function A(){const e=v();u(e==="dark"?"light":"dark")}function S(){const e=L();u(e==="light"||e==="dark"?e:v()),document.addEventListener("click",t=>{t.target.closest("#theme-toggle")&&A()})}function T(){const e=document.querySelector(".character-toc"),t=document.querySelector(".character-toc-toggle");!e||!t||t.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");t.textContent=n?"show":"hide",t.setAttribute("aria-expanded",String(!n))})}function B(){return`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))i(a);new MutationObserver(a=>{for(const n of a)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function s(a){const n={};return a.integrity&&(n.integrity=a.integrity),a.referrerPolicy&&(n.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?n.credentials="include":a.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function i(a){if(a.ep)return;a.ep=!0;const n=s(a);fetch(a.href,n)}})();function $(){const e=document.querySelector(".gallery-lightbox"),t=document.querySelector(".gallery-lightbox-image"),s=document.querySelector(".gallery-lightbox-close"),i=document.querySelectorAll(".gallery-image");if(!e||!t||!s||i.length===0)return;function a(r){const k=r.dataset.fullImage||r.src;t.src=k,t.alt=r.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function n(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),t.src="",t.alt=""}i.forEach(r=>{r.addEventListener("click",()=>{a(r)})}),s.addEventListener("click",n),e.addEventListener("click",r=>{r.target===e&&n()}),document.addEventListener("keydown",r=>{r.key==="Escape"&&n()})}function C(){document.querySelectorAll(".spoiler-reveal").forEach(t=>{t.addEventListener("click",()=>{const s=t.dataset.spoilerText;s&&(t.textContent=s,t.disabled=!0,t.classList.add("is-revealed"))})})}const m=document.documentElement,b="theme";function L(){return localStorage.getItem(b)}function v(){const e=m.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function u(e){const t=document.getElementById("theme-toggle");m.setAttribute("data-theme",e),localStorage.setItem(b,e),t&&t.setAttribute("aria-pressed",String(e==="dark"))}function A(){const e=v();u(e==="dark"?"light":"dark")}function S(){const e=L();u(e==="light"||e==="dark"?e:v()),document.addEventListener("click",t=>{t.target.closest("#theme-toggle")&&A()})}function T(){const e=document.querySelector(".character-toc"),t=document.querySelector(".character-toc-toggle");!e||!t||t.addEventListener("click",()=>{const s=e.classList.toggle("is-collapsed");t.textContent=s?"show":"hide",t.setAttribute("aria-expanded",String(!s))})}function B(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -168,7 +168,7 @@
       </div>
 
       <ol class="character-toc-list">
-        ${e.sections.map(n=>`<li><a href="#${n.id}">${n.title}</a></li>`).join("")}
+        ${e.sections.map(s=>`<li><a href="#${s.id}">${s.title}</a></li>`).join("")}
       </ol>
     </nav>
   `}function w(e,t){return`
@@ -206,7 +206,7 @@
 
       ${e.rows.map(I).join("")}
     </dl>
-  `}function x(e){const{image:t,groups:n}=e.infobox;return`
+  `}function x(e){const{image:t,groups:s}=e.infobox;return`
     <aside class="character-infobox" aria-label="${e.name} infobox">
       <div class="character-infobox-card">
         <div class="character-infobox-header">
@@ -227,7 +227,7 @@
           </div>
         </figure>
 
-        ${n.map(z).join("")}
+        ${s.map(z).join("")}
       </div>
     </aside>
   `}function N(e){return`
@@ -286,10 +286,10 @@
             `,className:"affiliation"},{label:"Jurisdiction",value:"Global"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"TBA"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/london-concept-800.webp",srcset:`
               /images/london-concept-800.webp 800w,
               /images/london-concept-1280.webp 1280w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London Concept Art",fullImage:"/images/london-concept-1280.webp",caption:"London Concept Art (<em>during part one</em>)"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/london-infobox-800.webp",srcset:`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London Concept Art",fullImage:"/images/london-concept-1280.webp",caption:"London Concept Art"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/london-infobox-800.webp",srcset:`
               /images/london-infobox-800.webp 800w,
               /images/london-infobox-1200.webp 1200w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London Cover Art",fullImage:"/images/london-infobox-1200.webp",caption:"London Cover Art (<em>during part one</em>)"}]}]}};function O(){return g(`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London Cover Art",fullImage:"/images/london-infobox-1200.webp",caption:"London Cover Art"}]}]}};function O(){return g(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
@@ -301,14 +301,14 @@
         ${x(o)}
       </div>
     </section>
-  `)}function q(e){const t=`${e.slug}-gallery-tabs`,n=e.gallery.tabs.map((a,r)=>`
+  `)}function q(e){const t=`${e.slug}-gallery-tabs`,s=e.gallery.tabs.map((a,n)=>`
         <input
           type="radio"
           name="${t}"
           id="${e.slug}-${a.id}"
-          ${r===0?"checked":""}
+          ${n===0?"checked":""}
         />
-      `).join(""),i=e.gallery.tabs.map(a=>`<label for="${e.slug}-${a.id}">${a.label}</label>`).join("");return{inputs:n,labels:i}}function H(e){return e.gallery.tabs.map(t=>{const n=t.images.map(a=>`
+      `).join(""),i=e.gallery.tabs.map(a=>`<label for="${e.slug}-${a.id}">${a.label}</label>`).join("");return{inputs:s,labels:i}}function H(e){return e.gallery.tabs.map(t=>{const s=t.images.map(a=>`
             <figure class="gallery-image-card">
               <img
                 src="${a.src}"
@@ -324,9 +324,9 @@
             </figure>
           `).join("");return`
         <div class="gallery-tab-panel ${`gallery-${t.id.replace("-art","")}-panel`}">
-          ${n}
+          ${s}
         </div>
-      `}).join("")}function M(e){const{inputs:t,labels:n}=q(e),i=H(e);return`
+      `}).join("")}function M(e){const{inputs:t,labels:s}=q(e),i=H(e);return`
     <section class="character-section character-gallery-section">
       <div class="gallery-category-header">
         <h2>${e.gallery.category}</h2>
@@ -336,7 +336,7 @@
         ${t}
 
         <div class="gallery-tab-list" aria-label="Gallery categories">
-          ${n}
+          ${s}
         </div>
 
         ${i}
@@ -363,4 +363,4 @@
       </div>
       ${R()}
     </section>
-  `)}const h=document.querySelector("#app"),V={home:y,london:O,"london-gallery":W},F=h?.dataset.page||"home",K=V[F]||y;h&&(h.innerHTML=K());S();T();C();$();const c=document.querySelector("#menu-toggle"),l=document.querySelector("#menu"),p=document.querySelector("#menu-close"),m=document.querySelector(".menu-backdrop");function U(){!l||!c||(l.classList.add("is-open"),l.setAttribute("aria-hidden","false"),c.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function d(){!l||!c||(l.classList.remove("is-open"),l.setAttribute("aria-hidden","true"),c.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}c&&l&&p&&m&&(c.addEventListener("click",U),p.addEventListener("click",d),m.addEventListener("click",d),document.addEventListener("keydown",e=>{e.key==="Escape"&&l.classList.contains("is-open")&&d()}));
+  `)}const h=document.querySelector("#app"),V={home:y,london:O,"london-gallery":W},F=h?.dataset.page||"home",K=V[F]||y;h&&(h.innerHTML=K());S();T();C();$();const c=document.querySelector("#menu-toggle"),l=document.querySelector("#menu"),p=document.querySelector("#menu-close"),f=document.querySelector(".menu-backdrop");function U(){!l||!c||(l.classList.add("is-open"),l.setAttribute("aria-hidden","false"),c.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function d(){!l||!c||(l.classList.remove("is-open"),l.setAttribute("aria-hidden","true"),c.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}c&&l&&p&&f&&(c.addEventListener("click",U),p.addEventListener("click",d),f.addEventListener("click",d),document.addEventListener("keydown",e=>{e.key==="Escape"&&l.classList.contains("is-open")&&d()}));
