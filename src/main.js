@@ -4,6 +4,8 @@ import { initSpoilerToggle } from './libraries/spoilers';
 import { initThemeToggle } from './libraries/theme';
 import { initCharacterToc } from './libraries/toc';
 import { renderHomePage } from './pages/home';
+import { renderDandyPage } from './pages/dandy';
+import { renderDandyGalleryPage } from './pages/dandy-gallery';
 import { renderLondonPage } from './pages/london';
 import { renderLondonGalleryPage } from './pages/london-gallery';
 
@@ -11,7 +13,9 @@ const app = document.querySelector('#app');
 
 const pages = {
   home: renderHomePage,
+  dandy: renderDandyPage,
   london: renderLondonPage,
+  'dandy-gallery': renderDandyGalleryPage,
   'london-gallery': renderLondonGalleryPage,
 };
 
