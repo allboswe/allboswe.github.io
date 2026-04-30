@@ -237,13 +237,13 @@
     opacity: 1;
 }
 
-.age, .affiliation, .education {
+.age, .affiliation, .education, .species {
     display: flex;
     flex-direction: column;
     align-items: flex-end; /* keeps your right alignment */
 }
 
-.age-context, .affiliation-context, .education-context {
+.age-context, .affiliation-context, .education-context, .species-context {
     font-size: 0.8em;
     opacity: 0.6;
     margin-top: 0.1rem;
@@ -417,14 +417,16 @@
     display: none;
 }
 
-#london-concept-art:checked ~ .gallery-tab-list label[for="london-concept-art"],
-#london-cover-art:checked ~ .gallery-tab-list label[for="london-cover-art"] {
+/* Active tab label */
+input[id$="concept-art"]:checked ~ .gallery-tab-list label[for$="concept-art"],
+input[id$="cover-art"]:checked ~ .gallery-tab-list label[for$="cover-art"] {
     color: var(--color-accent);
     border-bottom-color: var(--color-accent);
 }
 
-#london-concept-art:checked ~ .gallery-concept-panel,
-#london-cover-art:checked ~ .gallery-cover-panel {
+/* Show correct panel */
+input[id$="concept-art"]:checked ~ .gallery-concept-panel,
+input[id$="cover-art"]:checked ~ .gallery-cover-panel {
     display: block;
 }
 
@@ -438,11 +440,12 @@
 }
 
 .gallery-cover-panel .gallery-image {
-    height: 260px;           /* match concept art visual height */
-    width: auto;             /* prevent stretching */
+    height: 260px;
+    width: auto;
     display: block;
-    margin: 0 auto;          /* center it */
-    object-fit: contain;     /* keep full image visible */
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
 }
 
 .gallery-image-card {
@@ -591,14 +594,26 @@
         margin-right: auto;
     }
 
-#london-concept-art:checked ~ .gallery-concept-panel {
+input[id$="concept-art"]:checked ~ .gallery-concept-panel {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
 }
 
+input[id$="cover-art"]:checked ~ .gallery-cover-panel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
 .gallery-concept-panel .gallery-image-card {
+    margin: 0;
+}
+
+.gallery-cover-panel .gallery-image-card {
     margin: 0;
 }
 }
