@@ -434,7 +434,6 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
     width: 100%;
     height: auto;
     display: block;
-    border: 1px solid var(--color-border);
     background-color: var(--color-background);
     cursor: zoom-in;
 }
@@ -450,7 +449,17 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
 
 .gallery-image-card {
     max-width: 22rem;
-    margin: 0 auto; /* ← this centers it */
+    margin: 0 auto;
+
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: var(--color-background);
+
+    padding: 0.75rem 0.6rem 0.6rem;
+
+    transform: translateY(0);
+    transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .gallery-placeholder-image {
@@ -467,10 +476,19 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
 }
 
 .gallery-image-card figcaption {
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
+    padding: 0;
+
     color: var(--color-text-muted);
     font-size: 0.9rem;
     text-align: center;
+}
+
+.gallery-image-card:hover,
+.gallery-image-card:focus-within {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .gallery-lightbox {
@@ -550,6 +568,14 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
     color: currentColor;
 }
 
+input[id$="concept-art"]:checked ~ .gallery-concept-panel,
+input[id$="cover-art"]:checked ~ .gallery-cover-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 @media (min-width: 1200px) {
     main:has(.character-page) {
         display: block;
@@ -594,26 +620,30 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
         margin-right: auto;
     }
 
-input[id$="concept-art"]:checked ~ .gallery-concept-panel {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
+    input[id$="concept-art"]:checked ~ .gallery-concept-panel {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 
-input[id$="cover-art"]:checked ~ .gallery-cover-panel {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-}
+    input[id$="cover-art"]:checked ~ .gallery-cover-panel {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
 
-.gallery-concept-panel .gallery-image-card {
-    margin: 0;
-}
+    .gallery-concept-panel .gallery-image-card {
+        margin: 0;
+    }
 
-.gallery-cover-panel .gallery-image-card {
-    margin: 0;
-}
+    .gallery-cover-panel .gallery-image-card {
+        margin: 0;
+        max-width: none;
+        width: fit-content;
+    }
 }
