@@ -1,3 +1,230 @@
+export const dandy = {
+  slug: 'dandy-valentine',
+  name: 'Dandy Valentine',
+  kana: 'ダンディ・バレンタイン',
+  romaji: 'Dandi Barentain',
+  series: 'Pink Guy',
+  category: 'Characters',
+  overview: `
+    <strong>Dandy Valentine</strong> (ダンディ・バレンタイン <em>Dandi Barentain</em>) is the central protagonist of the <em>Pink Guy</em> series. He often finds himself caught up in situations he doesn't fully understand.
+  `,
+  sections: [
+    {
+      id: 'appearance',
+      title: 'Appearance',
+      content: `
+        <p>To be written.</p>
+      `,
+    },
+    {
+      id: 'personality',
+      title: 'Personality',
+      content: `
+        <p>To be written.</p>
+      `,
+    },
+  ],
+  infobox: {
+    image: {
+      src: 'https://placehold.co/1200x1500',
+      srcset: `
+        https://placehold.co/800x1000 800w,
+        https://placehold.co/1200x1500 1200w
+      `,
+      sizes: '(min-width: 1200px) 320px, 90vw',
+      alt: 'Dandy',
+    },
+    groups: [
+      {
+        heading: 'Name',
+        rows: [
+          {
+            label: 'Alias',
+            value: 'Pink Guy',
+          },
+          {
+            label: 'Kana',
+            value: 'ダンディ・バレンタイン',
+          },
+          {
+            label: 'Romaji',
+            value: 'Dandi Barentain',
+          },
+        ],
+      },
+      {
+        heading: 'Biological Information',
+        rows: [
+          {
+            label: 'Age',
+            value: '21',
+          },
+          {
+            label: 'Birthday',
+            value: 'February 14',
+          },
+          {
+            label: 'Birthplace',
+            value: 'New York, United States',
+          },
+          {
+            label: 'Blood Type',
+            value: 'B+',
+          },
+          {
+            label: 'Gender',
+            value: 'Male',
+          },
+          {
+            label: 'Height',
+            value: `180 cm (5'11")`,
+          },
+          {
+            label: 'Species',
+            value: `
+              <span>Hybrid</span>
+              <span class="species-context">(previously human)</span>
+            `,
+            className: 'species',
+          },
+          {
+            label: 'Weight',
+            value: '73 kg (160 lb)',
+          },
+        ],
+      },
+      {
+        heading: 'Personal Information',
+        rows: [
+          {
+            label: 'Arcana',
+            spoiler: true,
+            buttonText: 'Reveal Arcana',
+            revealedValue: 'The Fool',
+          },
+          {
+            label: 'Dislikes',
+            value: '—',
+          },
+          {
+            label: 'Education',
+            value: `
+              <span>James Madison High School</span>
+              <span class="education-context">(dropped out)</span>
+            `,
+            className: 'education',
+          },
+          {
+            label: 'Habits',
+            value: '—',
+          },
+          {
+            label: 'Likes',
+            value: '—',
+          },
+          {
+            label: 'Relatives',
+            value: '—',
+          },
+          {
+            label: 'Status',
+            spoiler: true,
+            buttonText: 'Reveal Status',
+            revealedValue: 'Alive',
+          },
+        ],
+      },
+      {
+        heading: 'Professional Information',
+        rows: [
+          {
+            label: 'Affiliation',
+            value: `
+              <span>Bureau of Arcane Affairs</span>
+              <span class="affiliation-context">—</span>
+            `,
+            className: 'affiliation',
+          },
+          {
+            label: 'Jurisdiction',
+            value: '—',
+          },
+        ],
+      },
+      {
+        heading: 'First Appearance',
+        rows: [
+          {
+            label: 'Web Novel',
+            value: 'TBA',
+          },
+        ],
+      },
+    ],
+  },
+  gallery: {
+    category: 'Web Novel',
+    tabs: [
+      {
+        id: 'concept-art',
+        label: 'Concept Art',
+        images: [
+          {
+            src: '/images/dandy-concept-(human)-800.webp',
+            srcset: `
+              /images/dandy-concept-(human)-800.webp 800w,
+              /images/dandy-concept-(human)-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'Dandy Valentine Concept Art',
+            fullImage: '/images/dandy-concept-(human)-1280.webp',
+            caption: 'Dandy Valentine Concept Art (<em>human</em>)',
+          },
+          {
+            src: 'https://placehold.co/800x481',
+            srcset: `
+              https://placehold.co/800x481 800w,
+              https://placehold.co/1280x769 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'Dandy Valentine Concept Art',
+            fullImage: 'https://placehold.co/1280x769',
+            caption: 'Dandy Valentine Concept Art (<em>hybrid</em>)',
+          },
+        ],
+      },
+      {
+        id: 'cover-art',
+        label: 'Cover Art',
+        images: [
+          {
+            src: 'https://placehold.co/800x1000',
+            srcset: `
+              https://placehold.co/800x1000 800w,
+              https://placehold.co/1200x1500 1200w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'Dandy Valentine Cover Art',
+            fullImage: 'https://placehold.co/1200x1500',
+            caption: 'Dandy Valentine Cover Art (<em>human</em>)',
+          },
+          {
+            src: 'https://placehold.co/800x1000',
+            srcset: `
+              https://placehold.co/800x1000 800w,
+              https://placehold.co/1200x1500 1200w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'Dandy Valentine Cover Art',
+            fullImage: 'https://placehold.co/1200x1500',
+            caption: 'Dandy Valentine Cover Art (<em>hybrid</em>)',
+          },
+        ],
+      },
+    ],
+  },
+};
+
 export const london = {
   slug: 'london',
   name: 'London',
