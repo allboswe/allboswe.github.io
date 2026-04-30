@@ -83,7 +83,7 @@ export const dandy = {
             label: 'Species',
             value: `
               <span>Hybrid</span>
-              <span class="species-context">(previously human)</span>
+              <span class="species-context">(formerly human)</span>
             `,
             className: 'species',
           },
@@ -141,13 +141,13 @@ export const dandy = {
             label: 'Affiliation',
             value: `
               <span>Bureau of Arcane Affairs</span>
-              <span class="affiliation-context">—</span>
+              <span class="affiliation-context">Field Operations</span>
             `,
             className: 'affiliation',
           },
           {
             label: 'Jurisdiction',
-            value: '—',
+            value: 'United States',
           },
         ],
       },
@@ -176,9 +176,9 @@ export const dandy = {
               /images/dandy-concept-(human)-1280.webp 1280w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'Dandy Valentine Concept Art',
+            alt: 'Dandy Valentine\'s Human Concept Art',
             fullImage: '/images/dandy-concept-(human)-1280.webp',
-            caption: 'Dandy Valentine Concept Art (<em>human</em>)',
+            caption: 'Dandy Valentine\'s Human Concept Art',
           },
           {
             src: 'https://placehold.co/800x481',
@@ -187,9 +187,9 @@ export const dandy = {
               https://placehold.co/1280x769 1280w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'Dandy Valentine Concept Art',
+            alt: 'Dandy Valentine\'s Hybrid Concept Art',
             fullImage: 'https://placehold.co/1280x769',
-            caption: 'Dandy Valentine Concept Art (<em>hybrid</em>)',
+            caption: 'Dandy Valentine\'s Hybrid Concept Art',
           },
         ],
       },
@@ -204,9 +204,9 @@ export const dandy = {
               https://placehold.co/1200x1500 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'Dandy Valentine Cover Art',
+            alt: 'Dandy Valentine\'s Human Cover Art',
             fullImage: 'https://placehold.co/1200x1500',
-            caption: 'Dandy Valentine Cover Art (<em>human</em>)',
+            caption: 'Dandy Valentine\'s Human Cover Art',
           },
           {
             src: 'https://placehold.co/800x1000',
@@ -215,9 +215,9 @@ export const dandy = {
               https://placehold.co/1200x1500 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'Dandy Valentine Cover Art',
+            alt: 'Dandy Valentine\'s Hybrid Cover Art',
             fullImage: 'https://placehold.co/1200x1500',
-            caption: 'Dandy Valentine Cover Art (<em>hybrid</em>)',
+            caption: 'Dandy Valentine\'s Hybrid Cover Art',
           },
         ],
       },
@@ -429,9 +429,9 @@ export const london = {
               /images/london-concept-1280.webp 1280w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'London Concept Art',
+            alt: 'London\'s Concept Art',
             fullImage: '/images/london-concept-1280.webp',
-            caption: 'London Concept Art',
+            caption: 'London\'s Concept Art',
           },
         ],
       },
@@ -446,9 +446,9 @@ export const london = {
               /images/london-infobox-1200.webp 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'London Cover Art',
+            alt: 'London\'s Cover Art',
             fullImage: '/images/london-infobox-1200.webp',
-            caption: 'London Cover Art',
+            caption: 'London\'s Cover Art',
           },
         ],
       },
