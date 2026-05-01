@@ -26,10 +26,10 @@ export const dandy = {
   ],
   infobox: {
     image: {
-      src: 'https://placehold.co/1200x1500',
+      src: '/images/dandy-infobox-(human)-1200.webp',
       srcset: `
-        https://placehold.co/800x1000 800w,
-        https://placehold.co/1200x1500 1200w
+        /images/dandy-infobox-(human)-800.webp 800w,
+        /images/dandy-infobox-(human)-1200.webp 1200w
       `,
       sizes: '(min-width: 1200px) 320px, 90vw',
       alt: 'Dandy',
@@ -198,14 +198,14 @@ export const dandy = {
         label: 'Cover Art',
         images: [
           {
-            src: 'https://placehold.co/800x1000',
+            src: '/images/dandy-infobox-(human)-800.webp',
             srcset: `
-              https://placehold.co/800x1000 800w,
-              https://placehold.co/1200x1500 1200w
+              /images/dandy-infobox-(human)-800.webp 800w,
+              /images/dandy-infobox-(human)-1200.webp 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
             alt: 'Dandy Valentine\'s Human Cover Art',
-            fullImage: 'https://placehold.co/1200x1500',
+            fullImage: '/images/dandy-infobox-(human)-1200.webp',
             caption: 'Dandy Valentine\'s Human Cover Art',
           },
           {
