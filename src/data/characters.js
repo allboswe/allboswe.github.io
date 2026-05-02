@@ -32,7 +32,28 @@ export const dandy = {
       id: 'personality',
       title: 'Personality',
       content: `
-        <p>To be written.</p>
+        <p>
+          Dandy Valentine has a laid-back, reactive disposition.
+          He responds to situations as they happen rather than working toward a clear goal, and rarely thinks beyond what is directly in front of him.
+          His thinking is simple and direct, often following whatever draws his attention in the moment.
+        </p>
+        <br />
+        <p>
+          His reactions are minimal, even in situations that would unsettle others.
+          Instead of questioning what he does not understand, he accepts it and moves on, adjusting as needed.
+          This can make him seem indifferent, though he remains attentive and quick to respond when something catches his interest.
+        </p>
+        <br />
+        <p>
+          He places strong importance on the <em>American Dream</em> and associates it with relationships, particularly with women.
+          In these situations, he can become fixated and tends to take interactions at face value, sometimes misreading them.
+        </p>
+        <br />
+        <p>
+          His behavior can come across as unusual.
+          He gives little thought to how his actions are perceived and handles situations in whatever way makes sense to him at the time, even when it seems out of place.
+          He also adjusts quickly to new environments and becomes familiar with people and surroundings without much hesitation.
+        </p>
       `,
     },
   ],
@@ -116,7 +137,7 @@ export const dandy = {
           },
           {
             label: 'Dislikes',
-            value: '—',
+            value: 'Rejection',
           },
           {
             label: 'Education',
@@ -128,11 +149,11 @@ export const dandy = {
           },
           {
             label: 'Habits',
-            value: '—',
+            value: 'Clinging',
           },
           {
             label: 'Likes',
-            value: '—',
+            value: 'Fast Food, Women',
           },
           {
             label: 'Relatives',
