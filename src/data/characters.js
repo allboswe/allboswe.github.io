@@ -13,7 +13,19 @@ export const dandy = {
       id: 'appearance',
       title: 'Appearance',
       content: `
-        <p>To be written.</p>
+        <p>
+          Dandy Valentine is a young man with light skin and a lean frame.
+          He has pale blonde hair, cut short and uneven, with strands falling loosely over his brow.
+          His eyes are a dull grey-blue and often sit half-open.
+          A small adhesive bandage rests across the bridge of his nose.
+          When he smiles, one of his upper front teeth is missing.
+        </p>
+        <br />
+        <p>
+          He wears a faded pink hoodie with a kangaroo pocket and drawstrings at the collar, usually with the hood up.
+          The cuffs bunch slightly at his wrists, and it hangs loosely on his frame.
+          He pairs this with dark denim jeans with multiple tears along the thighs and knees, along with low-cut sneakers that are visibly scuffed.
+        </p>
       `,
     },
     {
