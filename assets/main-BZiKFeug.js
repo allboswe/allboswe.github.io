@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))i(a);new MutationObserver(a=>{for(const n of a)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function s(a){const n={};return a.integrity&&(n.integrity=a.integrity),a.referrerPolicy&&(n.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?n.credentials="include":a.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function i(a){if(a.ep)return;a.ep=!0;const n=s(a);fetch(a.href,n)}})();function $(){const e=document.querySelector(".gallery-lightbox"),t=document.querySelector(".gallery-lightbox-image"),s=document.querySelector(".gallery-lightbox-close"),i=document.querySelectorAll(".gallery-image");if(!e||!t||!s||i.length===0)return;function a(r){const k=r.dataset.fullImage||r.src;t.src=k,t.alt=r.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function n(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),t.src="",t.alt=""}i.forEach(r=>{r.addEventListener("click",()=>{a(r)})}),s.addEventListener("click",n),e.addEventListener("click",r=>{r.target===e&&n()}),document.addEventListener("keydown",r=>{r.key==="Escape"&&n()})}function C(){document.querySelectorAll(".spoiler-reveal").forEach(t=>{t.addEventListener("click",()=>{const s=t.dataset.spoilerText;s&&(t.textContent=s,t.disabled=!0,t.classList.add("is-revealed"))})})}const m=document.documentElement,b="theme";function L(){return localStorage.getItem(b)}function v(){const e=m.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function u(e){const t=document.getElementById("theme-toggle");m.setAttribute("data-theme",e),localStorage.setItem(b,e),t&&t.setAttribute("aria-pressed",String(e==="dark"))}function A(){const e=v();u(e==="dark"?"light":"dark")}function S(){const e=L();u(e==="light"||e==="dark"?e:v()),document.addEventListener("click",t=>{t.target.closest("#theme-toggle")&&A()})}function T(){const e=document.querySelector(".character-toc"),t=document.querySelector(".character-toc-toggle");!e||!t||t.addEventListener("click",()=>{const s=e.classList.toggle("is-collapsed");t.textContent=s?"show":"hide",t.setAttribute("aria-expanded",String(!s))})}function B(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&l(i)}).observe(document,{childList:!0,subtree:!0});function n(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function l(t){if(t.ep)return;t.ep=!0;const s=n(t);fetch(t.href,s)}})();function T(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),l=document.querySelectorAll(".gallery-image");if(!e||!a||!n||l.length===0)return;function t(i){const H=i.dataset.fullImage||i.src;a.src=H,a.alt=i.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function s(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}l.forEach(i=>{i.addEventListener("click",()=>{t(i)})}),n.addEventListener("click",s),e.addEventListener("click",i=>{i.target===e&&s()}),document.addEventListener("keydown",i=>{i.key==="Escape"&&s()})}function B(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const y=document.documentElement,w="theme";function I(){return localStorage.getItem(w)}function x(){const e=y.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function m(e){const a=document.getElementById("theme-toggle");y.setAttribute("data-theme",e),localStorage.setItem(w,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function P(){const e=x();m(e==="dark"?"light":"dark")}function z(){const e=I();m(e==="light"||e==="dark"?e:x()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&P()})}function N(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function E(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </header>
-  `}function P(){return`
+  `}function D(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -83,13 +83,13 @@
         </div>
       </div>
     </footer>
-  `}function g(e){return`
-    ${B()}
+  `}function u(e){return`
+    ${E()}
     <main>
       ${e}
     </main>
-    ${P()}
-  `}function y(){return g(`
+    ${D()}
+  `}function k(){return u(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
@@ -144,7 +144,7 @@
         </article>
       </div>
     </section>
-  `)}function E(e){return`
+  `)}function $(e){return`
     <nav class="character-toc is-collapsed" aria-label="Table of contents">
       <div class="character-toc-header">
         <h2 class="character-toc-title">
@@ -168,23 +168,23 @@
       </div>
 
       <ol class="character-toc-list">
-        ${e.sections.map(s=>`<li><a href="#${s.id}">${s.title}</a></li>`).join("")}
+        ${e.sections.map(n=>`<li><a href="#${n.id}">${n.title}</a></li>`).join("")}
       </ol>
     </nav>
-  `}function w(e,t){return`
+  `}function h(e,a){return`
     <div class="character-title-block">
       <p class="character-kicker">${e.series} / ${e.category}</p>
       <h1>${e.name}</h1>
 
       <nav class="character-subnav" aria-label="Character sections">
-        <a href="/pink-guy/characters/${e.slug}/" ${t==="overview"?'aria-current="page"':""}>Overview</a>
+        <a href="/pink-guy/characters/${e.slug}/" ${a==="overview"?'aria-current="page"':""}>Overview</a>
 
         <a href="#" class="is-disabled" aria-disabled="true">History</a>
 
-        <a href="/pink-guy/characters/${e.slug}/gallery/" ${t==="gallery"?'aria-current="page"':""}>Gallery</a>
+        <a href="/pink-guy/characters/${e.slug}/gallery/" ${a==="gallery"?'aria-current="page"':""}>Gallery</a>
       </nav>
     </div>
-  `}function I(e){if(e.spoiler)return`
+  `}function j(e){if(e.spoiler)return`
       <div>
         <dt>${e.label}</dt>
         <dd>
@@ -193,20 +193,20 @@
           </button>
         </dd>
       </div>
-    `;const t=e.className?` class="${e.className}"`:"";return`
+    `;const a=e.className?` class="${e.className}"`:"";return`
     <div>
       <dt>${e.label}</dt>
-      <dd${t}>${e.value}</dd>
+      <dd${a}>${e.value}</dd>
     </div>
-  `}function z(e){return`
+  `}function G(e){return`
     <dl class="character-facts">
       <div class="character-facts-section">
         <dt>${e.heading}</dt>
       </div>
 
-      ${e.rows.map(I).join("")}
+      ${e.rows.map(j).join("")}
     </dl>
-  `}function x(e){const{image:t,groups:s}=e.infobox;return`
+  `}function p(e){const{image:a,groups:n}=e.infobox;return`
     <aside class="character-infobox" aria-label="${e.name} infobox">
       <div class="character-infobox-card">
         <div class="character-infobox-header">
@@ -216,10 +216,10 @@
         <figure class="character-infobox-figure">
           <div class="character-infobox-image-frame">
             <img
-              src="${t.src}"
-              srcset="${t.srcset}"
-              sizes="${t.sizes}"
-              alt="${t.alt}"
+              src="${a.src}"
+              srcset="${a.srcset}"
+              sizes="${a.sizes}"
+              alt="${a.alt}"
               class="character-infobox-image"
               loading="lazy"
               decoding="async"
@@ -227,19 +227,82 @@
           </div>
         </figure>
 
-        ${s.map(z).join("")}
+        ${n.map(G).join("")}
       </div>
     </aside>
-  `}function N(e){return`
+  `}function V(e){return`
     <section class="character-section" id="${e.id}">
       <h2>${e.title}</h2>
       ${e.content}
     </section>
-  `}function j(e){return e.sections.map(N).join("")}function G(e){return`
+  `}function A(e){return e.sections.map(V).join("")}function C(e){return`
     <section class="character-section" id="overview">
       <p>${e.overview}</p>
     </section>
-  `}const o={slug:"london",name:"London",series:"Pink Guy",category:"Characters",overview:`
+  `}const r={slug:"dandy-valentine",name:"Dandy Valentine",series:"Pink Guy",category:"Characters",overview:`
+    <strong>Dandy Valentine</strong> (ダンディ・バレンタイン <em>Dandi Barentain</em>) is the central protagonist of the <em>Pink Guy</em> series. He often finds himself caught up in situations he doesn't fully understand.
+  `,sections:[{id:"appearance",title:"Appearance",content:`
+        <p>
+          Dandy Valentine is a young man with light skin and a lean frame.
+          He has pale blonde hair, cut short and uneven, with strands falling loosely over his brow.
+          His eyes are a dull grey-blue and often sit half-open.
+          A small adhesive bandage rests across the bridge of his nose.
+          When he smiles, one of his upper front teeth is missing.
+        </p>
+        <br />
+        <p>
+          He wears a faded pink hoodie with a kangaroo pocket and drawstrings at the collar, usually with the hood up.
+          The cuffs bunch slightly at his wrists, and it hangs loosely on his frame.
+          He pairs this with dark denim jeans with multiple tears along the thighs and knees, along with low-cut sneakers that are visibly scuffed.
+        </p>
+      `},{id:"personality",title:"Personality",content:`
+        <p>
+          Dandy Valentine has a laid-back, reactive disposition.
+          He responds to situations as they happen rather than working toward a clear goal, and rarely thinks beyond what is directly in front of him.
+          His thinking is simple and direct, often following whatever draws his attention in the moment.
+        </p>
+        <br />
+        <p>
+          His reactions are minimal, even in situations that would unsettle others.
+          Instead of questioning what he does not understand, he accepts it and moves on, adjusting as needed.
+          This can make him seem indifferent, though he remains attentive and quick to respond when something catches his interest.
+        </p>
+        <br />
+        <p>
+          He places strong importance on the <em>American Dream</em> and associates it with relationships, particularly with women.
+          In these situations, he can become fixated and tends to take interactions at face value, sometimes misreading them.
+        </p>
+        <br />
+        <p>
+          His behavior can come across as unusual.
+          He gives little thought to how his actions are perceived and handles situations in whatever way makes sense to him at the time, even when it seems out of place.
+          He also adjusts quickly to new environments and becomes familiar with people and surroundings without much hesitation.
+        </p>
+      `}],infobox:{image:{src:"/images/dandy-infobox-(human)-1200.webp",srcset:`
+        /images/dandy-infobox-(human)-800.webp 800w,
+        /images/dandy-infobox-(human)-1200.webp 1200w
+      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"Dandy"},groups:[{heading:"Name",rows:[{label:"Alias",value:"Pink Guy"},{label:"Kana",value:"ダンディ・バレンタイン"},{label:"Romaji",value:"Dandi Barentain"}]},{heading:"Biological Information",rows:[{label:"Age",value:"21"},{label:"Birthday",value:"February 14"},{label:"Birthplace",value:"New York, United States"},{label:"Blood Type",value:"B+"},{label:"Gender",value:"Male"},{label:"Height",value:`180 cm (5'11")`},{label:"Species",value:`
+              <span>Hybrid</span>
+              <span class="species-context">(formerly human)</span>
+            `,className:"species"},{label:"Weight",value:"73 kg (160 lb)"}]},{heading:"Personal Information",rows:[{label:"Arcana",spoiler:!0,buttonText:"Reveal Arcana",revealedValue:"The Fool"},{label:"Dislikes",value:"Rejection"},{label:"Education",value:`
+              <span>James Madison High School</span>
+              <span class="education-context">(dropped out)</span>
+            `,className:"education"},{label:"Habits",value:"Clinging"},{label:"Likes",value:"Fast Food, Women"},{label:"Relatives",value:"—"},{label:"Status",spoiler:!0,buttonText:"Reveal Status",revealedValue:"Alive"}]},{heading:"Professional Information",rows:[{label:"Affiliation",value:`
+              <span>Bureau of Arcane Affairs</span>
+              <span class="affiliation-context">Field Operations</span>
+            `,className:"affiliation"},{label:"Jurisdiction",value:"United States"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"TBA"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/dandy-concept-(human)-800.webp",srcset:`
+              /images/dandy-concept-(human)-800.webp 800w,
+              /images/dandy-concept-(human)-1280.webp 1280w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine's Human Concept Art",fullImage:"/images/dandy-concept-(human)-1280.webp",caption:"Dandy Valentine's Human Concept Art"},{src:"https://placehold.co/800x481",srcset:`
+              https://placehold.co/800x481 800w,
+              https://placehold.co/1280x769 1280w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine's Hybrid Concept Art",fullImage:"https://placehold.co/1280x769",caption:"Dandy Valentine's Hybrid Concept Art"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/dandy-infobox-(human)-800.webp",srcset:`
+              /images/dandy-infobox-(human)-800.webp 800w,
+              /images/dandy-infobox-(human)-1200.webp 1200w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine's Human Cover Art",fullImage:"/images/dandy-infobox-(human)-1200.webp",caption:"Dandy Valentine's Human Cover Art"},{src:"https://placehold.co/800x1000",srcset:`
+              https://placehold.co/800x1000 800w,
+              https://placehold.co/1200x1500 1200w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine's Hybrid Cover Art",fullImage:"https://placehold.co/1200x1500",caption:"Dandy Valentine's Hybrid Cover Art"}]}]}},o={slug:"london",name:"London",series:"Pink Guy",category:"Characters",overview:`
     <strong>London</strong> (ロンドン <em>Rondon</em>) serves as an Administrator in the Bureau of Arcane Affairs, a global organization responsible for overseeing arcane phenomena.
   `,sections:[{id:"appearance",title:"Appearance",content:`
         <p>
@@ -286,63 +349,63 @@
             `,className:"affiliation"},{label:"Jurisdiction",value:"Global"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"TBA"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/london-concept-800.webp",srcset:`
               /images/london-concept-800.webp 800w,
               /images/london-concept-1280.webp 1280w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London Concept Art",fullImage:"/images/london-concept-1280.webp",caption:"London Concept Art"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/london-infobox-800.webp",srcset:`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London's Concept Art",fullImage:"/images/london-concept-1280.webp",caption:"London's Concept Art"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/london-infobox-800.webp",srcset:`
               /images/london-infobox-800.webp 800w,
               /images/london-infobox-1200.webp 1200w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London Cover Art",fullImage:"/images/london-infobox-1200.webp",caption:"London Cover Art"}]}]}};function O(){return g(`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London's Cover Art",fullImage:"/images/london-infobox-1200.webp",caption:"London's Cover Art"}]}]}};function q(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${w(o,"overview")}
-          ${G(o)}
-          ${E(o)}
-          ${j(o)}
+          ${h(r,"overview")}
+          ${C(r)}
+          ${$(r)}
+          ${A(r)}
           </article>
-        ${x(o)}
+        ${p(r)}
       </div>
     </section>
-  `)}function q(e){const t=`${e.slug}-gallery-tabs`,s=e.gallery.tabs.map((a,n)=>`
+  `)}function R(e){const a=`${e.slug}-gallery-tabs`,n=e.gallery.tabs.map((t,s)=>`
         <input
           type="radio"
-          name="${t}"
-          id="${e.slug}-${a.id}"
-          ${n===0?"checked":""}
+          name="${a}"
+          id="${e.slug}-${t.id}"
+          ${s===0?"checked":""}
         />
-      `).join(""),i=e.gallery.tabs.map(a=>`<label for="${e.slug}-${a.id}">${a.label}</label>`).join("");return{inputs:s,labels:i}}function H(e){return e.gallery.tabs.map(t=>{const s=t.images.map(a=>`
+      `).join(""),l=e.gallery.tabs.map(t=>`<label for="${e.slug}-${t.id}">${t.label}</label>`).join("");return{inputs:n,labels:l}}function O(e){return e.gallery.tabs.map(a=>{const n=a.images.map(t=>`
             <figure class="gallery-image-card">
               <img
-                src="${a.src}"
-                srcset="${a.srcset}"
-                sizes="${a.sizes}"
-                alt="${a.alt}"
+                src="${t.src}"
+                srcset="${t.srcset}"
+                sizes="${t.sizes}"
+                alt="${t.alt}"
                 class="gallery-image"
-                data-full-image="${a.fullImage}"
+                data-full-image="${t.fullImage}"
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>${a.caption}</figcaption>
+              <figcaption>${t.caption}</figcaption>
             </figure>
           `).join("");return`
-        <div class="gallery-tab-panel ${`gallery-${t.id.replace("-art","")}-panel`}">
-          ${s}
+        <div class="gallery-tab-panel ${`gallery-${a.id.replace("-art","")}-panel`}">
+          ${n}
         </div>
-      `}).join("")}function M(e){const{inputs:t,labels:s}=q(e),i=H(e);return`
+      `}).join("")}function L(e){const{inputs:a,labels:n}=R(e),l=O(e);return`
     <section class="character-section character-gallery-section">
       <div class="gallery-category-header">
         <h2>${e.gallery.category}</h2>
       </div>
 
       <div class="gallery-tabs">
-        ${t}
+        ${a}
 
         <div class="gallery-tab-list" aria-label="Gallery categories">
-          ${s}
+          ${n}
         </div>
 
-        ${i}
+        ${l}
       </div>
     </section>
-  `}function R(){return`
+  `}function S(){return`
     <div class="gallery-lightbox" aria-hidden="true">
       <button class="gallery-lightbox-close" type="button" aria-label="Close image preview">
         <svg class="icon" viewBox="0 0 24 24">
@@ -352,15 +415,38 @@
 
       <img src="" alt="" class="gallery-lightbox-image" />
     </div>
-  `}function W(){return g(`
+  `}function M(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${w(o,"gallery")}
-          ${M(o)}
+          ${h(r,"gallery")}
+          ${L(r)}
         </article>
-        ${x(o)}
+        ${p(r)}
       </div>
-      ${R()}
+      ${S()}
     </section>
-  `)}const h=document.querySelector("#app"),V={home:y,london:O,"london-gallery":W},F=h?.dataset.page||"home",K=V[F]||y;h&&(h.innerHTML=K());S();T();C();$();const c=document.querySelector("#menu-toggle"),l=document.querySelector("#menu"),p=document.querySelector("#menu-close"),f=document.querySelector(".menu-backdrop");function U(){!l||!c||(l.classList.add("is-open"),l.setAttribute("aria-hidden","false"),c.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function d(){!l||!c||(l.classList.remove("is-open"),l.setAttribute("aria-hidden","true"),c.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}c&&l&&p&&f&&(c.addEventListener("click",U),p.addEventListener("click",d),f.addEventListener("click",d),document.addEventListener("keydown",e=>{e.key==="Escape"&&l.classList.contains("is-open")&&d()}));
+  `)}function W(){return u(`
+    <section class="character-page">
+      <div class="character-shell">
+        <article class="character-article">
+          ${h(o,"overview")}
+          ${C(o)}
+          ${$(o)}
+          ${A(o)}
+          </article>
+        ${p(o)}
+      </div>
+    </section>
+  `)}function F(){return u(`
+    <section class="character-page">
+      <div class="character-shell">
+        <article class="character-article">
+          ${h(o,"gallery")}
+          ${L(o)}
+        </article>
+        ${p(o)}
+      </div>
+      ${S()}
+    </section>
+  `)}const b=document.querySelector("#app"),U={home:k,dandy:q,london:W,"dandy-gallery":M,"london-gallery":F},K=b?.dataset.page||"home",J=U[K]||k;b&&(b.innerHTML=J());z();N();B();T();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),f=document.querySelector("#menu-close"),v=document.querySelector(".menu-backdrop");function _(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function g(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&f&&v&&(d.addEventListener("click",_),f.addEventListener("click",g),v.addEventListener("click",g),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&g()}));
