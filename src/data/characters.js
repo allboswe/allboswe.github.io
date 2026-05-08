@@ -1,12 +1,12 @@
 export const dandy = {
   slug: 'dandy-valentine',
   name: 'Dandy Valentine',
-  kana: 'ダンディ・バレンタイン',
-  romaji: 'Dandi Barentain',
+  kana: 'バレンタイン・ダンディ',
+  romaji: 'Barentain Dandi',
   series: 'Pink Guy',
   category: 'Characters',
   overview: `
-    <strong>Dandy Valentine</strong> (ダンディ・バレンタイン <em>Dandi Barentain</em>) is the central protagonist of the <em>Pink Guy</em> series. He often finds himself caught up in situations he doesn't fully understand.
+    <strong>Dandy Valentine</strong> (バレンタイン・ダンディ <em>Barentain Dandi</em>) is the protagonist of the <em>Pink Guy</em> series. He frequently becomes involved in situations he does not fully understand.
   `,
   sections: [
     {
@@ -14,17 +14,11 @@ export const dandy = {
       title: 'Appearance',
       content: `
         <p>
-          Dandy Valentine is a young man with light skin and a lean frame.
-          He has pale blonde hair, cut short and uneven, with strands falling loosely over his brow.
-          His eyes are a dull grey-blue and often sit half-open.
-          A small adhesive bandage rests across the bridge of his nose.
-          When he smiles, one of his upper front teeth is missing.
-        </p>
-        <br />
-        <p>
-          He wears a faded pink hoodie with a kangaroo pocket and drawstrings at the collar, usually with the hood up.
-          The cuffs bunch slightly at his wrists, and it hangs loosely on his frame.
-          He pairs this with dark denim jeans with multiple tears along the thighs and knees, along with low-cut sneakers that are visibly scuffed.
+          Dandy Valentine is a young man with light skin, a lean build, pale blond hair, and dull grey-blue eyes that often appear half-open.
+          A small adhesive bandage sits across the bridge of his nose, and one of his upper front teeth is missing, leaving a slight gap when he smiles or speaks.
+          He usually wears a faded pastel pink hoodie with the hood pulled up, along with torn dark blue jeans and worn sneakers.
+          After coming into contact with an alien, he develops large wolf ears, a long wolf tail, claw-like fingernails, and small fangs.
+          He later begins wearing a pastel pink blazer over a white dress shirt and black tie, paired with black trousers and black dress shoes.
         </p>
       `,
     },
@@ -33,26 +27,11 @@ export const dandy = {
       title: 'Personality',
       content: `
         <p>
-          Dandy Valentine has a laid-back, reactive disposition.
-          He responds to situations as they happen rather than working toward a clear goal, and rarely thinks beyond what is directly in front of him.
-          His thinking is simple and direct, often following whatever draws his attention in the moment.
-        </p>
-        <br />
-        <p>
-          His reactions are minimal, even in situations that would unsettle others.
-          Instead of questioning what he does not understand, he accepts it and moves on, adjusting as needed.
-          This can make him seem indifferent, though he remains attentive and quick to respond when something catches his interest.
-        </p>
-        <br />
-        <p>
-          He places strong importance on the <em>American Dream</em> and associates it with relationships, particularly with women.
-          In these situations, he can become fixated and tends to take interactions at face value, sometimes misreading them.
-        </p>
-        <br />
-        <p>
-          His behavior can come across as unusual.
-          He gives little thought to how his actions are perceived and handles situations in whatever way makes sense to him at the time, even when it seems out of place.
-          He also adjusts quickly to new environments and becomes familiar with people and surroundings without much hesitation.
+          Dandy Valentine is foul-mouthed, impulsive, and emotionally direct, often speaking or acting without thinking ahead.
+          After spending several years homeless, he focuses mainly on immediate comfort and simple pleasures, which causes him to come across as immature, selfish, or overly interested in women and relationships.
+          He frequently talks about wanting an ordinary life and pursuing the <em>American Dream</em>, especially having a stable job, attending college, owning a home, getting married, and raising a family.
+          He also becomes attached to people quickly and shows strong loyalty toward those he grows close to.
+          Frustration with his situation often leads to reckless decisions.
         </p>
       `,
     },
@@ -65,7 +44,7 @@ export const dandy = {
         /images/dandy-infobox-(human)-1200.webp 1200w
       `,
       sizes: '(min-width: 1200px) 320px, 90vw',
-      alt: 'Dandy',
+      alt: 'Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.',
     },
     groups: [
       {
@@ -77,11 +56,11 @@ export const dandy = {
           },
           {
             label: 'Kana',
-            value: 'ダンディ・バレンタイン',
+            value: 'バレンタイン・ダンディ',
           },
           {
             label: 'Romaji',
-            value: 'Dandi Barentain',
+            value: 'Barentain Dandi',
           },
         ],
       },
@@ -114,11 +93,7 @@ export const dandy = {
           },
           {
             label: 'Species',
-            value: `
-              <span>Hybrid</span>
-              <span class="species-context">(formerly human)</span>
-            `,
-            className: 'species',
+            value: 'Hybrid',
           },
           {
             label: 'Weight',
@@ -137,27 +112,27 @@ export const dandy = {
           },
           {
             label: 'Dislikes',
-            value: 'Rejection',
+            value: 'Cats, Heartbreak',
           },
           {
             label: 'Education',
             value: `
-              <span>James Madison High School</span>
+              <span>Midwood High School</span>
               <span class="education-context">(dropped out)</span>
             `,
             className: 'education',
           },
           {
             label: 'Habits',
-            value: 'Clinging',
+            value: 'Daydreaming',
+          },
+          {
+            label: 'Hobbies',
+            value: 'Sleeping',
           },
           {
             label: 'Likes',
-            value: 'Fast Food, Women',
-          },
-          {
-            label: 'Relatives',
-            value: '—',
+            value: 'Food, Women',
           },
           {
             label: 'Status',
@@ -174,7 +149,7 @@ export const dandy = {
             label: 'Affiliation',
             value: `
               <span>Bureau of Arcane Affairs</span>
-              <span class="affiliation-context">Field Operations</span>
+              <span class="affiliation-context">Operations Specialist</span>
             `,
             className: 'affiliation',
           },
@@ -209,9 +184,9 @@ export const dandy = {
               /images/dandy-concept-(human)-1280.webp 1280w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'Dandy Valentine\'s Human Concept Art',
+            alt: 'A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat.',
             fullImage: '/images/dandy-concept-(human)-1280.webp',
-            caption: 'Dandy Valentine\'s Human Concept Art',
+            caption: 'Concept Art 1',
           },
           {
             src: 'https://placehold.co/800x481',
@@ -220,9 +195,9 @@ export const dandy = {
               https://placehold.co/1280x769 1280w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'Dandy Valentine\'s Hybrid Concept Art',
+            alt: 'None',
             fullImage: 'https://placehold.co/1280x769',
-            caption: 'Dandy Valentine\'s Hybrid Concept Art',
+            caption: 'Concept Art 2',
           },
         ],
       },
@@ -237,9 +212,9 @@ export const dandy = {
               /images/dandy-infobox-(human)-1200.webp 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'Dandy Valentine\'s Human Cover Art',
+            alt: 'Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.',
             fullImage: '/images/dandy-infobox-(human)-1200.webp',
-            caption: 'Dandy Valentine\'s Human Cover Art',
+            caption: 'Cover Art 1',
           },
           {
             src: 'https://placehold.co/800x1000',
@@ -248,9 +223,9 @@ export const dandy = {
               https://placehold.co/1200x1500 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'Dandy Valentine\'s Hybrid Cover Art',
+            alt: 'None',
             fullImage: 'https://placehold.co/1200x1500',
-            caption: 'Dandy Valentine\'s Hybrid Cover Art',
+            caption: 'Cover Art 2',
           },
         ],
       },
@@ -266,7 +241,7 @@ export const london = {
   series: 'Pink Guy',
   category: 'Characters',
   overview: `
-    <strong>London</strong> (ロンドン <em>Rondon</em>) serves as an Administrator in the Bureau of Arcane Affairs, a global organization responsible for overseeing arcane phenomena.
+    <strong>London</strong> (ロンドン <em>Rondon</em>) is a major character from the <em>Pink Guy</em> series. She is an Administrator in the Bureau of Arcane Affairs, an international organization responsible for overseeing arcane phenomena.
   `,
   sections: [
     {
@@ -274,16 +249,10 @@ export const london = {
       title: 'Appearance',
       content: `
         <p>
-          London is a woman with light, neutral-toned skin and an average build.
-          She has straight, shoulder-length pastel brown hair, cut in a blunt bob with even bangs that rest just above her eyebrows.
-          Her eyes are a pale, desaturated brown, with small unfilled pupils encircled by a single thin ring.
-        </p>
-        <br />
-        <p>
-          She wears a black two-piece business suit consisting of a fitted blazer with notch lapels and a high-waisted, knee-length pencil skirt.
-          Underneath, she wears a white blouse with long sleeves and buttoned cuffs.
-          The blouse features a ribbon tie at the collar, secured with a small round fastener, with the ends falling down the front.
-          She pairs this with plain black closed-toe flats and does not wear any visible accessories.
+          London is a woman with light skin and a slender build.
+          She has straight pastel-brown hair cut into a shoulder-length bob with even bangs that rest just above her eyes.
+          Her pale eyes contain concentric rings within the irises, and she is usually seen with a neutral expression and upright posture.
+          She wears a black business suit consisting of a fitted blazer and a high-waisted knee-length skirt over a white blouse tied at the collar, along with plain black flats.
         </p>
       `,
     },
@@ -292,20 +261,10 @@ export const london = {
       title: 'Personality',
       content: `
         <p>
-          London is composed and rarely shows outward reactions.
-          It can be difficult to tell what she is thinking, as she tends to observe more than she speaks, and when she does, she is usually brief and direct.
-          Her behavior comes across as distant, though she does not act that way intentionally.
-        </p>
-        <br />
-        <p>
-          In formal settings, she is highly capable and maintains a steady, professional demeanor.
-          She handles negotiations and discussions without hesitation, even in high-pressure situations.
-          She regularly meets with officials and world leaders through her work in the Bureau of Arcane Affairs and is known for remaining calm regardless of the circumstances.
-        </p>
-        <br />
-        <p>
-          Otherwise, she can be socially inept.
-          She may misread tone or respond in ways that seem blunt or out of place.
+          London is reserved and difficult to read, rarely showing strong emotion even in dangerous or high-pressure situations.
+          She speaks in a soft and direct manner and usually appears confident in her decisions.
+          Although polite and approachable, she keeps emotional distance from the people around her and rarely reveals what she is thinking or feeling.
+          She seldom raises her voice or changes her expression during conversations and usually prefers persuasion over direct force or intimidation.
         </p>
       `,
     },
@@ -318,7 +277,7 @@ export const london = {
         /images/london-infobox-1200.webp 1200w
       `,
       sizes: '(min-width: 1200px) 320px, 90vw',
-      alt: 'London',
+      alt: 'London standing in front of a city skyline while wearing a white blouse and dark skirt.',
     },
     groups: [
       {
@@ -343,11 +302,7 @@ export const london = {
         rows: [
           {
             label: 'Age',
-            value: `
-              <span>Unknown</span>
-              <span class="age-context">(appears late 20s)</span>
-            `,
-            className: 'age',
+            value: 'Unknown',
           },
           {
             label: 'Birthday',
@@ -371,7 +326,7 @@ export const london = {
           },
           {
             label: 'Species',
-            value: 'Human',
+            value: 'Hybrid',
           },
           {
             label: 'Weight',
@@ -390,7 +345,7 @@ export const london = {
           },
           {
             label: 'Dislikes',
-            value: 'Cliffhangers',
+            value: 'Cliffhangers, Tea',
           },
           {
             label: 'Education',
@@ -405,12 +360,12 @@ export const london = {
             value: 'Smoking',
           },
           {
-            label: 'Likes',
-            value: 'Classic Rock, Coffee',
+            label: 'Hobbies',
+            value: 'Reading, Tarot',
           },
           {
-            label: 'Relatives',
-            value: '—',
+            label: 'Likes',
+            value: 'Black Coffee, Classic Rock',
           },
           {
             label: 'Status',
@@ -462,9 +417,9 @@ export const london = {
               /images/london-concept-1280.webp 1280w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'London\'s Concept Art',
+            alt: 'A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut.',
             fullImage: '/images/london-concept-1280.webp',
-            caption: 'London\'s Concept Art',
+            caption: 'Concept Art 1',
           },
         ],
       },
@@ -479,9 +434,9 @@ export const london = {
               /images/london-infobox-1200.webp 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'London\'s Cover Art',
+            alt: 'London standing in front of a city skyline while wearing a white blouse and dark skirt.',
             fullImage: '/images/london-infobox-1200.webp',
-            caption: 'London\'s Cover Art',
+            caption: 'Cover Art 1',
           },
         ],
       },
