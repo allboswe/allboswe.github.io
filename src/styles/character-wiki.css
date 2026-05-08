@@ -30,10 +30,8 @@
 .character-infobox-header {
     padding: 0.5rem 0.75rem;
     margin: 0 -1rem;
-
     border-bottom: 1px solid var(--color-border);
     background-color: var(--color-accent-soft);
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,6 +120,20 @@
     text-align: right;
 }
 
+.affiliation,
+.education {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.affiliation-context,
+.education-context {
+    font-size: 0.8em;
+    opacity: 0.6;
+    margin-top: 0.1rem;
+}
+
 .character-article {
     padding: 1.5rem;
 }
@@ -144,6 +156,10 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     text-align: left;
+}
+
+.character-overview p {
+    text-align: justify;
 }
 
 .character-subnav {
@@ -189,13 +205,11 @@
     margin-top: 1.25rem;
 }
 
-/* ✅ THIS IS THE FIX */
 .character-section:last-child {
-    margin-bottom: 0;
     margin-top: 2rem;
+    margin-bottom: 0;
 }
 
-/* optional but cleaner control */
 .character-article > .character-section:last-child {
     margin-bottom: 0;
 }
@@ -211,6 +225,7 @@
     color: var(--color-text-muted);
     font-size: 0.95rem;
     line-height: 1.65;
+    text-align: justify;
 }
 
 /* Spoiler Button */
@@ -237,24 +252,11 @@
     opacity: 1;
 }
 
-.age, .affiliation, .education, .species {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* keeps your right alignment */
-}
-
-.age-context, .affiliation-context, .education-context, .species-context {
-    font-size: 0.8em;
-    opacity: 0.6;
-    margin-top: 0.1rem;
-}
-
 /* TOC */
 
 .character-toc {
     margin-top: -0.75rem;
     padding: 0.9rem 1rem;
-
     border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
 }
 
@@ -263,7 +265,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--color-border);
 }
@@ -272,7 +273,6 @@
     margin: 0;
     padding: 0;
     border-bottom: none;
-
     color: var(--color-text-muted);
     font-size: 0.95rem;
     font-weight: 600;
@@ -299,11 +299,9 @@
 .character-toc-list {
     margin: 0.6rem 0 0;
     padding-left: 1.25rem;
-
     color: var(--color-text-muted);
     font-size: 0.95rem;
     line-height: 1.65;
-
     list-style: decimal;
 }
 
@@ -329,7 +327,6 @@
     color: var(--color-text-muted);
     font-weight: 400;
     text-decoration: none;
-
     transition: color 0.15s ease, opacity 0.15s ease;
 }
 
@@ -342,17 +339,16 @@
 }
 
 .character-toc-title {
-    display: inline-flex; /* ⬅️ important */
+    display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    line-height: 1; /* ⬅️ removes vertical drift */
+    line-height: 1;
 }
 
 .toc-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     color: var(--color-text-muted);
     opacity: 0.7;
     transform: translateY(-0.5px);
@@ -397,7 +393,7 @@
     gap: 1rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid var(--color-border);
-    padding-left: 0.25rem; /* subtle alignment tweak */
+    padding-left: 0.25rem;
 }
 
 .gallery-tab-list label {
@@ -417,17 +413,18 @@
     display: none;
 }
 
-/* Active tab label */
 input[id$="concept-art"]:checked ~ .gallery-tab-list label[for$="concept-art"],
 input[id$="cover-art"]:checked ~ .gallery-tab-list label[for$="cover-art"] {
     color: var(--color-accent);
     border-bottom-color: var(--color-accent);
 }
 
-/* Show correct panel */
 input[id$="concept-art"]:checked ~ .gallery-concept-panel,
 input[id$="cover-art"]:checked ~ .gallery-cover-panel {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 .gallery-image {
@@ -450,14 +447,11 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
 .gallery-image-card {
     max-width: 22rem;
     margin: 0 auto;
-
     border: 1px solid var(--color-border);
     border-radius: 0.75rem;
     overflow: hidden;
     background-color: var(--color-background);
-
     padding: 0.75rem 0.6rem 0.6rem;
-
     transform: translateY(0);
     transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
@@ -478,7 +472,6 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
 .gallery-image-card figcaption {
     margin-top: 0.4rem;
     padding: 0;
-
     color: var(--color-text-muted);
     font-size: 0.9rem;
     text-align: center;
@@ -501,7 +494,6 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
     padding: 1.5rem;
     background: color-mix(in srgb, var(--color-background) 82%, transparent);
     backdrop-filter: blur(4px);
-
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -521,7 +513,6 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
     height: auto;
     border: 1px solid var(--color-border);
     background-color: var(--color-background);
-
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.2s ease, transform 0.2s ease;
@@ -536,23 +527,18 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
     position: fixed;
     top: 1rem;
     right: 1.25rem;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     width: 2rem;
     height: 2rem;
     padding: 0;
-
     border: none;
     background: transparent;
     color: var(--color-text);
-
     font-size: 1.25rem;
     line-height: 1;
     cursor: pointer;
-
     z-index: 1001;
 }
 
@@ -568,30 +554,22 @@ input[id$="cover-art"]:checked ~ .gallery-cover-panel {
     color: currentColor;
 }
 
-input[id$="concept-art"]:checked ~ .gallery-concept-panel,
-input[id$="cover-art"]:checked ~ .gallery-cover-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-}
-
 @media (min-width: 1200px) {
     main:has(.character-page) {
         display: block;
         width: 100%;
-        max-width: 110rem; /* ⬅️ wider overall page */
+        max-width: 110rem;
         margin-left: auto;
         margin-right: auto;
     }
 
     .character-shell {
         display: grid;
-        grid-template-columns: minmax(0, 4fr) minmax(22rem, 1.3fr); /* ⬅️ wider infobox + main */
+        grid-template-columns: minmax(0, 4fr) minmax(22rem, 1.3fr);
         gap: 2.5rem;
         align-items: start;
         width: 100%;
-        max-width: 90rem; /* ⬅️ increased from 72rem */
+        max-width: 90rem;
         margin-left: auto;
         margin-right: auto;
     }
