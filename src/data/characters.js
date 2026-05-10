@@ -241,7 +241,7 @@ export const london = {
   series: 'Pink Guy',
   category: 'Characters',
   overview: `
-    <strong>London</strong> (ロンドン <em>Rondon</em>) is a major character from the <em>Pink Guy</em> series. She is an Administrator in the Bureau of Arcane Affairs, an international organization responsible for overseeing arcane phenomena.
+    <strong>London</strong> (ロンドン <em>Rondon</em>) is a major character from the <em>Pink Guy</em> series. She is the Administrator in the Bureau of Arcane Affairs, an international organization responsible for overseeing arcane phenomena.
   `,
   sections: [
     {
