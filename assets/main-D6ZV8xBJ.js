@@ -279,7 +279,7 @@
               https://placehold.co/800x1000 800w,
               https://placehold.co/1200x1500 1200w
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"None",fullImage:"https://placehold.co/1200x1500",caption:"Cover Art 2"}]}]}},o={slug:"london",name:"London",series:"Pink Guy",category:"Characters",overview:`
-    <strong>London</strong> (ロンドン <em>Rondon</em>) is a major character from the <em>Pink Guy</em> series. She is an Administrator in the Bureau of Arcane Affairs, an international organization responsible for overseeing arcane phenomena.
+    <strong>London</strong> (ロンドン <em>Rondon</em>) is a major character from the <em>Pink Guy</em> series. She is the Administrator in the Bureau of Arcane Affairs, an international organization responsible for overseeing arcane phenomena.
   `,sections:[{id:"appearance",title:"Appearance",content:`
         <p>
           London is a woman with light skin and a slender build.
