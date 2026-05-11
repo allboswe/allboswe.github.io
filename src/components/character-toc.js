@@ -7,7 +7,7 @@ export function renderCharacterTOC(character) {
     .join('');
 
   return `
-    <nav class="character-toc is-collapsed" aria-label="Table of contents">
+    <nav class="character-toc" aria-label="Table of contents">
       <div class="character-toc-header">
         <h2 class="character-toc-title">
           <span class="toc-icon" aria-hidden="true">
@@ -24,8 +24,13 @@ export function renderCharacterTOC(character) {
           </span>
           Contents
         </h2>
-        <button class="character-toc-toggle" type="button" aria-expanded="false">
-          show
+
+        <button
+          class="character-toc-toggle"
+          type="button"
+          aria-expanded="true"
+        >
+          hide
         </button>
       </div>
 
