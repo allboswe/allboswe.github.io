@@ -189,14 +189,14 @@ export const dandy = {
             caption: 'Concept Art 1',
           },
           {
-            src: 'https://placehold.co/800x481',
+            src: '/images/dandy-concept-(hybrid)-800.webp',
             srcset: `
-              https://placehold.co/800x481 800w,
-              https://placehold.co/1280x769 1280w
+              /images/dandy-concept-(hybrid)-800.webp 800w,
+              /images/dandy-concept-(hybrid)-1280.webp 1280w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'None',
-            fullImage: 'https://placehold.co/1280x769',
+            alt: 'A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs.',
+            fullImage: '/images/dandy-concept-(hybrid)-1280.webp',
             caption: 'Concept Art 2',
           },
         ],
