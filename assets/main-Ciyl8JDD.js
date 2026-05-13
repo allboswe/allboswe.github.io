@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&l(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function l(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function T(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),l=document.querySelectorAll(".gallery-image");if(!e||!a||!n||l.length===0)return;function t(s){const B=s.dataset.fullImage||s.src;a.src=B,a.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}l.forEach(s=>{s.addEventListener("click",()=>{t(s)})}),n.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function P(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const y=document.documentElement,w="theme";function I(){return localStorage.getItem(w)}function x(){const e=y.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function m(e){const a=document.getElementById("theme-toggle");y.setAttribute("data-theme",e),localStorage.setItem(w,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function z(){const e=x();m(e==="dark"?"light":"dark")}function H(){const e=I();m(e==="light"||e==="dark"?e:x()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&z()})}function N(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function E(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function T(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),r=document.querySelectorAll(".gallery-image");if(!e||!a||!n||r.length===0)return;function t(s){const B=s.dataset.fullImage||s.src;a.src=B,a.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}r.forEach(s=>{s.addEventListener("click",()=>{t(s)})}),n.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function P(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const y=document.documentElement,w="theme";function z(){return localStorage.getItem(w)}function x(){const e=y.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function m(e){const a=document.getElementById("theme-toggle");y.setAttribute("data-theme",e),localStorage.setItem(w,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function I(){const e=x();m(e==="dark"?"light":"dark")}function H(){const e=z();m(e==="light"||e==="dark"?e:x()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&I()})}function E(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function N(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -84,7 +84,7 @@
       </div>
     </footer>
   `}function u(e){return`
-    ${E()}
+    ${N()}
     <main>
       ${e}
     </main>
@@ -145,7 +145,7 @@
       </div>
     </section>
   `)}function $(e){return`
-    <nav class="character-toc is-collapsed" aria-label="Table of contents">
+    <nav class="character-toc" aria-label="Table of contents">
       <div class="character-toc-header">
         <h2 class="character-toc-title">
           <span class="toc-icon" aria-hidden="true">
@@ -162,8 +162,13 @@
           </span>
           Contents
         </h2>
-        <button class="character-toc-toggle" type="button" aria-expanded="false">
-          show
+
+        <button
+          class="character-toc-toggle"
+          type="button"
+          aria-expanded="true"
+        >
+          hide
         </button>
       </div>
 
@@ -198,7 +203,7 @@
       <dt>${e.label}</dt>
       <dd${a}>${e.value}</dd>
     </div>
-  `}function q(e){return`
+  `}function D(e){return`
     <dl class="character-facts">
       <div class="character-facts-section">
         <dt>${e.heading}</dt>
@@ -206,7 +211,7 @@
 
       ${e.rows.map(j).join("")}
     </dl>
-  `}function p(e){const{image:a,groups:n}=e.infobox;return`
+  `}function g(e){const{image:a,groups:n}=e.infobox;return`
     <aside class="character-infobox" aria-label="${e.name} infobox">
       <div class="character-infobox-card">
         <div class="character-infobox-header">
@@ -227,19 +232,19 @@
           </div>
         </figure>
 
-        ${n.map(q).join("")}
+        ${n.map(D).join("")}
       </div>
     </aside>
-  `}function D(e){return`
+  `}function q(e){return`
     <section class="character-section" id="${e.id}">
       <h2>${e.title}</h2>
       ${e.content}
     </section>
-  `}function A(e){return e.sections.map(D).join("")}function C(e){return`
+  `}function A(e){return e.sections.map(q).join("")}function C(e){return`
     <section class="character-section" id="overview">
       <p>${e.overview}</p>
     </section>
-  `}const r={slug:"dandy-valentine",name:"Dandy Valentine",series:"Pink Guy",category:"Characters",overview:`
+  `}const l={slug:"dandy-valentine",name:"Dandy Valentine",series:"Pink Guy",category:"Characters",overview:`
     <strong>Dandy Valentine</strong> (バレンタイン・ダンディ <em>Barentain Dandi</em>) is the protagonist of the <em>Pink Guy</em> series. He frequently becomes involved in situations he does not fully understand.
   `,sections:[{id:"appearance",title:"Appearance",content:`
         <p>
@@ -269,10 +274,10 @@
             `,className:"affiliation"},{label:"Jurisdiction",value:"United States"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"TBA"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/dandy-concept-(human)-800.webp",srcset:`
               /images/dandy-concept-(human)-800.webp 800w,
               /images/dandy-concept-(human)-1280.webp 1280w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat.",fullImage:"/images/dandy-concept-(human)-1280.webp",caption:"Concept Art 1"},{src:"https://placehold.co/800x481",srcset:`
-              https://placehold.co/800x481 800w,
-              https://placehold.co/1280x769 1280w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"None",fullImage:"https://placehold.co/1280x769",caption:"Concept Art 2"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/dandy-infobox-(human)-800.webp",srcset:`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat.",fullImage:"/images/dandy-concept-(human)-1280.webp",caption:"Concept Art 1"},{src:"/images/dandy-concept-(hybrid)-800.webp",srcset:`
+              /images/dandy-concept-(hybrid)-800.webp 800w,
+              /images/dandy-concept-(hybrid)-1280.webp 1280w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs.",fullImage:"/images/dandy-concept-(hybrid)-1280.webp",caption:"Concept Art 2"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/dandy-infobox-(human)-800.webp",srcset:`
               /images/dandy-infobox-(human)-800.webp 800w,
               /images/dandy-infobox-(human)-1200.webp 1200w
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.",fullImage:"/images/dandy-infobox-(human)-1200.webp",caption:"Cover Art 1"},{src:"https://placehold.co/800x1000",srcset:`
@@ -309,26 +314,26 @@
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut.",fullImage:"/images/london-concept-1280.webp",caption:"Concept Art 1"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/london-infobox-800.webp",srcset:`
               /images/london-infobox-800.webp 800w,
               /images/london-infobox-1200.webp 1200w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt.",fullImage:"/images/london-infobox-1200.webp",caption:"Cover Art 1"}]}]}};function M(){return u(`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt.",fullImage:"/images/london-infobox-1200.webp",caption:"Cover Art 1"}]}]}};function V(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(r,"overview")}
-          ${C(r)}
-          ${$(r)}
-          ${A(r)}
+          ${h(l,"overview")}
+          ${C(l)}
+          ${$(l)}
+          ${A(l)}
           </article>
-        ${p(r)}
+        ${g(l)}
       </div>
     </section>
-  `)}function O(e){const a=`${e.slug}-gallery-tabs`,n=e.gallery.tabs.map((t,i)=>`
+  `)}function M(e){const a=`${e.slug}-gallery-tabs`,n=e.gallery.tabs.map((t,i)=>`
         <input
           type="radio"
           name="${a}"
           id="${e.slug}-${t.id}"
           ${i===0?"checked":""}
         />
-      `).join(""),l=e.gallery.tabs.map(t=>`<label for="${e.slug}-${t.id}">${t.label}</label>`).join("");return{inputs:n,labels:l}}function R(e){return e.gallery.tabs.map(a=>{const n=a.images.map(t=>`
+      `).join(""),r=e.gallery.tabs.map(t=>`<label for="${e.slug}-${t.id}">${t.label}</label>`).join("");return{inputs:n,labels:r}}function O(e){return e.gallery.tabs.map(a=>{const n=a.images.map(t=>`
             <figure class="gallery-image-card">
               <img
                 src="${t.src}"
@@ -346,7 +351,7 @@
         <div class="gallery-tab-panel ${`gallery-${a.id.replace("-art","")}-panel`}">
           ${n}
         </div>
-      `}).join("")}function L(e){const{inputs:a,labels:n}=O(e),l=R(e);return`
+      `}).join("")}function L(e){const{inputs:a,labels:n}=M(e),r=O(e);return`
     <section class="character-section character-gallery-section">
       <div class="gallery-category-header">
         <h2>${e.gallery.category}</h2>
@@ -359,7 +364,7 @@
           ${n}
         </div>
 
-        ${l}
+        ${r}
       </div>
     </section>
   `}function S(){return`
@@ -372,14 +377,14 @@
 
       <img src="" alt="" class="gallery-lightbox-image" />
     </div>
-  `}function V(){return u(`
+  `}function R(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(r,"gallery")}
-          ${L(r)}
+          ${h(l,"gallery")}
+          ${L(l)}
         </article>
-        ${p(r)}
+        ${g(l)}
       </div>
       ${S()}
     </section>
@@ -392,7 +397,7 @@
           ${$(o)}
           ${A(o)}
           </article>
-        ${p(o)}
+        ${g(o)}
       </div>
     </section>
   `)}function F(){return u(`
@@ -402,8 +407,8 @@
           ${h(o,"gallery")}
           ${L(o)}
         </article>
-        ${p(o)}
+        ${g(o)}
       </div>
       ${S()}
     </section>
-  `)}const b=document.querySelector("#app"),K={home:k,dandy:M,london:W,"dandy-gallery":V,"london-gallery":F},U=b?.dataset.page||"home",_=K[U]||k;b&&(b.innerHTML=_());H();N();P();T();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),f=document.querySelector("#menu-close"),v=document.querySelector(".menu-backdrop");function J(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function g(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&f&&v&&(d.addEventListener("click",J),f.addEventListener("click",g),v.addEventListener("click",g),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&g()}));
+  `)}const b=document.querySelector("#app"),K={home:k,dandy:V,london:W,"dandy-gallery":R,"london-gallery":F},U=b?.dataset.page||"home",_=K[U]||k;b&&(b.innerHTML=_());H();E();P();T();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),f=document.querySelector("#menu-close"),v=document.querySelector(".menu-backdrop");function J(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function p(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&f&&v&&(d.addEventListener("click",J),f.addEventListener("click",p),v.addEventListener("click",p),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&p()}));
