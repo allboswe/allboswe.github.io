@@ -112,7 +112,7 @@ export const dandy = {
           },
           {
             label: 'Dislikes',
-            value: 'Cats, Heartbreak',
+            value: 'Cats',
           },
           {
             label: 'Education',
@@ -345,7 +345,7 @@ export const london = {
           },
           {
             label: 'Dislikes',
-            value: 'Cliffhangers, Tea',
+            value: 'Tea',
           },
           {
             label: 'Education',
@@ -365,7 +365,7 @@ export const london = {
           },
           {
             label: 'Likes',
-            value: 'Black Coffee, Classic Rock',
+            value: 'Coffee, Classic Rock',
           },
           {
             label: 'Status',
