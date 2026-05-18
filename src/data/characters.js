@@ -17,7 +17,7 @@ export const dandy = {
           Dandy Valentine is a young man with light skin, a lean build, pale blond hair, and dull grey-blue eyes that often appear half-open.
           A small adhesive bandage sits across the bridge of his nose, and one of his upper front teeth is missing, leaving a slight gap when he smiles or speaks.
           He usually wears a faded pastel pink hoodie with the hood pulled up, along with torn dark blue jeans and worn sneakers.
-          After coming into contact with an alien, he develops large wolf ears, a long wolf tail, claw-like fingernails, and small fangs.
+          After coming into contact with an arcane phenomenon, he develops large wolf ears, a long wolf tail, claw-like fingernails, and small fangs.
           He later begins wearing a pastel pink blazer over a white dress shirt and black tie, paired with black trousers and black dress shoes.
         </p>
       `,
@@ -34,6 +34,39 @@ export const dandy = {
           Frustration with his situation often leads to reckless decisions.
         </p>
       `,
+    },
+    {
+      id: 'powers',
+      title: 'Powers',
+      content: `
+        <p>
+          Dandy Valentine possesses arcane phenomena tied to adaptation and instinct.
+          His primary power develops through exposure to and understanding of other arcane phenomena, allowing him to interpret imperfect variations used by those he encounters.
+          He also has a set of bestial subpowers, which only appear after suffering fatal injuries.
+          Unlike most characters, his survival appears closely tied to his own will to continue living.
+        </p>
+        <h3>Archetypal Drift</h3>
+        <p>
+          <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
+          These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
+          He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
+        </p>
+        <h3>Subpowers</h3>
+        <p>
+          Like other major arcane phenomena, he exhibits the common abilities typically associated with them.
+          He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
+        </p>
+        <h4>Bestial Convergence</h4>
+        <p>
+          <strong>Bestial Convergence</strong> is a passive ability that causes him to gradually develop permanent bestial traits.
+          These changes become more pronounced over time and are accompanied by shifts in behavior, instinctive response, and physical structure.
+        </p>
+        <h4>Bestial Weaponization</h4>
+        <p>
+          <strong>Bestial Weaponization</strong> is an active ability that allows him to utilize his transformed physical traits as weapons.
+          Features such as his elongated fingernails, fangs, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
+        </p>
+      `
     },
   ],
   infobox: {
