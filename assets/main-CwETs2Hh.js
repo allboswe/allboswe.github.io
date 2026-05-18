@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function T(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),r=document.querySelectorAll(".gallery-image");if(!e||!a||!n||r.length===0)return;function t(s){const B=s.dataset.fullImage||s.src;a.src=B,a.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}r.forEach(s=>{s.addEventListener("click",()=>{t(s)})}),n.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function P(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const y=document.documentElement,w="theme";function z(){return localStorage.getItem(w)}function x(){const e=y.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function m(e){const a=document.getElementById("theme-toggle");y.setAttribute("data-theme",e),localStorage.setItem(w,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function I(){const e=x();m(e==="dark"?"light":"dark")}function H(){const e=z();m(e==="light"||e==="dark"?e:x()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&I()})}function E(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function N(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function T(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),r=document.querySelectorAll(".gallery-image");if(!e||!a||!n||r.length===0)return;function t(s){const B=s.dataset.fullImage||s.src;a.src=B,a.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}r.forEach(s=>{s.addEventListener("click",()=>{t(s)})}),n.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function P(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const y=document.documentElement,w="theme";function z(){return localStorage.getItem(w)}function x(){const e=y.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function m(e){const a=document.getElementById("theme-toggle");y.setAttribute("data-theme",e),localStorage.setItem(w,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function H(){const e=x();m(e==="dark"?"light":"dark")}function I(){const e=z();m(e==="light"||e==="dark"?e:x()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&H()})}function j(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function E(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </header>
-  `}function G(){return`
+  `}function N(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -84,11 +84,11 @@
       </div>
     </footer>
   `}function u(e){return`
-    ${N()}
+    ${E()}
     <main>
       ${e}
     </main>
-    ${G()}
+    ${N()}
   `}function k(){return u(`
     <section id="hero">
       <h2>Hello world.</h2>
@@ -189,7 +189,7 @@
         <a href="/pink-guy/characters/${e.slug}/gallery/" ${a==="gallery"?'aria-current="page"':""}>Gallery</a>
       </nav>
     </div>
-  `}function j(e){if(e.spoiler)return`
+  `}function G(e){if(e.spoiler)return`
       <div>
         <dt>${e.label}</dt>
         <dd>
@@ -209,9 +209,9 @@
         <dt>${e.heading}</dt>
       </div>
 
-      ${e.rows.map(j).join("")}
+      ${e.rows.map(G).join("")}
     </dl>
-  `}function g(e){const{image:a,groups:n}=e.infobox;return`
+  `}function p(e){const{image:a,groups:n}=e.infobox;return`
     <aside class="character-infobox" aria-label="${e.name} infobox">
       <div class="character-infobox-card">
         <div class="character-infobox-header">
@@ -244,14 +244,14 @@
     <section class="character-section" id="overview">
       <p>${e.overview}</p>
     </section>
-  `}const l={slug:"dandy-valentine",name:"Dandy Valentine",series:"Pink Guy",category:"Characters",overview:`
+  `}const o={slug:"dandy-valentine",name:"Dandy Valentine",series:"Pink Guy",category:"Characters",overview:`
     <strong>Dandy Valentine</strong> (バレンタイン・ダンディ <em>Barentain Dandi</em>) is the protagonist of the <em>Pink Guy</em> series. He frequently becomes involved in situations he does not fully understand.
   `,sections:[{id:"appearance",title:"Appearance",content:`
         <p>
           Dandy Valentine is a young man with light skin, a lean build, pale blond hair, and dull grey-blue eyes that often appear half-open.
           A small adhesive bandage sits across the bridge of his nose, and one of his upper front teeth is missing, leaving a slight gap when he smiles or speaks.
           He usually wears a faded pastel pink hoodie with the hood pulled up, along with torn dark blue jeans and worn sneakers.
-          After coming into contact with an alien, he develops large wolf ears, a long wolf tail, claw-like fingernails, and small fangs.
+          After coming into contact with an arcane phenomenon, he develops large wolf ears, a long wolf tail, claw-like fingernails, and small fangs.
           He later begins wearing a pastel pink blazer over a white dress shirt and black tie, paired with black trousers and black dress shoes.
         </p>
       `},{id:"personality",title:"Personality",content:`
@@ -261,6 +261,34 @@
           He frequently talks about wanting an ordinary life and pursuing the <em>American Dream</em>, especially having a stable job, attending college, owning a home, getting married, and raising a family.
           He also becomes attached to people quickly and shows strong loyalty toward those he grows close to.
           Frustration with his situation often leads to reckless decisions.
+        </p>
+      `},{id:"powers",title:"Powers",content:`
+        <p>
+          Dandy Valentine possesses arcane phenomena tied to adaptation and instinct.
+          His primary power develops through exposure to and understanding of other arcane phenomena, allowing him to interpret imperfect variations used by those he encounters.
+          He also has a set of bestial subpowers, which only appear after suffering fatal injuries.
+          Unlike most characters, his survival appears closely tied to his own will to continue living.
+        </p>
+        <h3>Archetypal Drift</h3>
+        <p>
+          <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
+          These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
+          He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
+        </p>
+        <h3>Subpowers</h3>
+        <p>
+          Like other major arcane phenomena, he exhibits the common abilities typically associated with them.
+          He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
+        </p>
+        <h4>Bestial Convergence</h4>
+        <p>
+          <strong>Bestial Convergence</strong> is a passive ability that causes him to gradually develop permanent bestial traits.
+          These changes become more pronounced over time and are accompanied by shifts in behavior, instinctive response, and physical structure.
+        </p>
+        <h4>Bestial Weaponization</h4>
+        <p>
+          <strong>Bestial Weaponization</strong> is an active ability that allows him to utilize his transformed physical traits as weapons.
+          Features such as his elongated fingernails, fangs, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
         </p>
       `}],infobox:{image:{src:"/images/dandy-infobox-(human)-1200.webp",srcset:`
         /images/dandy-infobox-(human)-800.webp 800w,
@@ -283,7 +311,7 @@
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.",fullImage:"/images/dandy-infobox-(human)-1200.webp",caption:"Cover Art 1"},{src:"https://placehold.co/800x1000",srcset:`
               https://placehold.co/800x1000 800w,
               https://placehold.co/1200x1500 1200w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"None",fullImage:"https://placehold.co/1200x1500",caption:"Cover Art 2"}]}]}},o={slug:"london",name:"London",series:"Pink Guy",category:"Characters",overview:`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"None",fullImage:"https://placehold.co/1200x1500",caption:"Cover Art 2"}]}]}},l={slug:"london",name:"London",series:"Pink Guy",category:"Characters",overview:`
     <strong>London</strong> (ロンドン <em>Rondon</em>) is a major character from the <em>Pink Guy</em> series. She is the Administrator in the Bureau of Arcane Affairs, an international organization responsible for overseeing arcane phenomena.
   `,sections:[{id:"appearance",title:"Appearance",content:`
         <p>
@@ -318,12 +346,12 @@
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(l,"overview")}
-          ${C(l)}
-          ${$(l)}
-          ${A(l)}
+          ${h(o,"overview")}
+          ${C(o)}
+          ${$(o)}
+          ${A(o)}
           </article>
-        ${g(l)}
+        ${p(o)}
       </div>
     </section>
   `)}function M(e){const a=`${e.slug}-gallery-tabs`,n=e.gallery.tabs.map((t,i)=>`
@@ -381,10 +409,10 @@
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(l,"gallery")}
-          ${L(l)}
+          ${h(o,"gallery")}
+          ${L(o)}
         </article>
-        ${g(l)}
+        ${p(o)}
       </div>
       ${S()}
     </section>
@@ -392,23 +420,23 @@
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(o,"overview")}
-          ${C(o)}
-          ${$(o)}
-          ${A(o)}
+          ${h(l,"overview")}
+          ${C(l)}
+          ${$(l)}
+          ${A(l)}
           </article>
-        ${g(o)}
+        ${p(l)}
       </div>
     </section>
   `)}function F(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(o,"gallery")}
-          ${L(o)}
+          ${h(l,"gallery")}
+          ${L(l)}
         </article>
-        ${g(o)}
+        ${p(l)}
       </div>
       ${S()}
     </section>
-  `)}const b=document.querySelector("#app"),K={home:k,dandy:V,london:W,"dandy-gallery":R,"london-gallery":F},U=b?.dataset.page||"home",_=K[U]||k;b&&(b.innerHTML=_());H();E();P();T();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),f=document.querySelector("#menu-close"),v=document.querySelector(".menu-backdrop");function J(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function p(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&f&&v&&(d.addEventListener("click",J),f.addEventListener("click",p),v.addEventListener("click",p),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&p()}));
+  `)}const b=document.querySelector("#app"),U={home:k,dandy:V,london:W,"dandy-gallery":R,"london-gallery":F},K=b?.dataset.page||"home",_=U[K]||k;b&&(b.innerHTML=_());I();j();P();T();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),f=document.querySelector("#menu-close"),v=document.querySelector(".menu-backdrop");function J(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function g(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&f&&v&&(d.addEventListener("click",J),f.addEventListener("click",g),v.addEventListener("click",g),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&g()}));
