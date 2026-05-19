@@ -17,7 +17,7 @@ export const dandy = {
           Dandy Valentine is a young man with light skin, a lean build, pale blond hair, and dull grey-blue eyes that often appear half-open.
           A small adhesive bandage sits across the bridge of his nose, and one of his upper front teeth is missing, leaving a slight gap when he smiles or speaks.
           He usually wears a faded pastel pink hoodie with the hood pulled up, along with torn dark blue jeans and worn sneakers.
-          After coming into contact with an arcane phenomenon, he develops large wolf ears, a long wolf tail, claw-like fingernails, and small fangs.
+          After coming into contact with an arcane phenomenon, he develops a long wolf tail, claw-like fingernails, large wolf ears, and small fangs.
           He later begins wearing a pastel pink blazer over a white dress shirt and black tie, paired with black trousers and black dress shoes.
         </p>
       `,
@@ -43,15 +43,15 @@ export const dandy = {
           Dandy Valentine possesses arcane phenomena tied to adaptation and instinct.
           His primary power develops through exposure to and understanding of other arcane phenomena, allowing him to interpret imperfect variations used by those he encounters.
           He also has a set of bestial subpowers, which only appear after suffering fatal injuries.
-          Unlike most characters, his survival appears closely tied to his own will to continue living.
+          Unlike most characters, his survival is closely tied to his own will to continue living.
         </p>
-        <h3>Archetypal Drift</h3>
+        <h3 id="archetypal-drift">Archetypal Drift</h3>
         <p>
           <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
           These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
           He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
         </p>
-        <h3>Subpowers</h3>
+        <h3 id="subpowers">Subpowers</h3>
         <p>
           Like other arcane phenomena, he exhibits the common abilities typically associated with them.
           He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
@@ -138,12 +138,6 @@ export const dandy = {
         heading: 'Personal Information',
         rows: [
           {
-            label: 'Arcana',
-            spoiler: true,
-            buttonText: 'Reveal Arcana',
-            revealedValue: 'The Fool',
-          },
-          {
             label: 'Dislikes',
             value: 'Cats',
           },
@@ -168,10 +162,37 @@ export const dandy = {
             value: 'Food, Women',
           },
           {
+            label: 'Personality',
+            value: 'ESFP',
+          },
+          {
             label: 'Status',
             spoiler: true,
             buttonText: 'Reveal Status',
             revealedValue: 'Alive',
+          },
+        ],
+      },
+      {
+        heading: 'Phenomena Information',
+        rows: [
+          {
+            label: 'Arcana',
+            spoiler: true,
+            buttonText: 'Reveal Arcana',
+            revealedValue: 'The Fool',
+          },
+          {
+            label: 'Power',
+            value: 'Archetypal Drift',
+          },
+          {
+            label: 'Subpower',
+            value: 'Bestial',
+          },
+          {
+            label: 'Weapon',
+            value: '—',
           },
         ],
       },
@@ -231,6 +252,28 @@ export const dandy = {
             alt: 'A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs.',
             fullImage: '/images/dandy-concept-(hybrid)-1280.webp',
             caption: 'Concept Art 2',
+          },
+          {
+            src: '/images/dandy-concept-sheet-(human)-800.webp',
+            srcset: `
+              /images/dandy-concept-sheet-(human)-800.webp 800w,
+              /images/dandy-concept-sheet-(human)-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat including three facial expressions shown on the side such as neutral, excited, and smiling.',
+            fullImage: '/images/dandy-concept-sheet-(human)-1280.webp',
+            caption: 'Character Sheet 1',
+          },
+          {
+            src: '/images/dandy-concept-sheet-(hybrid)-800.webp',
+            srcset: `
+              /images/dandy-concept-sheet-(hybrid)-800.webp 800w,
+              /images/dandy-concept-sheet-(hybrid)-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs including three facial expressions shown on the side such as neutral, serious, and smiling.',
+            fullImage: '/images/dandy-concept-sheet-(hybrid)-1280.webp',
+            caption: 'Character Sheet 2',
           },
         ],
       },
@@ -371,12 +414,6 @@ export const london = {
         heading: 'Personal Information',
         rows: [
           {
-            label: 'Arcana',
-            spoiler: true,
-            buttonText: 'Reveal Arcana',
-            revealedValue: 'The World',
-          },
-          {
             label: 'Dislikes',
             value: 'Tea',
           },
@@ -394,17 +431,44 @@ export const london = {
           },
           {
             label: 'Hobbies',
-            value: 'Reading, Tarot',
+            value: 'French Tarot, Reading',
           },
           {
             label: 'Likes',
             value: 'Coffee, Classic Rock',
           },
           {
+            label: 'Personality',
+            value: 'INTJ',
+          },
+          {
             label: 'Status',
             spoiler: true,
             buttonText: 'Reveal Status',
             revealedValue: 'Alive',
+          },
+        ],
+      },
+      {
+        heading: 'Phenomena Information',
+        rows: [
+          {
+            label: 'Arcana',
+            spoiler: true,
+            buttonText: 'Reveal Arcana',
+            revealedValue: 'The World',
+          },
+          {
+            label: 'Power',
+            value: 'Absolute Authority',
+          },
+          {
+            label: 'Subpower',
+            value: '—',
+          },
+          {
+            label: 'Weapon',
+            value: '—',
           },
         ],
       },
@@ -453,6 +517,17 @@ export const london = {
             alt: 'A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut.',
             fullImage: '/images/london-concept-1280.webp',
             caption: 'Concept Art 1',
+          },
+          {
+            src: '/images/london-concept-sheet-800.webp',
+            srcset: `
+              /images/london-concept-sheet-800.webp 800w,
+              /images/london-concept-sheet-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut including three facial expressions shown on the side such as neutral, smiling, and tilted.',
+            fullImage: '/images/london-concept-sheet-1280.webp',
+            caption: 'Character Sheet 1',
           },
         ],
       },
