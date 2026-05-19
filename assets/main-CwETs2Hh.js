@@ -277,7 +277,7 @@
         </p>
         <h3>Subpowers</h3>
         <p>
-          Like other major arcane phenomena, he exhibits the common abilities typically associated with them.
+          Like other arcane phenomena, he exhibits the common abilities typically associated with them.
           He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
         </p>
         <h4>Bestial Convergence</h4>
