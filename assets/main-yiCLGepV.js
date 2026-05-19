@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function T(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),r=document.querySelectorAll(".gallery-image");if(!e||!a||!n||r.length===0)return;function t(s){const B=s.dataset.fullImage||s.src;a.src=B,a.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}r.forEach(s=>{s.addEventListener("click",()=>{t(s)})}),n.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function P(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const y=document.documentElement,w="theme";function z(){return localStorage.getItem(w)}function x(){const e=y.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function m(e){const a=document.getElementById("theme-toggle");y.setAttribute("data-theme",e),localStorage.setItem(w,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function H(){const e=x();m(e==="dark"?"light":"dark")}function I(){const e=z();m(e==="light"||e==="dark"?e:x()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&H()})}function j(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function E(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function B(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),r=document.querySelectorAll(".gallery-image");if(!e||!a||!n||r.length===0)return;function t(s){const u=s.dataset.fullImage||s.src;a.src=u,a.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}r.forEach(s=>{s.addEventListener("click",()=>{t(s)})}),n.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function T(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const w=document.documentElement,x="theme";function z(){return localStorage.getItem(x)}function k(){const e=w.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function b(e){const a=document.getElementById("theme-toggle");w.setAttribute("data-theme",e),localStorage.setItem(x,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function I(){const e=k();b(e==="dark"?"light":"dark")}function H(){const e=z();b(e==="light"||e==="dark"?e:k()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&I()})}function j(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function D(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -60,7 +60,12 @@
         </div>
       </div>
     </header>
-  `}function N(){return`
+
+    <div class="site-notice" role="status">
+      <span class="site-notice-emoji" aria-hidden="true">🚧</span>
+      <span>Hang in there, baby! (This website is still a work in progress.)</span>
+    </div>
+  `}function E(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -83,13 +88,13 @@
         </div>
       </div>
     </footer>
-  `}function u(e){return`
-    ${E()}
+  `}function h(e){return`
+    ${D()}
     <main>
       ${e}
     </main>
-    ${N()}
-  `}function k(){return u(`
+    ${E()}
+  `}function $(){return h(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
@@ -108,10 +113,9 @@
             <img src="https://placehold.co/640x320" alt="Placeholder project image" />
           </div>
           <div class="card-content">
-            <h3 class="card-title">Title</h3>
+            <h3 class="card-title">Yap</h3>
             <p class="card-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum
-              bibendum maximus. Vivamus at viverra tortor, sed eleifend erat.
+              A Chatango bot designed for conversation handling, room moderation, and utility automation.
             </p>
           </div>
           <ul class="card-tags">
@@ -137,14 +141,14 @@
             </p>
           </div>
           <ul class="card-tags">
-            <li class="tag">action</li>
-            <li class="tag">dark fantasy</li>
-            <li class="tag">supernatural</li>
+            <li class="tag">action fantasy</li>
+            <li class="tag">comedy</li>
+            <li class="tag">thriller/horror</li>
           </ul>
         </article>
       </div>
     </section>
-  `)}function $(e){return`
+  `)}function A(e){return`
     <nav class="character-toc" aria-label="Table of contents">
       <div class="character-toc-header">
         <h2 class="character-toc-title">
@@ -173,10 +177,28 @@
       </div>
 
       <ol class="character-toc-list">
-        ${e.sections.map(n=>`<li><a href="#${n.id}">${n.title}</a></li>`).join("")}
+        ${e.sections.map(n=>{let r="";return n.id==="powers"&&(r=`
+          <ol>
+            ${[...new DOMParser().parseFromString(n.content,"text/html").querySelectorAll("h3")].map(u=>`
+                  <li>
+                    <a href="#${u.textContent.toLowerCase().replace(/\s+/g,"-")}">
+                      ${u.textContent}
+                    </a>
+                  </li>
+                `).join("")}
+          </ol>
+        `),`
+        <li>
+          <a href="#${n.id}">
+            ${n.title}
+          </a>
+
+          ${r}
+        </li>
+      `}).join("")}
       </ol>
     </nav>
-  `}function h(e,a){return`
+  `}function p(e,a){return`
     <div class="character-title-block">
       <p class="character-kicker">${e.series} / ${e.category}</p>
       <h1>${e.name}</h1>
@@ -189,7 +211,7 @@
         <a href="/pink-guy/characters/${e.slug}/gallery/" ${a==="gallery"?'aria-current="page"':""}>Gallery</a>
       </nav>
     </div>
-  `}function G(e){if(e.spoiler)return`
+  `}function N(e){if(e.spoiler)return`
       <div>
         <dt>${e.label}</dt>
         <dd>
@@ -203,15 +225,15 @@
       <dt>${e.label}</dt>
       <dd${a}>${e.value}</dd>
     </div>
-  `}function D(e){return`
+  `}function G(e){return`
     <dl class="character-facts">
       <div class="character-facts-section">
         <dt>${e.heading}</dt>
       </div>
 
-      ${e.rows.map(G).join("")}
+      ${e.rows.map(N).join("")}
     </dl>
-  `}function p(e){const{image:a,groups:n}=e.infobox;return`
+  `}function g(e){const{image:a,groups:n}=e.infobox;return`
     <aside class="character-infobox" aria-label="${e.name} infobox">
       <div class="character-infobox-card">
         <div class="character-infobox-header">
@@ -232,7 +254,7 @@
           </div>
         </figure>
 
-        ${n.map(D).join("")}
+        ${n.map(G).join("")}
       </div>
     </aside>
   `}function q(e){return`
@@ -240,7 +262,7 @@
       <h2>${e.title}</h2>
       ${e.content}
     </section>
-  `}function A(e){return e.sections.map(q).join("")}function C(e){return`
+  `}function C(e){return e.sections.map(q).join("")}function S(e){return`
     <section class="character-section" id="overview">
       <p>${e.overview}</p>
     </section>
@@ -251,7 +273,7 @@
           Dandy Valentine is a young man with light skin, a lean build, pale blond hair, and dull grey-blue eyes that often appear half-open.
           A small adhesive bandage sits across the bridge of his nose, and one of his upper front teeth is missing, leaving a slight gap when he smiles or speaks.
           He usually wears a faded pastel pink hoodie with the hood pulled up, along with torn dark blue jeans and worn sneakers.
-          After coming into contact with an arcane phenomenon, he develops large wolf ears, a long wolf tail, claw-like fingernails, and small fangs.
+          After coming into contact with an arcane phenomenon, he develops a long wolf tail, claw-like fingernails, large wolf ears, and small fangs.
           He later begins wearing a pastel pink blazer over a white dress shirt and black tie, paired with black trousers and black dress shoes.
         </p>
       `},{id:"personality",title:"Personality",content:`
@@ -267,15 +289,15 @@
           Dandy Valentine possesses arcane phenomena tied to adaptation and instinct.
           His primary power develops through exposure to and understanding of other arcane phenomena, allowing him to interpret imperfect variations used by those he encounters.
           He also has a set of bestial subpowers, which only appear after suffering fatal injuries.
-          Unlike most characters, his survival appears closely tied to his own will to continue living.
+          Unlike most characters, his survival is closely tied to his own will to continue living.
         </p>
-        <h3>Archetypal Drift</h3>
+        <h3 id="archetypal-drift">Archetypal Drift</h3>
         <p>
           <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
           These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
           He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
         </p>
-        <h3>Subpowers</h3>
+        <h3 id="subpowers">Subpowers</h3>
         <p>
           Like other arcane phenomena, he exhibits the common abilities typically associated with them.
           He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
@@ -293,10 +315,10 @@
       `}],infobox:{image:{src:"/images/dandy-infobox-(human)-1200.webp",srcset:`
         /images/dandy-infobox-(human)-800.webp 800w,
         /images/dandy-infobox-(human)-1200.webp 1200w
-      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie."},groups:[{heading:"Name",rows:[{label:"Alias",value:"Pink Guy"},{label:"Kana",value:"バレンタイン・ダンディ"},{label:"Romaji",value:"Barentain Dandi"}]},{heading:"Biological Information",rows:[{label:"Age",value:"21"},{label:"Birthday",value:"February 14"},{label:"Birthplace",value:"New York, United States"},{label:"Blood Type",value:"B+"},{label:"Gender",value:"Male"},{label:"Height",value:`180 cm (5'11")`},{label:"Species",value:"Hybrid"},{label:"Weight",value:"73 kg (160 lb)"}]},{heading:"Personal Information",rows:[{label:"Arcana",spoiler:!0,buttonText:"Reveal Arcana",revealedValue:"The Fool"},{label:"Dislikes",value:"Cats"},{label:"Education",value:`
+      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie."},groups:[{heading:"Name",rows:[{label:"Alias",value:"Pink Guy"},{label:"Kana",value:"バレンタイン・ダンディ"},{label:"Romaji",value:"Barentain Dandi"}]},{heading:"Biological Information",rows:[{label:"Age",value:"21"},{label:"Birthday",value:"February 14"},{label:"Birthplace",value:"New York, United States"},{label:"Blood Type",value:"B+"},{label:"Gender",value:"Male"},{label:"Height",value:`180 cm (5'11")`},{label:"Species",value:"Hybrid"},{label:"Weight",value:"73 kg (160 lb)"}]},{heading:"Personal Information",rows:[{label:"Dislikes",value:"Cats"},{label:"Education",value:`
               <span>Midwood High School</span>
               <span class="education-context">(dropped out)</span>
-            `,className:"education"},{label:"Habits",value:"Daydreaming"},{label:"Hobbies",value:"Sleeping"},{label:"Likes",value:"Food, Women"},{label:"Status",spoiler:!0,buttonText:"Reveal Status",revealedValue:"Alive"}]},{heading:"Professional Information",rows:[{label:"Affiliation",value:`
+            `,className:"education"},{label:"Habits",value:"Daydreaming"},{label:"Hobbies",value:"Sleeping"},{label:"Likes",value:"Food, Women"},{label:"Personality",value:"ESFP"},{label:"Status",spoiler:!0,buttonText:"Reveal Status",revealedValue:"Alive"}]},{heading:"Phenomena Information",rows:[{label:"Arcana",spoiler:!0,buttonText:"Reveal Arcana",revealedValue:"The Fool"},{label:"Power",value:"Archetypal Drift"},{label:"Subpower",value:"Bestial"},{label:"Weapon",value:"—"}]},{heading:"Professional Information",rows:[{label:"Affiliation",value:`
               <span>Bureau of Arcane Affairs</span>
               <span class="affiliation-context">Operations Specialist</span>
             `,className:"affiliation"},{label:"Jurisdiction",value:"United States"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"TBA"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/dandy-concept-(human)-800.webp",srcset:`
@@ -305,7 +327,13 @@
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat.",fullImage:"/images/dandy-concept-(human)-1280.webp",caption:"Concept Art 1"},{src:"/images/dandy-concept-(hybrid)-800.webp",srcset:`
               /images/dandy-concept-(hybrid)-800.webp 800w,
               /images/dandy-concept-(hybrid)-1280.webp 1280w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs.",fullImage:"/images/dandy-concept-(hybrid)-1280.webp",caption:"Concept Art 2"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/dandy-infobox-(human)-800.webp",srcset:`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs.",fullImage:"/images/dandy-concept-(hybrid)-1280.webp",caption:"Concept Art 2"},{src:"/images/dandy-concept-sheet-(human)-800.webp",srcset:`
+              /images/dandy-concept-sheet-(human)-800.webp 800w,
+              /images/dandy-concept-sheet-(human)-1280.webp 1280w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat including three facial expressions shown on the side such as neutral, excited, and smiling.",fullImage:"/images/dandy-concept-sheet-(human)-1280.webp",caption:"Character Sheet 1"},{src:"/images/dandy-concept-sheet-(hybrid)-800.webp",srcset:`
+              /images/dandy-concept-sheet-(hybrid)-800.webp 800w,
+              /images/dandy-concept-sheet-(hybrid)-1280.webp 1280w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs including three facial expressions shown on the side such as neutral, serious, and smiling.",fullImage:"/images/dandy-concept-sheet-(hybrid)-1280.webp",caption:"Character Sheet 2"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/dandy-infobox-(human)-800.webp",srcset:`
               /images/dandy-infobox-(human)-800.webp 800w,
               /images/dandy-infobox-(human)-1200.webp 1200w
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.",fullImage:"/images/dandy-infobox-(human)-1200.webp",caption:"Cover Art 1"},{src:"https://placehold.co/800x1000",srcset:`
@@ -330,28 +358,31 @@
       `}],infobox:{image:{src:"/images/london-infobox-1200.webp",srcset:`
         /images/london-infobox-800.webp 800w,
         /images/london-infobox-1200.webp 1200w
-      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt."},groups:[{heading:"Name",rows:[{label:"Alias",value:"—"},{label:"Kana",value:"ロンドン"},{label:"Romaji",value:"Rondon"}]},{heading:"Biological Information",rows:[{label:"Age",value:"Unknown"},{label:"Birthday",value:"April 23"},{label:"Birthplace",value:"United Kingdom"},{label:"Blood Type",value:"AB+"},{label:"Gender",value:"Female"},{label:"Height",value:`168 cm (5'6")`},{label:"Species",value:"Hybrid"},{label:"Weight",value:"59 kg (130 lb)"}]},{heading:"Personal Information",rows:[{label:"Arcana",spoiler:!0,buttonText:"Reveal Arcana",revealedValue:"The World"},{label:"Dislikes",value:"Tea"},{label:"Education",value:`
+      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt."},groups:[{heading:"Name",rows:[{label:"Alias",value:"—"},{label:"Kana",value:"ロンドン"},{label:"Romaji",value:"Rondon"}]},{heading:"Biological Information",rows:[{label:"Age",value:"Unknown"},{label:"Birthday",value:"April 23"},{label:"Birthplace",value:"United Kingdom"},{label:"Blood Type",value:"AB+"},{label:"Gender",value:"Female"},{label:"Height",value:`168 cm (5'6")`},{label:"Species",value:"Hybrid"},{label:"Weight",value:"59 kg (130 lb)"}]},{heading:"Personal Information",rows:[{label:"Dislikes",value:"Tea"},{label:"Education",value:`
               <span>University of Oxford</span>
               <span class="education-context">PPE, DPhil in Politics</span>
-            `,className:"education"},{label:"Habits",value:"Smoking"},{label:"Hobbies",value:"Reading, Tarot"},{label:"Likes",value:"Coffee, Classic Rock"},{label:"Status",spoiler:!0,buttonText:"Reveal Status",revealedValue:"Alive"}]},{heading:"Professional Information",rows:[{label:"Affiliation",value:`
+            `,className:"education"},{label:"Habits",value:"Smoking"},{label:"Hobbies",value:"French Tarot, Reading"},{label:"Likes",value:"Coffee, Classic Rock"},{label:"Personality",value:"INTJ"},{label:"Status",spoiler:!0,buttonText:"Reveal Status",revealedValue:"Alive"}]},{heading:"Phenomena Information",rows:[{label:"Arcana",spoiler:!0,buttonText:"Reveal Arcana",revealedValue:"The World"},{label:"Power",value:"Absolute Authority"},{label:"Subpower",value:"—"},{label:"Weapon",value:"—"}]},{heading:"Professional Information",rows:[{label:"Affiliation",value:`
               <span>Bureau of Arcane Affairs</span>
               <span class="affiliation-context">Administrator</span>
             `,className:"affiliation"},{label:"Jurisdiction",value:"Global"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"TBA"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/london-concept-800.webp",srcset:`
               /images/london-concept-800.webp 800w,
               /images/london-concept-1280.webp 1280w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut.",fullImage:"/images/london-concept-1280.webp",caption:"Concept Art 1"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/london-infobox-800.webp",srcset:`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut.",fullImage:"/images/london-concept-1280.webp",caption:"Concept Art 1"},{src:"/images/london-concept-sheet-800.webp",srcset:`
+              /images/london-concept-sheet-800.webp 800w,
+              /images/london-concept-sheet-1280.webp 1280w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut including three facial expressions shown on the side such as neutral, smiling, and tilted.",fullImage:"/images/london-concept-sheet-1280.webp",caption:"Character Sheet 1"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/london-infobox-800.webp",srcset:`
               /images/london-infobox-800.webp 800w,
               /images/london-infobox-1200.webp 1200w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt.",fullImage:"/images/london-infobox-1200.webp",caption:"Cover Art 1"}]}]}};function V(){return u(`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt.",fullImage:"/images/london-infobox-1200.webp",caption:"Cover Art 1"}]}]}};function V(){return h(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(o,"overview")}
-          ${C(o)}
-          ${$(o)}
+          ${p(o,"overview")}
+          ${S(o)}
           ${A(o)}
+          ${C(o)}
           </article>
-        ${p(o)}
+        ${g(o)}
       </div>
     </section>
   `)}function M(e){const a=`${e.slug}-gallery-tabs`,n=e.gallery.tabs.map((t,i)=>`
@@ -395,7 +426,7 @@
         ${r}
       </div>
     </section>
-  `}function S(){return`
+  `}function P(){return`
     <div class="gallery-lightbox" aria-hidden="true">
       <button class="gallery-lightbox-close" type="button" aria-label="Close image preview">
         <svg class="icon" viewBox="0 0 24 24">
@@ -405,38 +436,38 @@
 
       <img src="" alt="" class="gallery-lightbox-image" />
     </div>
-  `}function R(){return u(`
+  `}function W(){return h(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(o,"gallery")}
+          ${p(o,"gallery")}
           ${L(o)}
         </article>
-        ${p(o)}
+        ${g(o)}
       </div>
-      ${S()}
+      ${P()}
     </section>
-  `)}function W(){return u(`
+  `)}function R(){return h(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(l,"overview")}
-          ${C(l)}
-          ${$(l)}
+          ${p(l,"overview")}
+          ${S(l)}
           ${A(l)}
+          ${C(l)}
           </article>
-        ${p(l)}
+        ${g(l)}
       </div>
     </section>
-  `)}function F(){return u(`
+  `)}function F(){return h(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
-          ${h(l,"gallery")}
+          ${p(l,"gallery")}
           ${L(l)}
         </article>
-        ${p(l)}
+        ${g(l)}
       </div>
-      ${S()}
+      ${P()}
     </section>
-  `)}const b=document.querySelector("#app"),U={home:k,dandy:V,london:W,"dandy-gallery":R,"london-gallery":F},K=b?.dataset.page||"home",_=U[K]||k;b&&(b.innerHTML=_());I();j();P();T();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),f=document.querySelector("#menu-close"),v=document.querySelector(".menu-backdrop");function J(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function g(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&f&&v&&(d.addEventListener("click",J),f.addEventListener("click",g),v.addEventListener("click",g),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&g()}));
+  `)}const f=document.querySelector("#app"),U={home:$,dandy:V,london:R,"dandy-gallery":W,"london-gallery":F},K=f?.dataset.page||"home",J=U[K]||$;f&&(f.innerHTML=J());H();j();T();B();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),v=document.querySelector("#menu-close"),y=document.querySelector(".menu-backdrop");function Y(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function m(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&v&&y&&(d.addEventListener("click",Y),v.addEventListener("click",m),y.addEventListener("click",m),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&m()}));
