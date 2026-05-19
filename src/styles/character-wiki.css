@@ -291,7 +291,7 @@
 
 .character-toc {
     margin-top: -0.75rem;
-    padding: 0.9rem 1rem;
+    padding: 0;
     border: 1px solid color-mix(in srgb, var(--color-border) 80%, transparent);
 }
 
@@ -300,7 +300,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    padding-bottom: 0.5rem;
+    padding: 0.65rem 0.85rem;
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -331,31 +331,63 @@
     opacity: 0.8;
 }
 
+.character-toc-list,
+.character-toc-list ol {
+    list-style: none;
+}
+
 .character-toc-list {
-    margin: 0.6rem 0 0;
-    padding-left: 1.25rem;
+    margin: 0;
+    padding: 0.65rem 1rem 0.75rem 1.2rem;
+
     color: var(--color-text-muted);
     font-size: 0.95rem;
-    line-height: 1.65;
-    list-style: decimal;
+    line-height: 1.55;
+
+    counter-reset: toc-item;
 }
 
-.character-toc.is-collapsed .character-toc-list {
-    display: none;
+.character-toc-list > li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    opacity: 0.75;
+
+    counter-increment: toc-item;
 }
 
-.character-toc-list li {
-    opacity: 0.7;
-}
-
-.character-toc-list li::marker {
+.character-toc-list > li::before {
+    content: counter(toc-item) ". ";
     color: var(--color-text-muted);
-    font-size: 0.95rem;
-    opacity: 0.55;
+    opacity: 0.65;
+}
+
+.character-toc-list > li > ol {
+    margin: 0.1rem 0 0 1.4rem;
+    padding: 0;
+
+    counter-reset: sub-item;
+}
+
+.character-toc-list > li > ol > li {
+    margin: 0;
+    padding: 0;
+
+    counter-increment: sub-item;
+}
+
+.character-toc-list > li > ol > li::before {
+    content: counter(toc-item) "." counter(sub-item) ". ";
+    color: var(--color-text-muted);
+    opacity: 0.65;
 }
 
 .character-toc li + li {
-    margin-top: 0.1rem;
+    margin-top: 0.15rem;
+}
+
+.character-toc-list > li > ol > li + li {
+    margin-top: 0.05rem;
 }
 
 .character-toc a {
@@ -371,6 +403,10 @@
     opacity: 1;
     text-decoration: underline;
     text-underline-offset: 0.15em;
+}
+
+.character-toc.is-collapsed .character-toc-list {
+    display: none;
 }
 
 .character-toc-title {
