@@ -61,6 +61,11 @@ export function renderSiteHeader() {
         </div>
       </div>
     </header>
+
+    <div class="site-notice" role="status">
+      <span class="site-notice-emoji" aria-hidden="true">🚧</span>
+      <span>Hang in there, baby! (This website is still a work in progress.)</span>
+    </div>
   `;
 }
 
