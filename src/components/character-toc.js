@@ -1,9 +1,45 @@
 export function renderCharacterTOC(character) {
   const items = character.sections
-    .map(
-      (section) =>
-        `<li><a href="#${section.id}">${section.title}</a></li>`
-    )
+    .map((section) => {
+      let subItems = '';
+
+      if (section.id === 'powers') {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(section.content, 'text/html');
+
+        const h3s = [...doc.querySelectorAll('h3')];
+
+        subItems = `
+          <ol>
+            ${h3s
+              .map((h3) => {
+                const id = h3.textContent
+                  .toLowerCase()
+                  .replace(/\s+/g, '-');
+
+                return `
+                  <li>
+                    <a href="#${id}">
+                      ${h3.textContent}
+                    </a>
+                  </li>
+                `;
+              })
+              .join('')}
+          </ol>
+        `;
+      }
+
+      return `
+        <li>
+          <a href="#${section.id}">
+            ${section.title}
+          </a>
+
+          ${subItems}
+        </li>
+      `;
+    })
     .join('');
 
   return `
