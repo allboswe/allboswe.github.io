@@ -20,10 +20,9 @@ export function renderHomePage() {
             <img src="https://placehold.co/640x320" alt="Placeholder project image" />
           </div>
           <div class="card-content">
-            <h3 class="card-title">Title</h3>
+            <h3 class="card-title">Yap</h3>
             <p class="card-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum
-              bibendum maximus. Vivamus at viverra tortor, sed eleifend erat.
+              A Chatango bot designed for conversation handling, room moderation, and utility automation.
             </p>
           </div>
           <ul class="card-tags">
@@ -49,9 +48,9 @@ export function renderHomePage() {
             </p>
           </div>
           <ul class="card-tags">
-            <li class="tag">action</li>
-            <li class="tag">dark fantasy</li>
-            <li class="tag">supernatural</li>
+            <li class="tag">action fantasy</li>
+            <li class="tag">comedy</li>
+            <li class="tag">thriller/horror</li>
           </ul>
         </article>
       </div>
