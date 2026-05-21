@@ -293,14 +293,14 @@ export const dandy = {
             caption: 'Cover Art 1',
           },
           {
-            src: 'https://placehold.co/800x1000',
+            src: '/images/dandy-infobox-(hybrid)-800.webp',
             srcset: `
-              https://placehold.co/800x1000 800w,
-              https://placehold.co/1200x1500 1200w
+              /images/dandy-infobox-(hybrid)-800.webp 800w,
+              /images/dandy-infobox-(hybrid)-1200.webp 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'None',
-            fullImage: 'https://placehold.co/1200x1500',
+            alt: 'Dandy Valentine in his hybrid form, standing in a narrow city alley while wearing a pastel pink suit jacket, black tie, and dark trousers.',
+            fullImage: '/images/dandy-infobox-(hybrid)-1200.webp',
             caption: 'Cover Art 2',
           },
         ],
