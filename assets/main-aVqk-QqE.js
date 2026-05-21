@@ -336,10 +336,10 @@
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs including three facial expressions shown on the side such as neutral, serious, and smiling.",fullImage:"/images/dandy-concept-sheet-(hybrid)-1280.webp",caption:"Character Sheet 2"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/dandy-infobox-(human)-800.webp",srcset:`
               /images/dandy-infobox-(human)-800.webp 800w,
               /images/dandy-infobox-(human)-1200.webp 1200w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.",fullImage:"/images/dandy-infobox-(human)-1200.webp",caption:"Cover Art 1"},{src:"https://placehold.co/800x1000",srcset:`
-              https://placehold.co/800x1000 800w,
-              https://placehold.co/1200x1500 1200w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"None",fullImage:"https://placehold.co/1200x1500",caption:"Cover Art 2"}]}]}},l={slug:"london",name:"London",series:"Pink Guy",category:"Characters",overview:`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.",fullImage:"/images/dandy-infobox-(human)-1200.webp",caption:"Cover Art 1"},{src:"/images/dandy-infobox-(hybrid)-800.webp",srcset:`
+              /images/dandy-infobox-(hybrid)-800.webp 800w,
+              /images/dandy-infobox-(hybrid)-1200.webp 1200w
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"Dandy Valentine in his hybrid form, standing in a narrow city alley while wearing a pastel pink suit jacket, black tie, and dark trousers.",fullImage:"/images/dandy-infobox-(hybrid)-1200.webp",caption:"Cover Art 2"}]}]}},l={slug:"london",name:"London",series:"Pink Guy",category:"Characters",overview:`
     <strong>London</strong> (ロンドン <em>Rondon</em>) is a major character from the <em>Pink Guy</em> series. She is the Administrator in the Bureau of Arcane Affairs, an international organization responsible for overseeing arcane phenomena.
   `,sections:[{id:"appearance",title:"Appearance",content:`
         <p>
@@ -470,4 +470,4 @@
       </div>
       ${P()}
     </section>
-  `)}const f=document.querySelector("#app"),U={home:$,dandy:V,london:R,"dandy-gallery":W,"london-gallery":F},K=f?.dataset.page||"home",J=U[K]||$;f&&(f.innerHTML=J());H();j();T();B();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),v=document.querySelector("#menu-close"),y=document.querySelector(".menu-backdrop");function Y(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function m(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&v&&y&&(d.addEventListener("click",Y),v.addEventListener("click",m),y.addEventListener("click",m),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&m()}));
+  `)}const f=document.querySelector("#app"),U={home:$,dandy:V,london:R,"dandy-gallery":W,"london-gallery":F},K=f?.dataset.page||"home",J=U[K]||$;f&&(f.innerHTML=J());H();j();T();B();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),y=document.querySelector("#menu-close"),v=document.querySelector(".menu-backdrop");function Y(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function m(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&y&&v&&(d.addEventListener("click",Y),y.addEventListener("click",m),v.addEventListener("click",m),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&m()}));
