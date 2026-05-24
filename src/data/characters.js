@@ -53,7 +53,7 @@ export const dandy = {
         </p>
         <h3 id="subpowers">Subpowers</h3>
         <p>
-          Like other arcane phenomena, he exhibits the common abilities typically associated with them.
+          Like other arcane phenomena, he exhibits the common abilities normally associated with them.
           He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
         </p>
         <h4>Bestial Convergence</h4>
@@ -64,7 +64,7 @@ export const dandy = {
         <h4>Bestial Weaponization</h4>
         <p>
           <strong>Bestial Weaponization</strong> is an active ability that allows him to utilize his transformed physical traits as weapons.
-          Features such as his elongated fingernails, fangs, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
+          Features such as his fangs, nails, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
         </p>
       `
     },
