@@ -464,7 +464,7 @@ export const london = {
           },
           {
             label: 'Subpower',
-            value: '—',
+            value: 'Secondhand Smoke',
           },
           {
             label: 'Weapon',
