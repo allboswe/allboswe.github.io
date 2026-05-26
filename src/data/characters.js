@@ -45,28 +45,75 @@ export const dandy = {
           He also has a set of bestial subpowers, which only appear after suffering fatal injuries.
           Unlike most characters, his survival is closely tied to his own will to continue living.
         </p>
-        <h3 id="archetypal-drift">Archetypal Drift</h3>
-        <p>
-          <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
-          These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
-          He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
-        </p>
-        <h3 id="subpowers">Subpowers</h3>
-        <p>
-          Like other arcane phenomena, he exhibits the common abilities normally associated with them.
-          He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
-        </p>
-        <h4>Bestial Convergence</h4>
-        <p>
-          <strong>Bestial Convergence</strong> is a passive ability that causes him to gradually develop permanent bestial traits.
-          These changes become more pronounced over time and are accompanied by shifts in behavior, instinctive response, and physical structure.
-        </p>
-        <h4>Bestial Weaponization</h4>
-        <p>
-          <strong>Bestial Weaponization</strong> is an active ability that allows him to utilize his transformed physical traits as weapons.
-          Features such as his fangs, nails, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
-        </p>
+        <div class="heading-block is-collapsed">
+          <h3 id="archetypal-drift" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="true"
+              aria-controls="archetypal-drift-content"
+            >
+              <span>Archetypal Drift</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="archetypal-drift-content">
+            <p>
+              <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
+              These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
+              He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
+            </p>
+          </div>
+        </div>
+
+        <div class="heading-block is-collapsed">
+          <h3 id="subpowers" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="subpowers-content"
+            >
+              <span>Subpowers</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="subpowers-content">
+            <p>
+              Like other arcane phenomena, he exhibits the common abilities normally associated with them.
+              He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
+            </p>
+
+            <h4>Bestial Convergence</h4>
+            <p>
+              <strong>Bestial Convergence</strong> is a passive ability that causes him to gradually develop permanent bestial traits.
+              These changes become more pronounced over time and are accompanied by shifts in behavior, instinctive response, and physical structure.
+            </p>
+
+            <h4>Bestial Weaponization</h4>
+            <p>
+              <strong>Bestial Weaponization</strong> is an active ability that allows him to utilize his transformed physical traits as weapons.
+              Features such as his fangs, nails, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
+            </p>
+          </div>
+        </div>
       `
+    },
+    {
+      id: 'trivia',
+      title: 'Trivia',
+      content: `
+        <ul>
+          <li>Dandy's birthday falls on <a href="https://en.wikipedia.org/wiki/Valentine%27s_Day" target="_blank" rel="noopener noreferrer">Valentine's Day</a>, referencing both his surname and his desire for affection and companionship.</li>
+          <li>Dandy's visual design was inspired by <a href="https://myanimelist.net/character/170732/Denji" target="_blank" rel="noopener noreferrer">Denji</a> from <a href="https://myanimelist.net/manga/116778/Chainsaw_Man" target="_blank" rel="noopener noreferrer"><em>Chainsaw Man</em></a> for his human form and <a href="https://myanimelist.net/character/18344/Tomoe" target="_blank" rel="noopener noreferrer">Tomoe</a> from <a href="https://myanimelist.net/manga/8157/Kamisama_Hajimemashita" target="_blank" rel="noopener noreferrer"><em>Kamisama Kiss</em></a> for his hybrid form, while aspects of his abilities were influenced by <a href="https://myanimelist.net/character/122209/Yuu_Otosaka" target="_blank" rel="noopener noreferrer">Yuu Otosaka</a> from <a href="https://myanimelist.net/anime/28999/Charlotte" target="_blank" rel="noopener noreferrer"><em>Charlotte</em></a>.</li>
+          <li>Dandy's wolf-related abilities were partially inspired by <a href="https://www.imdb.com/title/tt0082010/" target="_blank" rel="noopener noreferrer"><em>An American Werewolf in London</em></a>.</li>
+          <ul>
+            <li>Coincidentally, the title of the film closely mirrors both his American origin and his relationship with <a href="/pink-guy/characters/london/">London</a>.</li>
+          </u>
+        </ul>
+      `,
     },
   ],
   infobox: {
@@ -106,7 +153,7 @@ export const dandy = {
           },
           {
             label: 'Birthday',
-            value: 'February 14',
+            value: 'February 14, 1958',
           },
           {
             label: 'Birthplace',
@@ -218,7 +265,7 @@ export const dandy = {
         rows: [
           {
             label: 'Web Novel',
-            value: 'TBA',
+            value: 'Episode 1',
           },
         ],
       },
@@ -353,28 +400,73 @@ export const london = {
           Her primary power allows her to exert authority over the five senses of those existing within her world, causing sight, smell, sound, taste, and touch to become perceived according to her influence.
           She also possesses a unique set of subpowers tied to the manipulation of cigarette smoke.
         </p>
-        <h3 id="sensory-authority">Sensory Authority</h3>
-        <p>
-          <strong>Sensory Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her arcana.
-          Those affected by this phenomenon lose the ability to distinguish between objective reality and altered perception.
-          The extent and complexity of these alterations may change depending on her concentration, emotional state, and familiarity with the affected target.
-        </p>
-        <h3 id="subpowers">Subpowers</h3>
-        <p>
-          Like other arcane phenomena, she exhibits the common abilities normally associated with them.
-          She also possesses a unique set of abilities tied to the manipulation of cigarette smoke.
-        </p>
-        <h4>Secondhand Smoke</h4>
-        <p>
-          <strong>Secondhand Smoke</strong> is a passive ability that causes prolonged exposure to cigarette smoke surrounding her to gradually dull awareness, concentration, and sensory alertness in nearby individuals.
-          Those exposed may become increasingly calm, distracted, or mentally subdued without immediately recognizing the influence of the smoke.
-        </p>
-        <h4>Secondhand Smoke Veil</h4>
-        <p>
-          <strong>Secondhand Smoke Veil</strong> is an active ability that allows her to produce abnormally dense concentrations of cigarette smoke from a single puff.
-          The smoke can rapidly spread through surrounding areas to disorient nearby individuals, obscure visibility, restrict movement, and make enclosed environments increasingly difficult to breathe within.
-        </p>
+        <div class="heading-block is-collapsed">
+          <h3 id="sensory-authority" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="true"
+              aria-controls="sensory-authority-content"
+            >
+              <span>Sensory Authority</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="sensory-authority-content">
+            <p>
+              <strong>Sensory Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her arcana.
+              Those affected by this phenomenon lose the ability to distinguish between objective reality and altered perception.
+              The extent and complexity of these alterations may change depending on her concentration, emotional state, and familiarity with the affected target.
+            </p>
+          </div>
+        </div>
+
+        <div class="heading-block is-collapsed">
+          <h3 id="subpowers" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="subpowers-content"
+            >
+              <span>Subpowers</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="subpowers-content">
+            <p>
+              Like other arcane phenomena, she exhibits the common abilities normally associated with them.
+              She also possesses a unique set of abilities tied to the manipulation of cigarette smoke.
+            </p>
+
+            <h4>Secondhand Smoke</h4>
+            <p>
+              <strong>Secondhand Smoke</strong> is a passive ability that causes prolonged exposure to cigarette smoke surrounding her to gradually dull awareness, concentration, and sensory alertness in nearby individuals.
+              Those exposed may become increasingly calm, distracted, or mentally subdued without immediately recognizing the influence of the smoke.
+            </p>
+
+            <h4>Secondhand Smoke Veil</h4>
+            <p>
+              <strong>Secondhand Smoke Veil</strong> is an active ability that allows her to produce abnormally dense concentrations of cigarette smoke from a single puff.
+              The smoke can rapidly spread through surrounding areas to disorient nearby individuals, obscure visibility, restrict movement, and make enclosed environments increasingly difficult to breathe within.
+            </p>
+          </div>
+        </div>
       `
+    },
+    {
+      id: 'trivia',
+      title: 'Trivia',
+      content: `
+        <ul>
+          <li>London's birthday coincides with both <a href="https://en.wikipedia.org/wiki/Saint_George%27s_Day" target="_blank" rel="noopener noreferrer">Saint George's Day</a> and the traditionally recognized birth and death date of <a href="https://en.wikipedia.org/wiki/William_Shakespeare" target="_blank" rel="noopener noreferrer">William Shakespeare</a>.</li>
+          <li>London's name and introductory chapter title were inspired by <a href="https://www.youtube.com/watch?v=EfK-WX2pa8c" target="_blank" rel="noopener noreferrer"><em>London Calling</em></a> by <a href="https://www.imdb.com/name/nm1502648/" target="_blank" rel="noopener noreferrer">The Clash</a>.</li>
+          <li>London's smoking habit and smoke-related abilities reference the "<a href="https://en.wikipedia.org/wiki/London" target="_blank" rel="noopener noreferrer">Big Smoke</a>," a historical nickname associated with the city's heavy smog and pollution.</li>
+          <li>London's visual design was inspired by <a href="https://myanimelist.net/character/170734/Makima" target="_blank" rel="noopener noreferrer">Makima</a> from <a href="https://myanimelist.net/manga/116778/Chainsaw_Man" target="_blank" rel="noopener noreferrer"><em>Chainsaw Man</em></a>, while aspects of her abilities were influenced by <a href="https://myanimelist.net/character/1086/Sousuke_Aizen" target="_blank" rel="noopener noreferrer">Sousuke Aizen</a> from <a href="https://myanimelist.net/manga/12/Bleach" target="_blank" rel="noopener noreferrer"><em>Bleach</em></a>.</li>
+        </ul>
+      `,
     },
   ],
   infobox: {
@@ -410,11 +502,11 @@ export const london = {
         rows: [
           {
             label: 'Age',
-            value: 'Unknown',
+            value: '31',
           },
           {
             label: 'Birthday',
-            value: 'April 23',
+            value: 'April 23, 1948',
           },
           {
             label: 'Birthplace',
@@ -526,7 +618,7 @@ export const london = {
         rows: [
           {
             label: 'Web Novel',
-            value: 'TBA',
+            value: 'Episode 3',
           },
         ],
       },
