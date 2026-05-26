@@ -13,14 +13,17 @@ export function renderCharacterTOC(character) {
           <ol>
             ${h3s
               .map((h3) => {
-                const id = h3.textContent
-                  .toLowerCase()
-                  .replace(/\s+/g, '-');
+                const id = h3.id;
+                const title =
+                  h3.querySelector('.heading-toggle span')?.textContent.trim() ||
+                  h3.textContent.trim();
+
+                if (!id) return '';
 
                 return `
                   <li>
                     <a href="#${id}">
-                      ${h3.textContent}
+                      ${title}
                     </a>
                   </li>
                 `;
