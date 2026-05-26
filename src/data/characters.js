@@ -353,9 +353,9 @@ export const london = {
           Her primary power allows her to exert authority over the five senses of those existing within her world, causing sight, smell, sound, taste, and touch to become perceived according to her influence.
           She also possesses a unique set of subpowers tied to the manipulation of cigarette smoke.
         </p>
-        <h3 id="absolute-authority">Absolute Authority</h3>
+        <h3 id="sensory-authority">Sensory Authority</h3>
         <p>
-          <strong>Absolute Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her arcana.
+          <strong>Sensory Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her arcana.
           Those affected by this phenomenon lose the ability to distinguish between objective reality and altered perception.
           The extent and complexity of these alterations may change depending on her concentration, emotional state, and familiarity with the affected target.
         </p>
@@ -492,7 +492,7 @@ export const london = {
           },
           {
             label: 'Power',
-            value: 'Absolute Authority',
+            value: 'Sensory Authority',
           },
           {
             label: 'Subpower',
