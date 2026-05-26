@@ -418,7 +418,7 @@
 
           <div class="heading-content" id="sensory-authority-content">
             <p>
-              <strong>Sensory Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her arcana.
+              <strong>Sensory Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her power.
               Those affected by this phenomenon lose the ability to distinguish between objective reality and altered perception.
               The extent and complexity of these alterations may change depending on her concentration, emotional state, and familiarity with the affected target.
             </p>
