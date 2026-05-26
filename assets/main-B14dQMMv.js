@@ -1,4 +1,4 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function B(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),r=document.querySelectorAll(".gallery-image");if(!e||!a||!n||r.length===0)return;function t(s){const u=s.dataset.fullImage||s.src;a.src=u,a.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}r.forEach(s=>{s.addEventListener("click",()=>{t(s)})}),n.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function T(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const w=document.documentElement,x="theme";function z(){return localStorage.getItem(x)}function k(){const e=w.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function b(e){const a=document.getElementById("theme-toggle");w.setAttribute("data-theme",e),localStorage.setItem(x,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function I(){const e=k();b(e==="dark"?"light":"dark")}function H(){const e=z();b(e==="light"||e==="dark"?e:k()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&I()})}function j(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function D(){return`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))r(t);new MutationObserver(t=>{for(const i of t)if(i.type==="childList")for(const s of i.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&r(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const i={};return t.integrity&&(i.integrity=t.integrity),t.referrerPolicy&&(i.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?i.credentials="include":t.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function r(t){if(t.ep)return;t.ep=!0;const i=n(t);fetch(t.href,i)}})();function B(){const e=document.querySelector(".gallery-lightbox"),a=document.querySelector(".gallery-lightbox-image"),n=document.querySelector(".gallery-lightbox-close"),r=document.querySelectorAll(".gallery-image");if(!e||!a||!n||r.length===0)return;function t(s){const h=s.dataset.fullImage||s.src;a.src=h,a.alt=s.alt,e.classList.add("is-open"),e.setAttribute("aria-hidden","false")}function i(){e.classList.remove("is-open"),e.setAttribute("aria-hidden","true"),a.src="",a.alt=""}r.forEach(s=>{s.addEventListener("click",()=>{t(s)})}),n.addEventListener("click",i),e.addEventListener("click",s=>{s.target===e&&i()}),document.addEventListener("keydown",s=>{s.key==="Escape"&&i()})}function D(){document.querySelectorAll(".spoiler-reveal").forEach(a=>{a.addEventListener("click",()=>{const n=a.dataset.spoilerText;n&&(a.textContent=n,a.disabled=!0,a.classList.add("is-revealed"))})})}const k=document.documentElement,x="theme";function I(){return localStorage.getItem(x)}function A(){const e=k.getAttribute("data-theme");return e==="light"||e==="dark"?e:window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}function b(e){const a=document.getElementById("theme-toggle");k.setAttribute("data-theme",e),localStorage.setItem(x,e),a&&a.setAttribute("aria-pressed",String(e==="dark"))}function j(){const e=A();b(e==="dark"?"light":"dark")}function H(){const e=I();b(e==="light"||e==="dark"?e:A()),document.addEventListener("click",a=>{a.target.closest("#theme-toggle")&&j()})}function E(){const e=document.querySelector(".character-toc"),a=document.querySelector(".character-toc-toggle");!e||!a||a.addEventListener("click",()=>{const n=e.classList.toggle("is-collapsed");a.textContent=n?"show":"hide",a.setAttribute("aria-expanded",String(!n))})}function _(){document.querySelectorAll(".heading-toggle").forEach(a=>{a.addEventListener("click",()=>{const n=a.closest(".heading-block");if(!n)return;const r=n.classList.toggle("is-collapsed");a.setAttribute("aria-expanded",String(!r))})})}function G(){return`
     <header>
       <h1 class="site-title">
         <a href="/" class="site-title-link">
@@ -63,9 +63,9 @@
 
     <div class="site-notice" role="status">
       <span class="site-notice-emoji" aria-hidden="true">🚧</span>
-      <span>Hang in there, baby! (This website is still a work in progress.)</span>
+      <span>This website is being developed.</span>
     </div>
-  `}function E(){return`
+  `}function N(){return`
     <footer>
       <div class="footer-inner">
         <p class="footer-copy">
@@ -88,13 +88,13 @@
         </div>
       </div>
     </footer>
-  `}function h(e){return`
-    ${D()}
+  `}function u(e){return`
+    ${G()}
     <main>
       ${e}
     </main>
-    ${E()}
-  `}function $(){return h(`
+    ${N()}
+  `}function S(){return u(`
     <section id="hero">
       <h2>Hello world.</h2>
       <p>I build software and write stories.</p>
@@ -141,14 +141,14 @@
             </p>
           </div>
           <ul class="card-tags">
-            <li class="tag">action fantasy</li>
+            <li class="tag">action</li>
             <li class="tag">comedy</li>
-            <li class="tag">thriller/horror</li>
+            <li class="tag">horror</li>
           </ul>
         </article>
       </div>
     </section>
-  `)}function A(e){return`
+  `)}function $(e){return`
     <nav class="character-toc" aria-label="Table of contents">
       <div class="character-toc-header">
         <h2 class="character-toc-title">
@@ -179,13 +179,13 @@
       <ol class="character-toc-list">
         ${e.sections.map(n=>{let r="";return n.id==="powers"&&(r=`
           <ol>
-            ${[...new DOMParser().parseFromString(n.content,"text/html").querySelectorAll("h3")].map(u=>`
+            ${[...new DOMParser().parseFromString(n.content,"text/html").querySelectorAll("h3")].map(h=>{const y=h.id,z=h.querySelector(".heading-toggle span")?.textContent.trim()||h.textContent.trim();return y?`
                   <li>
-                    <a href="#${u.textContent.toLowerCase().replace(/\s+/g,"-")}">
-                      ${u.textContent}
+                    <a href="#${y}">
+                      ${z}
                     </a>
                   </li>
-                `).join("")}
+                `:""}).join("")}
           </ol>
         `),`
         <li>
@@ -211,7 +211,7 @@
         <a href="/pink-guy/characters/${e.slug}/gallery/" ${a==="gallery"?'aria-current="page"':""}>Gallery</a>
       </nav>
     </div>
-  `}function N(e){if(e.spoiler)return`
+  `}function q(e){if(e.spoiler)return`
       <div>
         <dt>${e.label}</dt>
         <dd>
@@ -225,13 +225,13 @@
       <dt>${e.label}</dt>
       <dd${a}>${e.value}</dd>
     </div>
-  `}function G(e){return`
+  `}function V(e){return`
     <dl class="character-facts">
       <div class="character-facts-section">
         <dt>${e.heading}</dt>
       </div>
 
-      ${e.rows.map(N).join("")}
+      ${e.rows.map(q).join("")}
     </dl>
   `}function g(e){const{image:a,groups:n}=e.infobox;return`
     <aside class="character-infobox" aria-label="${e.name} infobox">
@@ -254,15 +254,15 @@
           </div>
         </figure>
 
-        ${n.map(G).join("")}
+        ${n.map(V).join("")}
       </div>
     </aside>
-  `}function q(e){return`
+  `}function M(e){return`
     <section class="character-section" id="${e.id}">
       <h2>${e.title}</h2>
       ${e.content}
     </section>
-  `}function C(e){return e.sections.map(q).join("")}function S(e){return`
+  `}function C(e){return e.sections.map(M).join("")}function L(e){return`
     <section class="character-section" id="overview">
       <p>${e.overview}</p>
     </section>
@@ -291,37 +291,79 @@
           He also has a set of bestial subpowers, which only appear after suffering fatal injuries.
           Unlike most characters, his survival is closely tied to his own will to continue living.
         </p>
-        <h3 id="archetypal-drift">Archetypal Drift</h3>
-        <p>
-          <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
-          These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
-          He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
-        </p>
-        <h3 id="subpowers">Subpowers</h3>
-        <p>
-          Like other arcane phenomena, he exhibits the common abilities typically associated with them.
-          He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
-        </p>
-        <h4>Bestial Convergence</h4>
-        <p>
-          <strong>Bestial Convergence</strong> is a passive ability that causes him to gradually develop permanent bestial traits.
-          These changes become more pronounced over time and are accompanied by shifts in behavior, instinctive response, and physical structure.
-        </p>
-        <h4>Bestial Weaponization</h4>
-        <p>
-          <strong>Bestial Weaponization</strong> is an active ability that allows him to utilize his transformed physical traits as weapons.
-          Features such as his elongated fingernails, fangs, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
-        </p>
+        <div class="heading-block is-collapsed">
+          <h3 id="archetypal-drift" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="true"
+              aria-controls="archetypal-drift-content"
+            >
+              <span>Archetypal Drift</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="archetypal-drift-content">
+            <p>
+              <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
+              These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
+              He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
+            </p>
+          </div>
+        </div>
+
+        <div class="heading-block is-collapsed">
+          <h3 id="subpowers" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="subpowers-content"
+            >
+              <span>Subpowers</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="subpowers-content">
+            <p>
+              Like other arcane phenomena, he exhibits the common abilities normally associated with them.
+              He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
+            </p>
+
+            <h4>Bestial Convergence</h4>
+            <p>
+              <strong>Bestial Convergence</strong> is a passive ability that causes him to gradually develop permanent bestial traits.
+              These changes become more pronounced over time and are accompanied by shifts in behavior, instinctive response, and physical structure.
+            </p>
+
+            <h4>Bestial Weaponization</h4>
+            <p>
+              <strong>Bestial Weaponization</strong> is an active ability that allows him to utilize his transformed physical traits as weapons.
+              Features such as his fangs, nails, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
+            </p>
+          </div>
+        </div>
+      `},{id:"trivia",title:"Trivia",content:`
+        <ul>
+          <li>Dandy's birthday falls on <a href="https://en.wikipedia.org/wiki/Valentine%27s_Day" target="_blank" rel="noopener noreferrer">Valentine's Day</a>, referencing both his surname and his desire for affection and companionship.</li>
+          <li>Dandy's visual design was inspired by <a href="https://myanimelist.net/character/170732/Denji" target="_blank" rel="noopener noreferrer">Denji</a> from <a href="https://myanimelist.net/manga/116778/Chainsaw_Man" target="_blank" rel="noopener noreferrer"><em>Chainsaw Man</em></a> for his human form and <a href="https://myanimelist.net/character/18344/Tomoe" target="_blank" rel="noopener noreferrer">Tomoe</a> from <a href="https://myanimelist.net/manga/8157/Kamisama_Hajimemashita" target="_blank" rel="noopener noreferrer"><em>Kamisama Kiss</em></a> for his hybrid form, while aspects of his abilities were influenced by <a href="https://myanimelist.net/character/122209/Yuu_Otosaka" target="_blank" rel="noopener noreferrer">Yuu Otosaka</a> from <a href="https://myanimelist.net/anime/28999/Charlotte" target="_blank" rel="noopener noreferrer"><em>Charlotte</em></a>.</li>
+          <li>Dandy's wolf-related abilities were partially inspired by <a href="https://www.imdb.com/title/tt0082010/" target="_blank" rel="noopener noreferrer"><em>An American Werewolf in London</em></a>.</li>
+          <ul>
+            <li>Coincidentally, the title of the film closely mirrors both his American origin and his relationship with <a href="/pink-guy/characters/london/">London</a>.</li>
+          </u>
+        </ul>
       `}],infobox:{image:{src:"/images/dandy-infobox-(human)-1200.webp",srcset:`
         /images/dandy-infobox-(human)-800.webp 800w,
         /images/dandy-infobox-(human)-1200.webp 1200w
-      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie."},groups:[{heading:"Name",rows:[{label:"Alias",value:"Pink Guy"},{label:"Kana",value:"バレンタイン・ダンディ"},{label:"Romaji",value:"Barentain Dandi"}]},{heading:"Biological Information",rows:[{label:"Age",value:"21"},{label:"Birthday",value:"February 14"},{label:"Birthplace",value:"New York, United States"},{label:"Blood Type",value:"B+"},{label:"Gender",value:"Male"},{label:"Height",value:`180 cm (5'11")`},{label:"Species",value:"Hybrid"},{label:"Weight",value:"73 kg (160 lb)"}]},{heading:"Personal Information",rows:[{label:"Dislikes",value:"Cats"},{label:"Education",value:`
+      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie."},groups:[{heading:"Name",rows:[{label:"Alias",value:"Pink Guy"},{label:"Kana",value:"バレンタイン・ダンディ"},{label:"Romaji",value:"Barentain Dandi"}]},{heading:"Biological Information",rows:[{label:"Age",value:"21"},{label:"Birthday",value:"February 14, 1958"},{label:"Birthplace",value:"New York, United States"},{label:"Blood Type",value:"B+"},{label:"Gender",value:"Male"},{label:"Height",value:`180 cm (5'11")`},{label:"Species",value:"Hybrid"},{label:"Weight",value:"73 kg (160 lb)"}]},{heading:"Personal Information",rows:[{label:"Dislikes",value:"Cats"},{label:"Education",value:`
               <span>Midwood High School</span>
               <span class="education-context">(dropped out)</span>
             `,className:"education"},{label:"Habits",value:"Daydreaming"},{label:"Hobbies",value:"Sleeping"},{label:"Likes",value:"Food, Women"},{label:"Personality",value:"ESFP"},{label:"Status",spoiler:!0,buttonText:"Reveal Status",revealedValue:"Alive"}]},{heading:"Phenomena Information",rows:[{label:"Arcana",spoiler:!0,buttonText:"Reveal Arcana",revealedValue:"The Fool"},{label:"Power",value:"Archetypal Drift"},{label:"Subpower",value:"Bestial"},{label:"Weapon",value:"—"}]},{heading:"Professional Information",rows:[{label:"Affiliation",value:`
               <span>Bureau of Arcane Affairs</span>
               <span class="affiliation-context">Operations Specialist</span>
-            `,className:"affiliation"},{label:"Jurisdiction",value:"United States"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"TBA"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/dandy-concept-(human)-800.webp",srcset:`
+            `,className:"affiliation"},{label:"Jurisdiction",value:"United States"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"Episode 1"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/dandy-concept-(human)-800.webp",srcset:`
               /images/dandy-concept-(human)-800.webp 800w,
               /images/dandy-concept-(human)-1280.webp 1280w
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat.",fullImage:"/images/dandy-concept-(human)-1280.webp",caption:"Concept Art 1"},{src:"/images/dandy-concept-(hybrid)-800.webp",srcset:`
@@ -355,16 +397,83 @@
           Although polite and approachable, she keeps emotional distance from the people around her and rarely reveals what she is thinking or feeling.
           She seldom raises her voice or changes her expression during conversations and usually prefers persuasion over direct force or intimidation.
         </p>
+      `},{id:"powers",title:"Powers",content:`
+        <p>
+          London possesses arcane phenomena tied to sensory perception and imposed interpretation of reality.
+          Her primary power allows her to exert authority over the five senses of those existing within her world, causing sight, smell, sound, taste, and touch to become perceived according to her influence.
+          She also possesses a unique set of subpowers tied to the manipulation of cigarette smoke.
+        </p>
+        <div class="heading-block is-collapsed">
+          <h3 id="sensory-authority" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="true"
+              aria-controls="sensory-authority-content"
+            >
+              <span>Sensory Authority</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="sensory-authority-content">
+            <p>
+              <strong>Sensory Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her arcana.
+              Those affected by this phenomenon lose the ability to distinguish between objective reality and altered perception.
+              The extent and complexity of these alterations may change depending on her concentration, emotional state, and familiarity with the affected target.
+            </p>
+          </div>
+        </div>
+
+        <div class="heading-block is-collapsed">
+          <h3 id="subpowers" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="subpowers-content"
+            >
+              <span>Subpowers</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="subpowers-content">
+            <p>
+              Like other arcane phenomena, she exhibits the common abilities normally associated with them.
+              She also possesses a unique set of abilities tied to the manipulation of cigarette smoke.
+            </p>
+
+            <h4>Secondhand Smoke</h4>
+            <p>
+              <strong>Secondhand Smoke</strong> is a passive ability that causes prolonged exposure to cigarette smoke surrounding her to gradually dull awareness, concentration, and sensory alertness in nearby individuals.
+              Those exposed may become increasingly calm, distracted, or mentally subdued without immediately recognizing the influence of the smoke.
+            </p>
+
+            <h4>Secondhand Smoke Veil</h4>
+            <p>
+              <strong>Secondhand Smoke Veil</strong> is an active ability that allows her to produce abnormally dense concentrations of cigarette smoke from a single puff.
+              The smoke can rapidly spread through surrounding areas to disorient nearby individuals, obscure visibility, restrict movement, and make enclosed environments increasingly difficult to breathe within.
+            </p>
+          </div>
+        </div>
+      `},{id:"trivia",title:"Trivia",content:`
+        <ul>
+          <li>London's birthday coincides with both <a href="https://en.wikipedia.org/wiki/Saint_George%27s_Day" target="_blank" rel="noopener noreferrer">Saint George's Day</a> and the traditionally recognized birth and death date of <a href="https://en.wikipedia.org/wiki/William_Shakespeare" target="_blank" rel="noopener noreferrer">William Shakespeare</a>.</li>
+          <li>London's name and introductory chapter title were inspired by <a href="https://www.youtube.com/watch?v=EfK-WX2pa8c" target="_blank" rel="noopener noreferrer"><em>London Calling</em></a> by <a href="https://www.imdb.com/name/nm1502648/" target="_blank" rel="noopener noreferrer">The Clash</a>.</li>
+          <li>London's smoking habit and smoke-related abilities reference the "<a href="https://en.wikipedia.org/wiki/London" target="_blank" rel="noopener noreferrer">Big Smoke</a>," a historical nickname associated with the city's heavy smog and pollution.</li>
+          <li>London's visual design was inspired by <a href="https://myanimelist.net/character/170734/Makima" target="_blank" rel="noopener noreferrer">Makima</a> from <a href="https://myanimelist.net/manga/116778/Chainsaw_Man" target="_blank" rel="noopener noreferrer"><em>Chainsaw Man</em></a>, while aspects of her abilities were influenced by <a href="https://myanimelist.net/character/1086/Sousuke_Aizen" target="_blank" rel="noopener noreferrer">Sousuke Aizen</a> from <a href="https://myanimelist.net/manga/12/Bleach" target="_blank" rel="noopener noreferrer"><em>Bleach</em></a>.</li>
+        </ul>
       `}],infobox:{image:{src:"/images/london-infobox-1200.webp",srcset:`
         /images/london-infobox-800.webp 800w,
         /images/london-infobox-1200.webp 1200w
-      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt."},groups:[{heading:"Name",rows:[{label:"Alias",value:"—"},{label:"Kana",value:"ロンドン"},{label:"Romaji",value:"Rondon"}]},{heading:"Biological Information",rows:[{label:"Age",value:"Unknown"},{label:"Birthday",value:"April 23"},{label:"Birthplace",value:"United Kingdom"},{label:"Blood Type",value:"AB+"},{label:"Gender",value:"Female"},{label:"Height",value:`168 cm (5'6")`},{label:"Species",value:"Hybrid"},{label:"Weight",value:"59 kg (130 lb)"}]},{heading:"Personal Information",rows:[{label:"Dislikes",value:"Tea"},{label:"Education",value:`
+      `,sizes:"(min-width: 1200px) 320px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt."},groups:[{heading:"Name",rows:[{label:"Alias",value:"—"},{label:"Kana",value:"ロンドン"},{label:"Romaji",value:"Rondon"}]},{heading:"Biological Information",rows:[{label:"Age",value:"31"},{label:"Birthday",value:"April 23, 1948"},{label:"Birthplace",value:"United Kingdom"},{label:"Blood Type",value:"AB+"},{label:"Gender",value:"Female"},{label:"Height",value:`168 cm (5'6")`},{label:"Species",value:"Hybrid"},{label:"Weight",value:"59 kg (130 lb)"}]},{heading:"Personal Information",rows:[{label:"Dislikes",value:"Tea"},{label:"Education",value:`
               <span>University of Oxford</span>
               <span class="education-context">PPE, DPhil in Politics</span>
-            `,className:"education"},{label:"Habits",value:"Smoking"},{label:"Hobbies",value:"French Tarot, Reading"},{label:"Likes",value:"Coffee, Classic Rock"},{label:"Personality",value:"INTJ"},{label:"Status",spoiler:!0,buttonText:"Reveal Status",revealedValue:"Alive"}]},{heading:"Phenomena Information",rows:[{label:"Arcana",spoiler:!0,buttonText:"Reveal Arcana",revealedValue:"The World"},{label:"Power",value:"Absolute Authority"},{label:"Subpower",value:"—"},{label:"Weapon",value:"—"}]},{heading:"Professional Information",rows:[{label:"Affiliation",value:`
+            `,className:"education"},{label:"Habits",value:"Smoking"},{label:"Hobbies",value:"French Tarot, Reading"},{label:"Likes",value:"Coffee, Classic Rock"},{label:"Personality",value:"INTJ"},{label:"Status",spoiler:!0,buttonText:"Reveal Status",revealedValue:"Alive"}]},{heading:"Phenomena Information",rows:[{label:"Arcana",spoiler:!0,buttonText:"Reveal Arcana",revealedValue:"The World"},{label:"Power",value:"Sensory Authority"},{label:"Subpower",value:"Secondhand Smoke"},{label:"Weapon",value:"—"}]},{heading:"Professional Information",rows:[{label:"Affiliation",value:`
               <span>Bureau of Arcane Affairs</span>
               <span class="affiliation-context">Administrator</span>
-            `,className:"affiliation"},{label:"Jurisdiction",value:"Global"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"TBA"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/london-concept-800.webp",srcset:`
+            `,className:"affiliation"},{label:"Jurisdiction",value:"Global"}]},{heading:"First Appearance",rows:[{label:"Web Novel",value:"Episode 3"}]}]},gallery:{category:"Web Novel",tabs:[{id:"concept-art",label:"Concept Art",images:[{src:"/images/london-concept-800.webp",srcset:`
               /images/london-concept-800.webp 800w,
               /images/london-concept-1280.webp 1280w
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut.",fullImage:"/images/london-concept-1280.webp",caption:"Concept Art 1"},{src:"/images/london-concept-sheet-800.webp",srcset:`
@@ -373,26 +482,26 @@
             `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut including three facial expressions shown on the side such as neutral, smiling, and tilted.",fullImage:"/images/london-concept-sheet-1280.webp",caption:"Character Sheet 1"}]},{id:"cover-art",label:"Cover Art",images:[{src:"/images/london-infobox-800.webp",srcset:`
               /images/london-infobox-800.webp 800w,
               /images/london-infobox-1200.webp 1200w
-            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt.",fullImage:"/images/london-infobox-1200.webp",caption:"Cover Art 1"}]}]}};function V(){return h(`
+            `,sizes:"(min-width: 1200px) 400px, 90vw",alt:"London standing in front of a city skyline while wearing a white blouse and dark skirt.",fullImage:"/images/london-infobox-1200.webp",caption:"Cover Art 1"}]}]}};function W(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
           ${p(o,"overview")}
-          ${S(o)}
-          ${A(o)}
+          ${L(o)}
+          ${$(o)}
           ${C(o)}
           </article>
         ${g(o)}
       </div>
     </section>
-  `)}function M(e){const a=`${e.slug}-gallery-tabs`,n=e.gallery.tabs.map((t,i)=>`
+  `)}function O(e){const a=`${e.slug}-gallery-tabs`,n=e.gallery.tabs.map((t,i)=>`
         <input
           type="radio"
           name="${a}"
           id="${e.slug}-${t.id}"
           ${i===0?"checked":""}
         />
-      `).join(""),r=e.gallery.tabs.map(t=>`<label for="${e.slug}-${t.id}">${t.label}</label>`).join("");return{inputs:n,labels:r}}function O(e){return e.gallery.tabs.map(a=>{const n=a.images.map(t=>`
+      `).join(""),r=e.gallery.tabs.map(t=>`<label for="${e.slug}-${t.id}">${t.label}</label>`).join("");return{inputs:n,labels:r}}function R(e){return e.gallery.tabs.map(a=>{const n=a.images.map(t=>`
             <figure class="gallery-image-card">
               <img
                 src="${t.src}"
@@ -410,7 +519,7 @@
         <div class="gallery-tab-panel ${`gallery-${a.id.replace("-art","")}-panel`}">
           ${n}
         </div>
-      `}).join("")}function L(e){const{inputs:a,labels:n}=M(e),r=O(e);return`
+      `}).join("")}function T(e){const{inputs:a,labels:n}=O(e),r=R(e);return`
     <section class="character-section character-gallery-section">
       <div class="gallery-category-header">
         <h2>${e.gallery.category}</h2>
@@ -436,38 +545,38 @@
 
       <img src="" alt="" class="gallery-lightbox-image" />
     </div>
-  `}function W(){return h(`
+  `}function F(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
           ${p(o,"gallery")}
-          ${L(o)}
+          ${T(o)}
         </article>
         ${g(o)}
       </div>
       ${P()}
     </section>
-  `)}function R(){return h(`
+  `)}function K(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
           ${p(l,"overview")}
-          ${S(l)}
-          ${A(l)}
+          ${L(l)}
+          ${$(l)}
           ${C(l)}
           </article>
         ${g(l)}
       </div>
     </section>
-  `)}function F(){return h(`
+  `)}function U(){return u(`
     <section class="character-page">
       <div class="character-shell">
         <article class="character-article">
           ${p(l,"gallery")}
-          ${L(l)}
+          ${T(l)}
         </article>
         ${g(l)}
       </div>
       ${P()}
     </section>
-  `)}const f=document.querySelector("#app"),U={home:$,dandy:V,london:R,"dandy-gallery":W,"london-gallery":F},K=f?.dataset.page||"home",J=U[K]||$;f&&(f.innerHTML=J());H();j();T();B();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),y=document.querySelector("#menu-close"),v=document.querySelector(".menu-backdrop");function Y(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function m(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&y&&v&&(d.addEventListener("click",Y),y.addEventListener("click",m),v.addEventListener("click",m),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&m()}));
+  `)}const f=document.querySelector("#app"),Y={home:S,dandy:W,london:K,"dandy-gallery":F,"london-gallery":U},J=f?.dataset.page||"home",X=Y[J]||S;f&&(f.innerHTML=X());H();E();D();_();B();const d=document.querySelector("#menu-toggle"),c=document.querySelector("#menu"),v=document.querySelector("#menu-close"),w=document.querySelector(".menu-backdrop");function Q(){!c||!d||(c.classList.add("is-open"),c.setAttribute("aria-hidden","false"),d.setAttribute("aria-expanded","true"),document.body.classList.add("menu-open"))}function m(){!c||!d||(c.classList.remove("is-open"),c.setAttribute("aria-hidden","true"),d.setAttribute("aria-expanded","false"),document.body.classList.remove("menu-open"))}d&&c&&v&&w&&(d.addEventListener("click",Q),v.addEventListener("click",m),w.addEventListener("click",m),document.addEventListener("keydown",e=>{e.key==="Escape"&&c.classList.contains("is-open")&&m()}));
