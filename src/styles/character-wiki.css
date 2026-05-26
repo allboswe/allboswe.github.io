@@ -263,6 +263,88 @@
     text-align: left;
 }
 
+.character-section ul {
+    margin: 0;
+    padding-left: 1.5rem;
+
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.character-section li + li {
+    margin-top: 0.35rem;
+}
+
+.character-section ul ul {
+    margin-top: 0.35rem;
+    padding-left: 1.25rem;
+}
+
+.character-section ul ul li {
+    font-size: 0.92rem;
+}
+
+.character-section a {
+    color: var(--color-accent);
+    text-decoration: none;
+    text-underline-offset: 0.15em;
+    transition: opacity 0.15s ease;
+}
+
+.character-section a:hover,
+.character-section a:focus {
+    opacity: 0.8;
+}
+
+.character-section a:visited {
+    color: var(--color-accent);
+}
+
+.heading-block {
+    margin-top: 1.5rem;
+}
+
+.heading-block:first-of-type {
+    margin-top: 1.5rem;
+}
+
+.heading-heading {
+    margin: 0 0 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.heading-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    color: var(--color-text);
+    font: inherit;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+    background: none;
+    cursor: pointer;
+}
+
+.heading-caret::before {
+    content: "▼";
+    font-size: 0.75rem;
+}
+
+.heading-block.is-collapsed .heading-caret::before {
+    content: "▲";
+    font-size: 0.75rem;
+}
+
+.heading-block.is-collapsed .heading-content {
+    display: none;
+}
+
 /* Spoiler Button */
 
 .spoiler-reveal {
