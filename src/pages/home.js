@@ -48,9 +48,9 @@ export function renderHomePage() {
             </p>
           </div>
           <ul class="card-tags">
-            <li class="tag">action fantasy</li>
+            <li class="tag">action</li>
             <li class="tag">comedy</li>
-            <li class="tag">thriller/horror</li>
+            <li class="tag">horror</li>
           </ul>
         </article>
       </div>
