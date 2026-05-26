@@ -344,6 +344,38 @@ export const london = {
         </p>
       `,
     },
+    {
+      id: 'powers',
+      title: 'Powers',
+      content: `
+        <p>
+          London possesses arcane phenomena tied to sensory perception and imposed interpretation of reality.
+          Her primary power allows her to exert authority over the five senses of those existing within her world, causing sight, smell, sound, taste, and touch to become perceived according to her influence.
+          She also possesses a unique set of subpowers tied to the manipulation of cigarette smoke.
+        </p>
+        <h3 id="absolute-authority">Absolute Authority</h3>
+        <p>
+          <strong>Absolute Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her arcana.
+          Those affected by this phenomenon lose the ability to distinguish between objective reality and altered perception.
+          The extent and complexity of these alterations may change depending on her concentration, emotional state, and familiarity with the affected target.
+        </p>
+        <h3 id="subpowers">Subpowers</h3>
+        <p>
+          Like other arcane phenomena, she exhibits the common abilities normally associated with them.
+          She also possesses a unique set of abilities tied to the manipulation of cigarette smoke.
+        </p>
+        <h4>Secondhand Smoke</h4>
+        <p>
+          <strong>Secondhand Smoke</strong> is a passive ability that causes prolonged exposure to cigarette smoke surrounding her to gradually dull awareness, concentration, and sensory alertness in nearby individuals.
+          Those exposed may become increasingly calm, distracted, or mentally subdued without immediately recognizing the influence of the smoke.
+        </p>
+        <h4>Secondhand Smoke Veil</h4>
+        <p>
+          <strong>Secondhand Smoke Veil</strong> is an active ability that allows her to produce abnormally dense concentrations of cigarette smoke from a single puff.
+          The smoke can rapidly spread through surrounding areas to disorient nearby individuals, obscure visibility, restrict movement, and make enclosed environments increasingly difficult to breathe within.
+        </p>
+      `
+    },
   ],
   infobox: {
     image: {
