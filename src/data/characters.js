@@ -1,12 +1,12 @@
-export const london = {
-  slug: 'london',
-  name: 'London',
-  kana: 'ロンドン',
-  romaji: 'Rondon',
+export const dandy = {
+  slug: 'dandy-valentine',
+  name: 'Dandy Valentine',
+  kana: 'バレンタイン・ダンディ',
+  romaji: 'Barentain Dandi',
   series: 'Pink Guy',
   category: 'Characters',
   overview: `
-    <strong>London</strong> (ロンドン <em>Rondon</em>) serves as an Administrator in the Bureau of Arcane Affairs, a global organization responsible for overseeing arcane phenomena.
+    <strong>Dandy Valentine</strong> (バレンタイン・ダンディ <em>Barentain Dandi</em>) is the protagonist of the <em>Pink Guy</em> series. He frequently becomes involved in situations he does not fully understand.
   `,
   sections: [
     {
@@ -14,16 +14,11 @@ export const london = {
       title: 'Appearance',
       content: `
         <p>
-          London is a woman with light, neutral-toned skin and an average build.
-          She has straight, shoulder-length pastel brown hair, cut in a blunt bob with even bangs that rest just above her eyebrows.
-          Her eyes are a pale, desaturated brown, with small unfilled pupils encircled by a single thin ring.
-        </p>
-        <br />
-        <p>
-          She wears a black two-piece business suit consisting of a fitted blazer with notch lapels and a high-waisted, knee-length pencil skirt.
-          Underneath, she wears a white blouse with long sleeves and buttoned cuffs.
-          The blouse features a ribbon tie at the collar, secured with a small round fastener, with the ends falling down the front.
-          She pairs this with plain black closed-toe flats and does not wear any visible accessories.
+          Dandy Valentine is a young man with light skin, a lean build, pale blond hair, and dull grey-blue eyes that often appear half-open.
+          A small adhesive bandage sits across the bridge of his nose, and one of his upper front teeth is missing, leaving a slight gap when he smiles or speaks.
+          He usually wears a faded pastel pink hoodie with the hood pulled up, along with torn dark blue jeans and worn sneakers.
+          After coming into contact with an arcane phenomenon, he develops a long wolf tail, claw-like fingernails, large wolf ears, and small fangs.
+          He later begins wearing a pastel pink blazer over a white dress shirt and black tie, paired with black trousers and black dress shoes.
         </p>
       `,
     },
@@ -32,21 +27,445 @@ export const london = {
       title: 'Personality',
       content: `
         <p>
-          London is composed and rarely shows outward reactions.
-          It can be difficult to tell what she is thinking, as she tends to observe more than she speaks, and when she does, she is usually brief and direct.
-          Her behavior comes across as distant, though she does not act that way intentionally.
+          Dandy Valentine is foul-mouthed, impulsive, and emotionally direct, often speaking or acting without thinking ahead.
+          After spending several years homeless, he focuses mainly on immediate comfort and simple pleasures, which causes him to come across as immature, selfish, or overly interested in women and relationships.
+          He frequently talks about wanting an ordinary life and pursuing the <em>American Dream</em>, especially having a stable job, attending college, owning a home, getting married, and raising a family.
+          He also becomes attached to people quickly and shows strong loyalty toward those he grows close to.
+          Frustration with his situation often leads to reckless decisions.
         </p>
-        <br />
+      `,
+    },
+    {
+      id: 'powers',
+      title: 'Powers',
+      content: `
         <p>
-          In formal settings, she is highly capable and maintains a steady, professional demeanor.
-          She handles negotiations and discussions without hesitation, even in high-pressure situations.
-          She regularly meets with officials and world leaders through her work in the Bureau of Arcane Affairs and is known for remaining calm regardless of the circumstances.
+          Dandy Valentine possesses arcane phenomena tied to adaptation and instinct.
+          His primary power develops through exposure to and understanding of other arcane phenomena, allowing him to interpret imperfect variations used by those he encounters.
+          He also has a set of bestial subpowers, which only appear after suffering fatal injuries.
+          Unlike most characters, his survival is closely tied to his own will to continue living.
         </p>
-        <br />
+        <div class="heading-block is-collapsed">
+          <h3 id="archetypal-drift" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="true"
+              aria-controls="archetypal-drift-content"
+            >
+              <span>Archetypal Drift</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="archetypal-drift-content">
+            <p>
+              <strong>Archetypal Drift</strong> allows him to interpret imperfect variations of other arcane phenomena through prolonged exposure and personal understanding.
+              These interpretations are shaped by his own perception of the phenomenon and may develop differently from their original forms.
+              He is only capable of interpreting a single phenomenon from another individual, and the process itself is unreliable even when performed intentionally.
+            </p>
+          </div>
+        </div>
+
+        <div class="heading-block is-collapsed">
+          <h3 id="subpowers" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="subpowers-content"
+            >
+              <span>Subpowers</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="subpowers-content">
+            <p>
+              Like other arcane phenomena, he exhibits the common abilities normally associated with them.
+              He also has a unique set of abilities tied to his bestial transformation, which only appear after suffering fatal injuries in his human state.
+            </p>
+
+            <h4>Bestial Convergence</h4>
+            <p>
+              <strong>Bestial Convergence</strong> is a passive ability that causes him to gradually develop permanent bestial traits.
+              These changes become more pronounced over time and are accompanied by shifts in behavior, instinctive response, and physical structure.
+            </p>
+
+            <h4>Bestial Weaponization</h4>
+            <p>
+              <strong>Bestial Weaponization</strong> is an active ability that allows him to utilize his transformed physical traits as weapons.
+              Features such as his fangs, nails, and tail can be used offensively or defensively, often in ways that resemble instinctive animal behavior.
+            </p>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 'trivia',
+      title: 'Trivia',
+      content: `
+        <ul>
+          <li>Dandy's birthday falls on <a href="https://en.wikipedia.org/wiki/Valentine%27s_Day" target="_blank" rel="noopener noreferrer">Valentine's Day</a>, referencing both his surname and his desire for affection and companionship.</li>
+          <li>Dandy's visual design was inspired by <a href="https://myanimelist.net/character/170732/Denji" target="_blank" rel="noopener noreferrer">Denji</a> from <a href="https://myanimelist.net/manga/116778/Chainsaw_Man" target="_blank" rel="noopener noreferrer"><em>Chainsaw Man</em></a> for his human form and <a href="https://myanimelist.net/character/18344/Tomoe" target="_blank" rel="noopener noreferrer">Tomoe</a> from <a href="https://myanimelist.net/manga/8157/Kamisama_Hajimemashita" target="_blank" rel="noopener noreferrer"><em>Kamisama Kiss</em></a> for his hybrid form, while aspects of his abilities were influenced by <a href="https://myanimelist.net/character/122209/Yuu_Otosaka" target="_blank" rel="noopener noreferrer">Yuu Otosaka</a> from <a href="https://myanimelist.net/anime/28999/Charlotte" target="_blank" rel="noopener noreferrer"><em>Charlotte</em></a>.</li>
+          <li>Dandy's wolf-related abilities were partially inspired by <a href="https://www.imdb.com/title/tt0082010/" target="_blank" rel="noopener noreferrer"><em>An American Werewolf in London</em></a>.</li>
+          <ul>
+            <li>Coincidentally, the title of the film closely mirrors both his American origin and his relationship with <a href="/pink-guy/characters/london/">London</a>.</li>
+          </u>
+        </ul>
+      `,
+    },
+  ],
+  infobox: {
+    image: {
+      src: '/images/dandy-infobox-(human)-1200.webp',
+      srcset: `
+        /images/dandy-infobox-(human)-800.webp 800w,
+        /images/dandy-infobox-(human)-1200.webp 1200w
+      `,
+      sizes: '(min-width: 1200px) 320px, 90vw',
+      alt: 'Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.',
+    },
+    groups: [
+      {
+        heading: 'Name',
+        rows: [
+          {
+            label: 'Alias',
+            value: 'Pink Guy',
+          },
+          {
+            label: 'Kana',
+            value: 'バレンタイン・ダンディ',
+          },
+          {
+            label: 'Romaji',
+            value: 'Barentain Dandi',
+          },
+        ],
+      },
+      {
+        heading: 'Biological Information',
+        rows: [
+          {
+            label: 'Age',
+            value: '21',
+          },
+          {
+            label: 'Birthday',
+            value: 'February 14, 1958',
+          },
+          {
+            label: 'Birthplace',
+            value: 'New York, United States',
+          },
+          {
+            label: 'Blood Type',
+            value: 'B+',
+          },
+          {
+            label: 'Gender',
+            value: 'Male',
+          },
+          {
+            label: 'Height',
+            value: `180 cm (5'11")`,
+          },
+          {
+            label: 'Species',
+            value: 'Hybrid',
+          },
+          {
+            label: 'Weight',
+            value: '73 kg (160 lb)',
+          },
+        ],
+      },
+      {
+        heading: 'Personal Information',
+        rows: [
+          {
+            label: 'Dislikes',
+            value: 'Cats',
+          },
+          {
+            label: 'Education',
+            value: `
+              <span>Midwood High School</span>
+              <span class="education-context">(dropped out)</span>
+            `,
+            className: 'education',
+          },
+          {
+            label: 'Habits',
+            value: 'Daydreaming',
+          },
+          {
+            label: 'Hobbies',
+            value: 'Sleeping',
+          },
+          {
+            label: 'Likes',
+            value: 'Food, Women',
+          },
+          {
+            label: 'Personality',
+            value: 'ESFP',
+          },
+          {
+            label: 'Status',
+            spoiler: true,
+            buttonText: 'Reveal Status',
+            revealedValue: 'Alive',
+          },
+        ],
+      },
+      {
+        heading: 'Phenomena Information',
+        rows: [
+          {
+            label: 'Arcana',
+            spoiler: true,
+            buttonText: 'Reveal Arcana',
+            revealedValue: 'The Fool',
+          },
+          {
+            label: 'Power',
+            value: 'Archetypal Drift',
+          },
+          {
+            label: 'Subpower',
+            value: 'Bestial',
+          },
+          {
+            label: 'Weapon',
+            value: '—',
+          },
+        ],
+      },
+      {
+        heading: 'Professional Information',
+        rows: [
+          {
+            label: 'Affiliation',
+            value: `
+              <span>Bureau of Arcane Affairs</span>
+              <span class="affiliation-context">Operations Specialist</span>
+            `,
+            className: 'affiliation',
+          },
+          {
+            label: 'Jurisdiction',
+            value: 'United States',
+          },
+        ],
+      },
+      {
+        heading: 'First Appearance',
+        rows: [
+          {
+            label: 'Web Novel',
+            value: 'Episode 1',
+          },
+        ],
+      },
+    ],
+  },
+  gallery: {
+    category: 'Web Novel',
+    tabs: [
+      {
+        id: 'concept-art',
+        label: 'Concept Art',
+        images: [
+          {
+            src: '/images/dandy-concept-(human)-800.webp',
+            srcset: `
+              /images/dandy-concept-(human)-800.webp 800w,
+              /images/dandy-concept-(human)-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat.',
+            fullImage: '/images/dandy-concept-(human)-1280.webp',
+            caption: 'Concept Art 1',
+          },
+          {
+            src: '/images/dandy-concept-(hybrid)-800.webp',
+            srcset: `
+              /images/dandy-concept-(hybrid)-800.webp 800w,
+              /images/dandy-concept-(hybrid)-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs.',
+            fullImage: '/images/dandy-concept-(hybrid)-1280.webp',
+            caption: 'Concept Art 2',
+          },
+          {
+            src: '/images/dandy-concept-sheet-(human)-800.webp',
+            srcset: `
+              /images/dandy-concept-sheet-(human)-800.webp 800w,
+              /images/dandy-concept-sheet-(human)-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'A character reference sheet of Dandy Valentine wearing a pastel pink hoodie, torn jeans, and carrying a baseball bat including three facial expressions shown on the side such as neutral, excited, and smiling.',
+            fullImage: '/images/dandy-concept-sheet-(human)-1280.webp',
+            caption: 'Character Sheet 1',
+          },
+          {
+            src: '/images/dandy-concept-sheet-(hybrid)-800.webp',
+            srcset: `
+              /images/dandy-concept-sheet-(hybrid)-800.webp 800w,
+              /images/dandy-concept-sheet-(hybrid)-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'A character reference sheet of Dandy Valentine in his hybrid form, wearing a pastel pink blazer with wolf ears, a tail, and sharp fangs including three facial expressions shown on the side such as neutral, serious, and smiling.',
+            fullImage: '/images/dandy-concept-sheet-(hybrid)-1280.webp',
+            caption: 'Character Sheet 2',
+          },
+        ],
+      },
+      {
+        id: 'cover-art',
+        label: 'Cover Art',
+        images: [
+          {
+            src: '/images/dandy-infobox-(human)-800.webp',
+            srcset: `
+              /images/dandy-infobox-(human)-800.webp 800w,
+              /images/dandy-infobox-(human)-1200.webp 1200w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'Dandy Valentine standing with his hands in the pocket of a pastel pink hoodie.',
+            fullImage: '/images/dandy-infobox-(human)-1200.webp',
+            caption: 'Cover Art 1',
+          },
+          {
+            src: '/images/dandy-infobox-(hybrid)-800.webp',
+            srcset: `
+              /images/dandy-infobox-(hybrid)-800.webp 800w,
+              /images/dandy-infobox-(hybrid)-1200.webp 1200w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'Dandy Valentine in his hybrid form, standing in a narrow city alley while wearing a pastel pink suit jacket, black tie, and dark trousers.',
+            fullImage: '/images/dandy-infobox-(hybrid)-1200.webp',
+            caption: 'Cover Art 2',
+          },
+        ],
+      },
+    ],
+  },
+};
+
+export const london = {
+  slug: 'london',
+  name: 'London',
+  kana: 'ロンドン',
+  romaji: 'Rondon',
+  series: 'Pink Guy',
+  category: 'Characters',
+  overview: `
+    <strong>London</strong> (ロンドン <em>Rondon</em>) is a major character from the <em>Pink Guy</em> series. She is the Administrator in the Bureau of Arcane Affairs, an international organization responsible for overseeing arcane phenomena.
+  `,
+  sections: [
+    {
+      id: 'appearance',
+      title: 'Appearance',
+      content: `
         <p>
-          Otherwise, she can be socially inept.
-          She may misread tone or respond in ways that seem blunt or out of place.
+          London is a woman with light skin and a slender build.
+          She has straight pastel-brown hair cut into a shoulder-length bob with even bangs that rest just above her eyes.
+          Her pale eyes contain concentric rings within the irises, and she is usually seen with a neutral expression and upright posture.
+          She wears a black business suit consisting of a fitted blazer and a high-waisted knee-length skirt over a white blouse tied at the collar, along with plain black flats.
         </p>
+      `,
+    },
+    {
+      id: 'personality',
+      title: 'Personality',
+      content: `
+        <p>
+          London is reserved and difficult to read, rarely showing strong emotion even in dangerous or high-pressure situations.
+          She speaks in a soft and direct manner and usually appears confident in her decisions.
+          Although polite and approachable, she keeps emotional distance from the people around her and rarely reveals what she is thinking or feeling.
+          She seldom raises her voice or changes her expression during conversations and usually prefers persuasion over direct force or intimidation.
+        </p>
+      `,
+    },
+    {
+      id: 'powers',
+      title: 'Powers',
+      content: `
+        <p>
+          London possesses arcane phenomena tied to sensory perception and imposed interpretation of reality.
+          Her primary power allows her to exert authority over the five senses of those existing within her world, causing sight, smell, sound, taste, and touch to become perceived according to her influence.
+          She also possesses a unique set of subpowers tied to the manipulation of cigarette smoke.
+        </p>
+        <div class="heading-block is-collapsed">
+          <h3 id="sensory-authority" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="true"
+              aria-controls="sensory-authority-content"
+            >
+              <span>Sensory Authority</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="sensory-authority-content">
+            <p>
+              <strong>Sensory Authority</strong> allows her to impose complete authority over the five senses of those existing within her world, causing sight, smell, sight, taste, and touch to become perceived according to conditions imposed through her power.
+              Those affected by this phenomenon lose the ability to distinguish between objective reality and altered perception.
+              The extent and complexity of these alterations may change depending on her concentration, emotional state, and familiarity with the affected target.
+            </p>
+          </div>
+        </div>
+
+        <div class="heading-block is-collapsed">
+          <h3 id="subpowers" class="heading-heading">
+            <button
+              class="heading-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="subpowers-content"
+            >
+              <span>Subpowers</span>
+              <span class="heading-caret" aria-hidden="true"></span>
+            </button>
+          </h3>
+
+          <div class="heading-content" id="subpowers-content">
+            <p>
+              Like other arcane phenomena, she exhibits the common abilities normally associated with them.
+              She also possesses a unique set of abilities tied to the manipulation of cigarette smoke.
+            </p>
+
+            <h4>Secondhand Smoke</h4>
+            <p>
+              <strong>Secondhand Smoke</strong> is a passive ability that causes prolonged exposure to cigarette smoke surrounding her to gradually dull awareness, concentration, and sensory alertness in nearby individuals.
+              Those exposed may become increasingly calm, distracted, or mentally subdued without immediately recognizing the influence of the smoke.
+            </p>
+
+            <h4>Secondhand Smoke Veil</h4>
+            <p>
+              <strong>Secondhand Smoke Veil</strong> is an active ability that allows her to produce abnormally dense concentrations of cigarette smoke from a single puff.
+              The smoke can rapidly spread through surrounding areas to disorient nearby individuals, obscure visibility, restrict movement, and make enclosed environments increasingly difficult to breathe within.
+            </p>
+          </div>
+        </div>
+      `
+    },
+    {
+      id: 'trivia',
+      title: 'Trivia',
+      content: `
+        <ul>
+          <li>London's birthday coincides with both <a href="https://en.wikipedia.org/wiki/Saint_George%27s_Day" target="_blank" rel="noopener noreferrer">Saint George's Day</a> and the traditionally recognized birth and death date of <a href="https://en.wikipedia.org/wiki/William_Shakespeare" target="_blank" rel="noopener noreferrer">William Shakespeare</a>.</li>
+          <li>London's name and introductory chapter title were inspired by <a href="https://www.youtube.com/watch?v=EfK-WX2pa8c" target="_blank" rel="noopener noreferrer"><em>London Calling</em></a> by <a href="https://www.imdb.com/name/nm1502648/" target="_blank" rel="noopener noreferrer">The Clash</a>.</li>
+          <li>London's smoking habit and smoke-related abilities reference the "<a href="https://en.wikipedia.org/wiki/London" target="_blank" rel="noopener noreferrer">Big Smoke</a>," a historical nickname associated with the city's heavy smog and pollution.</li>
+          <li>London's visual design was inspired by <a href="https://myanimelist.net/character/170734/Makima" target="_blank" rel="noopener noreferrer">Makima</a> from <a href="https://myanimelist.net/manga/116778/Chainsaw_Man" target="_blank" rel="noopener noreferrer"><em>Chainsaw Man</em></a>, while aspects of her abilities were influenced by <a href="https://myanimelist.net/character/1086/Sousuke_Aizen" target="_blank" rel="noopener noreferrer">Sousuke Aizen</a> from <a href="https://myanimelist.net/manga/12/Bleach" target="_blank" rel="noopener noreferrer"><em>Bleach</em></a>.</li>
+        </ul>
       `,
     },
   ],
@@ -58,7 +477,7 @@ export const london = {
         /images/london-infobox-1200.webp 1200w
       `,
       sizes: '(min-width: 1200px) 320px, 90vw',
-      alt: 'London',
+      alt: 'London standing in front of a city skyline while wearing a white blouse and dark skirt.',
     },
     groups: [
       {
@@ -83,15 +502,11 @@ export const london = {
         rows: [
           {
             label: 'Age',
-            value: `
-              <span>Unknown</span>
-              <span class="age-context">(appears late 20s)</span>
-            `,
-            className: 'age',
+            value: '31',
           },
           {
             label: 'Birthday',
-            value: 'April 23',
+            value: 'April 23, 1948',
           },
           {
             label: 'Birthplace',
@@ -111,7 +526,7 @@ export const london = {
           },
           {
             label: 'Species',
-            value: 'Human',
+            value: 'Hybrid',
           },
           {
             label: 'Weight',
@@ -123,14 +538,8 @@ export const london = {
         heading: 'Personal Information',
         rows: [
           {
-            label: 'Arcana',
-            spoiler: true,
-            buttonText: 'Reveal Arcana',
-            revealedValue: 'The World',
-          },
-          {
             label: 'Dislikes',
-            value: 'Cliffhangers',
+            value: 'Tea',
           },
           {
             label: 'Education',
@@ -145,18 +554,45 @@ export const london = {
             value: 'Smoking',
           },
           {
-            label: 'Likes',
-            value: 'Classic Rock, Coffee',
+            label: 'Hobbies',
+            value: 'French Tarot, Reading',
           },
           {
-            label: 'Relatives',
-            value: '—',
+            label: 'Likes',
+            value: 'Coffee, Classic Rock',
+          },
+          {
+            label: 'Personality',
+            value: 'INTJ',
           },
           {
             label: 'Status',
             spoiler: true,
             buttonText: 'Reveal Status',
             revealedValue: 'Alive',
+          },
+        ],
+      },
+      {
+        heading: 'Phenomena Information',
+        rows: [
+          {
+            label: 'Arcana',
+            spoiler: true,
+            buttonText: 'Reveal Arcana',
+            revealedValue: 'The World',
+          },
+          {
+            label: 'Power',
+            value: 'Sensory Authority',
+          },
+          {
+            label: 'Subpower',
+            value: 'Secondhand Smoke',
+          },
+          {
+            label: 'Weapon',
+            value: '—',
           },
         ],
       },
@@ -182,7 +618,7 @@ export const london = {
         rows: [
           {
             label: 'Web Novel',
-            value: 'TBA',
+            value: 'Episode 3',
           },
         ],
       },
@@ -202,9 +638,20 @@ export const london = {
               /images/london-concept-1280.webp 1280w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'London Concept Art',
+            alt: 'A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut.',
             fullImage: '/images/london-concept-1280.webp',
-            caption: 'London Concept Art',
+            caption: 'Concept Art 1',
+          },
+          {
+            src: '/images/london-concept-sheet-800.webp',
+            srcset: `
+              /images/london-concept-sheet-800.webp 800w,
+              /images/london-concept-sheet-1280.webp 1280w
+            `,
+            sizes: '(min-width: 1200px) 400px, 90vw',
+            alt: 'A character reference sheet of London wearing a black business suit with a shoulder-length bob haircut including three facial expressions shown on the side such as neutral, smiling, and tilted.',
+            fullImage: '/images/london-concept-sheet-1280.webp',
+            caption: 'Character Sheet 1',
           },
         ],
       },
@@ -219,9 +666,9 @@ export const london = {
               /images/london-infobox-1200.webp 1200w
             `,
             sizes: '(min-width: 1200px) 400px, 90vw',
-            alt: 'London Cover Art',
+            alt: 'London standing in front of a city skyline while wearing a white blouse and dark skirt.',
             fullImage: '/images/london-infobox-1200.webp',
-            caption: 'London Cover Art',
+            caption: 'Cover Art 1',
           },
         ],
       },

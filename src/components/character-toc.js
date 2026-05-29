@@ -1,13 +1,52 @@
 export function renderCharacterTOC(character) {
   const items = character.sections
-    .map(
-      (section) =>
-        `<li><a href="#${section.id}">${section.title}</a></li>`
-    )
+    .map((section) => {
+      let subItems = '';
+
+      if (section.id === 'powers') {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(section.content, 'text/html');
+
+        const h3s = [...doc.querySelectorAll('h3')];
+
+        subItems = `
+          <ol>
+            ${h3s
+              .map((h3) => {
+                const id = h3.id;
+                const title =
+                  h3.querySelector('.heading-toggle span')?.textContent.trim() ||
+                  h3.textContent.trim();
+
+                if (!id) return '';
+
+                return `
+                  <li>
+                    <a href="#${id}">
+                      ${title}
+                    </a>
+                  </li>
+                `;
+              })
+              .join('')}
+          </ol>
+        `;
+      }
+
+      return `
+        <li>
+          <a href="#${section.id}">
+            ${section.title}
+          </a>
+
+          ${subItems}
+        </li>
+      `;
+    })
     .join('');
 
   return `
-    <nav class="character-toc is-collapsed" aria-label="Table of contents">
+    <nav class="character-toc" aria-label="Table of contents">
       <div class="character-toc-header">
         <h2 class="character-toc-title">
           <span class="toc-icon" aria-hidden="true">
@@ -24,8 +63,13 @@ export function renderCharacterTOC(character) {
           </span>
           Contents
         </h2>
-        <button class="character-toc-toggle" type="button" aria-expanded="false">
-          show
+
+        <button
+          class="character-toc-toggle"
+          type="button"
+          aria-expanded="true"
+        >
+          hide
         </button>
       </div>
 
